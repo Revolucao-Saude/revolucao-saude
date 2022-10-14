@@ -1,6 +1,6 @@
 import { IsNotEmpty } from "class-validator";
-import { Tema } from "src/tema/entity/tema.entities";
-import { Usuario } from "src/usuario/entity/usuario.entities";
+import { Tema } from "src/tema/entities/tema.entity";
+import { Usuario } from "src/usuario/entities/usuario.entity";
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 
