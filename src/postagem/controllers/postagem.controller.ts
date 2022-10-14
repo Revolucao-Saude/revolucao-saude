@@ -6,7 +6,6 @@ import { Body } from "@nestjs/common";
 import { Delete } from "@nestjs/common";
 
 
-
 @Controller("/postagens")
 export class PostagemController {
     constructor(private readonly postagemService: PostagemServices) {}
@@ -22,10 +21,10 @@ export class PostagemController {
     findById(@Param('id', ParseIntPipe)id:number): Promise<Postagem>{
         return this.postagemService.findById(id);   
     }  
-    @Get('/titulo/:titulo')
+    @Get('/texto/:texto')
     @HttpCode(HttpStatus.OK)
-    findByTitulo(@Param('titulo') titulo: string): Promise<Postagem[]> {
-        return this.postagemService.findByTitulo(titulo);
+    findByTexto(@Param('texto') texto: string): Promise<Postagem[]> {
+        return this.postagemService.findByTexto(texto);
     } 
     @Post()
     @HttpCode(HttpStatus.CREATED)
