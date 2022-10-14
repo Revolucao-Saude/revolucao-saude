@@ -20,7 +20,7 @@ export class UsuarioService {
 
   })
 }
-async finAll (): Promise<Usuario[]> {
+async findAll (): Promise<Usuario[]> {
     return await this.usuarioRepository.find (
         {
             relations:{
