@@ -57,12 +57,6 @@ export class PostagemServices {
 
         return await this.postagemRepository.delete(id);
     }
-
-
-
-
-
-
 }
 
 
