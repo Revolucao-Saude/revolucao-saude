@@ -15,7 +15,7 @@ import { PostagemModule } from './postagem/postagem.module';
       database: 'db_revolucaosaude',
       entities: [Postagem],
       synchronize: true,
-    })
+    }),
     PostagemModule
   ],
   controllers: [],
