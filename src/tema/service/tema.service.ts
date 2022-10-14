@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import {  InjectRepository } from "@nestjs/typeorm";
 import { DeleteResult, ILike, Repository} from "typeorm";
-import { Tema } from "../entity/tema.entities";
+import { Tema } from "../entities/tema.entity";
 
 @Injectable()
 export class TemaService {
@@ -19,7 +19,7 @@ export class TemaService {
     }
 
     async findById(id: number): Promise <Tema> {
-        let tema = await this.temaRepository.find({
+        let tema = await this.temaRepository.findOne({
           where: {
             id
           },
