@@ -21,7 +21,7 @@ export class Usuario{
     senha:string
     
     @IsNotEmpty()
-    @Column({length: 100, nullable:true})
+    @Column({length: 300, nullable:true})
     foto:string
 
     @OneToMany(() => Postagem, (postagem) => postagem.usuario, {
