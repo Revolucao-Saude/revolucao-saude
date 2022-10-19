@@ -12,6 +12,13 @@ export class UsuarioService {
     //private bcrypt: Brcypt
 
   ) { }
+
+  /**
+     * @desc consulta o usuario pelo nome
+
+     * @returns usuario consultado
+ 
+     */
   async findByUsuario (usuario: string): Promise<Usuario | undefined> {
   return await this.usuarioRepository.findOne ({
         where: {
@@ -20,6 +27,14 @@ export class UsuarioService {
 
   })
 }
+
+      /**
+       * @desc consulta todos os usuarios cadastrados
+
+       * @returns usuario cadastrado
+ 
+      */
+
 async findAll (): Promise<Usuario[]> {
     return await this.usuarioRepository.find (
         {
@@ -29,6 +44,14 @@ async findAll (): Promise<Usuario[]> {
         }
 );
     }
+
+      /**
+     * @desc consulta o usuario pelo ID do banco de dad0s
+
+     * @returns usuario pelo id
+ 
+     */
+
     async findById (id: number): Promise<Usuario> {
       let usuario = await this.usuarioRepository.findOne({
         where: {
@@ -44,6 +67,13 @@ async findAll (): Promise<Usuario[]> {
     return usuario;
 }
 
+/**
+     * @desc cria um novo usuario
+     * @param usuario Identificador para atualizar o usuario
+     * @returns O conteudo atualizado
+     * @throws HttpExeption Caso o usuário informado já exista
+     */
+
 async create(usuario: Usuario): Promise<Usuario>{
 
     let buscaUsuario = await this.findByUsuario(usuario.nome);
@@ -57,6 +87,14 @@ throw new HttpException ("O Usuario ja existe!", HttpStatus.BAD_REQUEST);
 
 
 }
+
+
+/**
+     * @desc Atualiza o Usuário no banco de dados
+     * @param usuario Identificador para atualizar o usuário
+     * @returns O conteudo atualizado
+     * @throws HttpExeption Caso o usuário informado não seja encontrado
+     */
 
 async update (usuario: Usuario): Promise<Usuario>{
 
