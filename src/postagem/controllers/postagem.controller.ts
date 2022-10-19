@@ -21,11 +21,19 @@ export class PostagemController {
     findById(@Param('id', ParseIntPipe)id:number): Promise<Postagem>{
         return this.postagemService.findById(id);   
     }  
+
     @Get('/texto/:texto')
     @HttpCode(HttpStatus.OK)
-    findByTexto(@Param('texto') texto: string): Promise<Postagem[]> {
+    findByText(@Param('texto') texto: string): Promise<Postagem[]> {
         return this.postagemService.findByTexto(texto);
     } 
+
+    @Get('/foto-perfil/:arquivos_midia')
+    @HttpCode(HttpStatus.OK)
+    findByImage(@Param('arquivos_midia') arquivos_midia: string): Promise<Postagem[]> {
+        return this.postagemService.findByTexto(arquivos_midia);
+    } 
+
     @Post()
     @HttpCode(HttpStatus.CREATED)
     create(@Body()postagem: Postagem): Promise<Postagem> {
