@@ -7,7 +7,11 @@ import { TemaModule } from './tema/tema.module';
 import { Usuario } from './usuario/entities/usuario.entity';
 import { UsuarioModule } from './usuario/usuario.module';
 
-
+/**
+ *@desc Nessa parte fazemos a integração com o banco de dados, a propriedade synchronize definida como
+  true fica responsável por indicar que as tabelas serão criadas e atualizadas
+  a cada inicialização da aplicação
+ */
 @Module({
   imports: [
     TypeOrmModule.forRoot({

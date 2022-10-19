@@ -9,7 +9,10 @@ import { Delete } from "@nestjs/common";
 @Controller("/postagens")
 export class PostagemController {
     constructor(private readonly postagemService: PostagemServices) {}
-    
+    /**
+     * @desc 
+     * @return essa função retorna todas as postagens do banco de dados
+     */
     @Get()
     @HttpCode(HttpStatus.OK)
     findAll(): Promise <Postagem[]> {
