@@ -14,9 +14,9 @@ export class UsuarioService {
   ) {}
 
   /**
-     * @desc consulta o usuario pelo nome
+     * @desc Consulta o usuario pelo nome
 
-     * @returns usuario consultado
+     * @returns Usuário consultado
  
      */
  
@@ -33,9 +33,9 @@ export class UsuarioService {
 }
 
       /**
-       * @desc consulta todos os usuarios cadastrados
+       * @desc Consulta todos os Usuários cadastrados
 
-       * @returns usuario cadastrado
+       * @returns Usuário cadastrado
  
       */
 
@@ -50,9 +50,9 @@ async findAll (): Promise<Usuario[]> {
     }
 
       /**
-     * @desc consulta o usuario pelo ID do banco de dad0s
+     * @desc Consulta o Usuário pelo ID do Banco de Dadoss
 
-     * @returns usuario pelo id
+     * @returns usuario pelo ID
  
      */
 
@@ -72,7 +72,7 @@ async findAll (): Promise<Usuario[]> {
 }
 
 /**
-     * @desc cria um novo usuario
+     * @desc Cria um novo usuário
      * @param usuario Identificador para atualizar o usuario
      * @returns O conteudo atualizado
      * @throws HttpExeption Caso o usuário informado já exista
@@ -115,6 +115,16 @@ async update (usuario: Usuario): Promise<Usuario>{
  //       usuario.senha = await this.bcrypt.criptografarSenha(usuario.senha)
         return await this.usuarioRepository.save(usuario);
 }
+
+    
+/**
+     * @desc Apaga um usuário do banco de dados
+     * @param id O identificador do usuário a ser apagado
+     * @returns Conteúdo vazio 
+     * @throws HttpException Caso o ID informado não seja encontrado
+     * @example
+     * delete(2); // Será apagado o tema com o id = 2
+     */
 
 async delete (id: number): Promise <DeleteResult> {
 
