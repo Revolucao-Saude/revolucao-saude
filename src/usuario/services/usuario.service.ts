@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import {Repository} from 'typeorm';
+import {DeleteResult, Repository} from 'typeorm';
 import { Usuario} from '../entities/usuario.entity';
 //import { Brcypt} from '../../auth/Brcypt/Brcypt';
 
@@ -11,7 +11,7 @@ export class UsuarioService {
     private usuarioRepository: Repository<Usuario>,
     //private bcrypt: Brcypt
 
-  ) { }
+  ) {}
 
   /**
      * @desc consulta o usuario pelo nome
@@ -19,10 +19,14 @@ export class UsuarioService {
      * @returns usuario consultado
  
      */
-  async findByUsuario (usuario: string): Promise<Usuario | undefined> {
+ 
+  async findByUsername (usuario: string): Promise<Usuario> {
   return await this.usuarioRepository.findOne ({
         where: {
           nome: usuario
+        },
+        relations:{
+          postagem: true
         }
 
   })
@@ -76,9 +80,9 @@ async findAll (): Promise<Usuario[]> {
 
 async create(usuario: Usuario): Promise<Usuario>{
 
-    let buscaUsuario = await this.findByUsuario(usuario.nome);
+    let buscaUsername = await this.findByUsername(usuario.nome);
 
-    if (!buscaUsuario) {
+    if (!buscaUsername) {
     //    usuario.senha = await this.bcrypt.criptografarSenha(usuario.senha)
         return await this.usuarioRepository.save (usuario);
     }
@@ -99,7 +103,7 @@ throw new HttpException ("O Usuario ja existe!", HttpStatus.BAD_REQUEST);
 async update (usuario: Usuario): Promise<Usuario>{
 
     let updateUsuario: Usuario = await this.findById(usuario.id);
-    let buscaUsuario = await this.findByUsuario (usuario.nome);
+    let buscaUsuario = await this.findByUsername (usuario.nome);
 
     if (!updateUsuario)
     throw new HttpException ('Usuário não encontrado!', HttpStatus.NOT_FOUND);
@@ -110,6 +114,16 @@ async update (usuario: Usuario): Promise<Usuario>{
 
  //       usuario.senha = await this.bcrypt.criptografarSenha(usuario.senha)
         return await this.usuarioRepository.save(usuario);
+}
+
+async delete (id: number): Promise <DeleteResult> {
+
+  let buscaUsuario = await this.findById(id);
+
+  if (!buscaUsuario)
+    throw new HttpException( ' Usuario não encontrado ', HttpStatus.NOT_FOUND );
+
+      return await this.usuarioRepository.delete(id);
 }
 
 }

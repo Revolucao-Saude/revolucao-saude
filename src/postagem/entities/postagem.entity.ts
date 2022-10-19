@@ -15,7 +15,7 @@ export class Postagem{
     texto: string;
 
     @IsNotEmpty()
-    @Column({length: 200, nullable:true})
+    @Column({length: 300, nullable:true})
     arquivos_midia: string;
 
     @UpdateDateColumn()
