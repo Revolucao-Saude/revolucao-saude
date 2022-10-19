@@ -16,13 +16,13 @@ export class UsuarioController {
 
     @Get('/:id')
     @HttpCode(HttpStatus.OK)
-    findById(id: number): Promise<Usuario>{
+    findById(@Param('id', ParseIntPipe) id: number): Promise<Usuario>{
         return this.usuarioService.findById(id);
     }
 
-    @Get('/:usuario')
+    @Get('/:usuario/:usuario')
     @HttpCode(HttpStatus.OK)
-    findByUsername(nome: string): Promise<Usuario>{
+    findByUsername(@Param('usuario') nome: string): Promise<Usuario>{
         return this.usuarioService.findByUsername(nome);
     }
 
