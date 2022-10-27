@@ -1,4 +1,4 @@
-import { IsNotEmpty } from "class-validator";
+import { IsEmail, IsNotEmpty, MinLength } from "class-validator";
 import { Postagem } from "src/postagem/entities/postagem.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
@@ -9,24 +9,25 @@ export class Usuario{
     id: number;
 
     @IsNotEmpty()
-    @Column({length:100, nullable:false})
-    nome:string
+    @Column({length: 255, nullable:false})
+    nome:string;
+
+    @IsEmail()
+    @Column({length: 255, nullable:false})
+    email:string;
 
     @IsNotEmpty()
-    @Column({length: 100, nullable:false})
-    email:string
-
-    @IsNotEmpty()
-    @Column({length: 30, nullable:false})
-    senha:string
+    @MinLength(8)
+    @Column({length: 255, nullable:false})
+    senha:string;
     
-    @IsNotEmpty()
-    @Column({length: 300, nullable:true})
-    foto:string
+    
+    @Column({length: 5000, nullable:true})
+    foto:string;
 
     @OneToMany(() => Postagem, (postagem) => postagem.usuario, {
         onDelete: "CASCADE"
     })
-    postagem: Postagem
+    postagem: Postagem[];
 
 }
