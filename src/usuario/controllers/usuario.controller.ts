@@ -2,7 +2,7 @@ import { UseGuards } from "@nestjs/common";
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Post, Put } from "@nestjs/common";
 import { Param } from "@nestjs/common/decorators";
 import { ParseIntPipe } from "@nestjs/common/pipes";
-import { JwtAuthGuard } from "src/auth/guard/jwt.auth.guard";
+import { JwtAuthGuard } from "../../auth/guard/jwt.auth.guard";
 import { Usuario } from "../entities/usuario.entity";
 import { UsuarioService } from "../services/usuario.service";
 
