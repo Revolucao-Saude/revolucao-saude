@@ -13,6 +13,10 @@ export class LocalStrategy extends PassportStrategy (Strategy) {
 
     }
 
+    /**
+     * @param username dois parâmetros do tipo string, que são o usuário e a senha
+     * @desc esses parâmetros serão recebidos na autenticação do usuário (login) 
+     */
     async validate (username: string, password: string): Promise <any>{
         const user = await this.authService.validateUser(username , password);
         if(!user) {
