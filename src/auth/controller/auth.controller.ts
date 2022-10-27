@@ -1,13 +1,12 @@
-import { Body, Controller, HttpCode } from "@nestjs/common";
-import { Postagem } from "src/postagem/entities/postagem.entity";
+import { Body, Controller, HttpCode, HttpStatus, Post } from "@nestjs/common";
 import { UsuarioLogin } from "../entities/usuariologin.entity";
 
 @Controller('/auth')
 export class AuthController {
     constructor (private authService: AuthService) {}
 
-    @HttpCode(LocalAuthGuard)
-    @Postagem('/logar')
+    @HttpCode(HttpStatus.OK)
+    @Post('/logar')
     async Login (@Body () user: UsuarioLogin): Promise <any> {
         return this.authService.login(user)
     }
