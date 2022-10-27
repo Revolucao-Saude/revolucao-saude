@@ -8,6 +8,7 @@ O projeto **Revolução Saúde** é uma rede social voltado para o tema de saúd
 
 #### Contribuidores
 
-<img align="center" height="50" width="50" src="https://avatars.githubusercontent.com/u/103282943?v=4"/> <img align="center" height="50" width="50" src="https://avatars.githubusercontent.com/u/64869364?v=4"/>
+<img align="center" height="50" width="50" src="https://avatars.githubusercontent.com/u/64869364?v=4"/> <img align="center" height="50" width="50" src="https://avatars.githubusercontent.com/u/112710538?v=4"/> <img align="center" height="50" width="50" src="https://avatars.githubusercontent.com/u/112709586?v=4"/> <img align="center" height="50" width="50" src="https://avatars.githubusercontent.com/u/112560958?v=4"/> <img align="center" height="50" width="50" src="https://avatars.githubusercontent.com/u/103282943?v=4"/> 
+
 
 
