@@ -22,7 +22,7 @@ export class UsuarioService {
   async findByUsername (usuario: string): Promise<Usuario> {
   return await this.usuarioRepository.findOne ({
         where: {
-          nome: usuario
+          email: usuario
         },
         relations:{
           postagem: true
