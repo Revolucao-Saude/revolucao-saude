@@ -14,6 +14,7 @@ import { LocalStrategy } from "./strategy/local.strategy";
     imports: [
         UsuarioModule,
         PassportModule,
+        UsuarioModule,
         JwtModule.register({
             secret: jwtConstants.secret,
             signOptions: {
