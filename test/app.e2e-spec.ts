@@ -5,13 +5,14 @@ import { AppModule } from './../src/app.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 describe('Testes dos Módulos Usuário e Auth (e2e)', () => {
-  let token:string;
-  let usuarioId:number;
+  let token: any;
+  let usuarioId: any;
   let app: INestApplication;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [TypeOrmModule.forRoot({
+      imports: [
+        TypeOrmModule.forRoot({
         type:'mysql',
         host: 'localhost',
         port: 3306,
@@ -47,7 +48,7 @@ describe('Testes dos Módulos Usuário e Auth (e2e)', () => {
       email: 'root@root.com',
       senha: 'rootroot',
       foto: ' '
-    })
+    });
     expect(HttpStatus.CREATED)
     
     usuarioId = resposta.body.id
@@ -71,7 +72,7 @@ describe('Testes dos Módulos Usuário e Auth (e2e)', () => {
   /**
    * @desc cadastra um novo usuário no banco de dados e verifica se ele está realizando cadastro duplicado.
    */
-  it('03 - Não Deve Duplicar O Usuário', async()=>{
+  it('03 - Não Deve Duplicar O Usuário', async() => {
     request(app.getHttpServer())
     .post('/usuario/cadastrar')
     .send({

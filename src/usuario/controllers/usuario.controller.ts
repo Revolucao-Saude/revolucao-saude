@@ -1,7 +1,4 @@
-import { UseGuards } from "@nestjs/common";
-import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Post, Put } from "@nestjs/common";
-import { Param } from "@nestjs/common/decorators";
-import { ParseIntPipe } from "@nestjs/common/pipes";
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put, UseGuards } from "@nestjs/common";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { JwtAuthGuard } from "../../auth/guard/jwt.auth.guard";
 import { Usuario } from "../entities/usuario.entity";
@@ -9,11 +6,11 @@ import { UsuarioService } from "../services/usuario.service";
 
 @ApiTags('Usuario')
 @Controller("/usuarios")
-@ApiBearerAuth()
 export class UsuarioController {
     constructor(private readonly usuarioService: UsuarioService) {}
 
     @UseGuards(JwtAuthGuard)
+    @ApiBearerAuth()
     @Get('/todos')
     @HttpCode(HttpStatus.OK)
     findAll(): Promise<Usuario[]>{
@@ -21,6 +18,7 @@ export class UsuarioController {
     }
 
     @UseGuards(JwtAuthGuard)
+    @ApiBearerAuth()
     @Get('/:id')
     @HttpCode(HttpStatus.OK)
     findById(@Param('id', ParseIntPipe) id: number): Promise<Usuario>{
@@ -28,6 +26,7 @@ export class UsuarioController {
     }
 
     @UseGuards(JwtAuthGuard)
+    @ApiBearerAuth()
     @Get('/:usuarios')
     @HttpCode(HttpStatus.OK)
     findByUsername(@Param('usuario') nome: string): Promise<Usuario>{
@@ -35,12 +34,14 @@ export class UsuarioController {
     }
 
     @HttpCode(HttpStatus.CREATED)
+    @ApiBearerAuth()
     @Post('/cadastrar')
     async create (@Body() usuario: Usuario): Promise<Usuario> {
         return await this.usuarioService.create(usuario);
     }
 
     @UseGuards(JwtAuthGuard)
+    @ApiBearerAuth()
     @Put('/atualizar')
     @HttpCode(HttpStatus.OK)
     async update(@Body() usuario: Usuario): Promise<Usuario> {
