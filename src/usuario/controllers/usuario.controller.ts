@@ -34,7 +34,6 @@ export class UsuarioController {
     }
 
     @HttpCode(HttpStatus.CREATED)
-    @ApiBearerAuth()
     @Post('/cadastrar')
     async create (@Body() usuario: Usuario): Promise<Usuario> {
         return await this.usuarioService.create(usuario);

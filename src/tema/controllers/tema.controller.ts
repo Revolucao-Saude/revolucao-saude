@@ -3,7 +3,7 @@ import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPip
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { JwtAuthGuard } from "../../auth/guard/jwt.auth.guard";
 import { Tema } from "../entities/tema.entity";
-import { TemaService } from "../service/tema.service";
+import { TemaService } from "../services/tema.service";
 
 
 @ApiTags('Tema')
