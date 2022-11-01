@@ -25,5 +25,5 @@ export class Tema{
     @ManyToOne(() => Postagem, (postagem) => postagem.tema, {
         onDelete: "CASCADE"
     })
-    postagem: Postagem
+    postagem: Postagem[]
 }
