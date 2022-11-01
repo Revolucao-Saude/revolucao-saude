@@ -1,10 +1,6 @@
 import { PostagemServices } from "../services/postagem.service";
-import { Controller, Get, HttpCode, HttpStatus, Param, ParseIntPipe} from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, UseGuards} from "@nestjs/common";
 import { Postagem } from "../entities/postagem.entity";
-import { Post } from "@nestjs/common";
-import { Body } from "@nestjs/common";
-import { Delete } from "@nestjs/common";
-import { UseGuards } from "@nestjs/common";
 import { JwtAuthGuard } from "../../auth/guard/jwt.auth.guard";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 
