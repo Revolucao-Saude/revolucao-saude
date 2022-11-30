@@ -2,7 +2,7 @@ import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import { Login } from "./pages/login/Login";
-
+import { Profile } from "./pages/profile/Profile";
 
 function App() {
   return(
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path='/' /*element={<Home />}*/ />
         <Route path='/inicio' /*element={<Home />}*/ />
-        <Route path='/perfil' /*element={<Perfil />}*/ />
+        <Route path='/perfil' element={<Profile />} />
         <Route path='/cadastro' /*element={<Cadastro />}*/ />
         <Route path='/login' element={<Login />} />
         <Route path='/sobre' /*element={<Sobre />}*/ />
