@@ -12,6 +12,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import FooterCadastro from '../../components/footer/footerCadastro/Footer';
+
 
 function Copyright() {
   return (
@@ -101,17 +103,21 @@ function Login() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="./cadastro" variant="body2">
                 {"Não tem uma conta? Cadastre-se"}
               </Link>
             </Grid>
           </Grid>
+
         </form>
       </div>
-      <Box mt={8}>
+      {/* <Box mt={8}>
         <Copyright />
-      </Box>
+      </Box> */}
     </Container>
+
+  
+  
   );
 }
 
