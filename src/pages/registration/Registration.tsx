@@ -1,17 +1,14 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import FooterCadastro from '../../components/footer/footerCadastro/Footer';
 
 function Copyright() {
   return (
@@ -44,16 +41,20 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  image: {
+    width: '40%'
+  }
 }));
 
 export default function Registration() {
   const classes = useStyles();
 
   return (
+    <>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-      
+        <img className={classes.image} src='assets/images/revolucao-saude.png' />
         <Typography component="h1" variant="h5">
           Cadastro 
         </Typography>
@@ -117,7 +118,7 @@ export default function Registration() {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/login" variant="body2">
               Já tem uma conta? Entre aqui
               </Link>
             </Grid>
@@ -128,5 +129,8 @@ export default function Registration() {
         <Copyright />
       </Box>
     </Container>
+
+    <FooterCadastro />
+    </>
   );
 }
