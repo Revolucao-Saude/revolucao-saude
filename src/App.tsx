@@ -11,11 +11,11 @@ function App() {
   return(
     <Router>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/inicio' element={<Home />} />
         <Route path='/perfil' element={<Profile />} />
         <Route path='/cadastro' element={<Registration />} />
-        <Route path='/login' element={<Login />} />
         {/* <Route path='/sobre' element={<Sobre />} /> */}
       </Routes>
     </Router>

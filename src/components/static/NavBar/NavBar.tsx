@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function PrimarySearchAppBar() {
+function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -201,12 +201,12 @@ export default function PrimarySearchAppBar() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge /*badgeContent={4}*/ color="secondary">
                 <MailIcon />
               </Badge>
             </IconButton>
             <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
+              <Badge /*badgeContent={17}*/ color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -215,7 +215,7 @@ export default function PrimarySearchAppBar() {
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+              //onClick={handleProfileMenuOpen}
               color="inherit"
             >
               <AccountCircle />
@@ -240,3 +240,4 @@ export default function PrimarySearchAppBar() {
   );
 }
 
+export {PrimarySearchAppBar};
