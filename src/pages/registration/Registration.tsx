@@ -16,12 +16,12 @@ import Container from '@material-ui/core/Container';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
+      {''}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        
       </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
+      {}
+      {''}
     </Typography>
   );
 }
@@ -53,9 +53,7 @@ export default function Registration() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
+      
         <Typography component="h1" variant="h5">
           Cadastro 
         </Typography>
@@ -68,7 +66,7 @@ export default function Registration() {
                 required
                 fullWidth
                 id="firstName"
-                label="First Name"
+                label="Nome"
                 autoFocus
               />
             </Grid>
@@ -79,7 +77,7 @@ export default function Registration() {
                 required
                 fullWidth
                 id="lastName"
-                label="Last Name"
+                label="Sobrenome"
                 name="lastName"
                 autoComplete="lname"
               />
@@ -90,7 +88,7 @@ export default function Registration() {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Email"
                 name="email"
                 autoComplete="email"
               />
@@ -101,7 +99,7 @@ export default function Registration() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Senha"
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -115,12 +113,12 @@ export default function Registration() {
             color="primary"
             className={classes.submit}
           >
-            Sign Up
+            Entrar
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="#" variant="body2">
-                Already have an account? Sign in
+              Já tem uma conta? Entre aqui
               </Link>
             </Grid>
           </Grid>
