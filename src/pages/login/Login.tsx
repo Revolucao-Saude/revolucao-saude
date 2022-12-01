@@ -51,6 +51,7 @@ function Login() {
   const classes = useStyles();
 
   return (
+    <>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -111,12 +112,14 @@ function Login() {
 
         </form>
       </div>
-      {/* <Box mt={8}>
+      <Box mt={8}>
         <Copyright />
-      </Box> */}
+      </Box>
     </Container>
 
-  
+    <FooterCadastro /> 
+
+  </>
   
   );
 }
