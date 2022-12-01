@@ -5,7 +5,7 @@ import {Grid} from "@material-ui/core";
 function Home(){
     return(
         <>
-            TESTE
+    
         </>
     );
 }
