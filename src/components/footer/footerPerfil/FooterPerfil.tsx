@@ -10,14 +10,14 @@ function FooterPerfil() {
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
-                    <Box style={{ backgroundColor: "#3F51B5", height: "120px" }}>
+                    <Box style={{ backgroundColor: "#a6d4fa", height: "120px" }}>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Revolução Saúde. Todos os direitos reservados </Typography>
+                            <Typography variant="h6" align="center" gutterBottom style={{ color: "white" }}>Revolução Saúde. Todos os direitos reservados </Typography>
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
                         </Box>
                     </Box>
-                    <Box style={{ backgroundColor: "#303F9F", height: "60px" }}>
+                    <Box style={{ backgroundColor: "#90caf9", height: "60px" }}>
                         <Box paddingTop={1}>
                             <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2022 Copyright:</Typography>
                         </Box>
