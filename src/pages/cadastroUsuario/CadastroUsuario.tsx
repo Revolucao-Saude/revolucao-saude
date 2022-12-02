@@ -6,7 +6,7 @@ import { cadastroUsuario } from '../../services/Service';
 import { Link } from "react-router-dom";
 import './CadastroUsuario.css';
 
-function CadastroUsuario() {
+function CadastroUsuario(url: any,dados: any,setDado: any) {
 
     let navigate = useNavigate();
     const [confirmarSenha, setConfirmarSenha] = useState<String>("")

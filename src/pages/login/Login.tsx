@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 import FooterCadastro from '../../components/footer/footerCadastro/Footer';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
+import UserLogin from '../../models/UserLogin';
 
 
 function Copyright() {
@@ -49,12 +50,12 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-function Login() {
+function Login(url: any,dados: any,setDado: any) {
   const classes = useStyles();
 
   let navigate = useNavigate();
   const [token, setToken] = useLocalStorage('token');
-  const [userLogin, setUserLogin] = useState<userLogin>(
+  const [userLogin, setUserLogin] = useState<UserLogin>(
     {
       id:0,
       usuario: '',
