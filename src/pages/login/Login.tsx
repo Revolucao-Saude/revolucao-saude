@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import FooterCadastro from '../../components/footer/footerCadastro/Footer';
+import { useNavigate } from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
 
 
 function Copyright() {
@@ -50,6 +52,40 @@ const useStyles = makeStyles((theme) => ({
 function Login() {
   const classes = useStyles();
 
+  let navigate = useNavigate();
+  const [token, setToken] = useLocalStorage('token');
+  const [userLogin, setUserLogin] = useState<userLogin>(
+    {
+      id:0,
+      usuario: '',
+      senha: '',
+      token: ''
+    }
+  )
+
+  function updatedModel (e: ChangeEvent<HTMLInputElement>) {
+    setUserLogin({
+      ...userLogin,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  useEffect(()=>{
+    if(token != ''){
+      navigate('/home')
+    }
+  }, [token])
+
+  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault();
+    try{
+      await Login(`/usuarios/logar`, userLogin, setToken)
+
+      alert('Usuario logado com sucesso!');
+    }catch(error){
+      alert('Dados do usuário inconsistentes. Erro ao logar!');
+    }
+  }
   return (
     <>
     <Container component="main" maxWidth="xs">
@@ -114,7 +150,7 @@ function Login() {
       </div>
       <Box mt={8}>
         <Copyright />
-      </Box>
+      </Box> 
     </Container>
 
     <FooterCadastro /> 
