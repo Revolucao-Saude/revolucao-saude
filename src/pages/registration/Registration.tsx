@@ -11,24 +11,25 @@ import Container from '@material-ui/core/Container';
 import FooterCadastro from '../../components/footer/footerCadastro/Footer';
 import Avatar from '@material-ui/core/Avatar';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import CadastroUsuario from '../cadastroUsuario/CadastroUsuario';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {''}
       <Link color="inherit" href="https://mui.com/">
-        
+
       </Link>{' '}
-      {}
+      { }
       {''}
     </Typography>
   );
 }
 
-const useStyles = makeStyles((theme) => 
-  
+const useStyles = makeStyles((theme) =>
+
 ({
-  
+
   paper: {
     marginTop: theme.spacing(0),
     display: 'flex',
@@ -47,7 +48,7 @@ const useStyles = makeStyles((theme) =>
     margin: theme.spacing(1),
 
   },
-  
+
 }));
 
 export default function Registration() {
@@ -55,81 +56,32 @@ export default function Registration() {
 
   return (
     <>
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar} >
-          <AccountBoxIcon/>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar} >
+            <AccountBoxIcon />
           </Avatar>
-        <Typography component="h1" variant="h5">
-        Criar uma conta
-        </Typography>
-        É rápdido e fácil!
-          <Grid container spacing={2}>
-            <Grid item xs={12} >
-              <TextField
-                autoComplete="fname"
-                name="firstName"
-                variant="outlined"
-                required
-                fullWidth
-                id="firstName"
-                label="Nome completo"
-               
-              />
-            </Grid>
-            <br />
-            
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="email"
-                label="Email"
-                name="email"
-                autoComplete="email"
-              />
-              <p>Você pode usar letras, números e pontos finais</p>
-            </Grid>
-            
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="Senha"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </Grid>
-          </Grid>
-          <Button 
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Cadastre-se
-          </Button>
+          <Typography component="h1" variant="h5">
+            Criar uma conta
+          </Typography>
+          É rápdido e fácil!
+          <CadastroUsuario />
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="/login" variant="body2">
-              Já tem uma conta? Click aqui
+                Já tem uma conta? Click aqui
               </Link>
             </Grid>
           </Grid>
         </div>
-      
-      <Box mt={5}>
-        <Copyright />
-      </Box>
-    </Container>
 
-    <FooterCadastro />
+        <Box mt={5}>
+          <Copyright />
+        </Box>
+      </Container>
+
+      <FooterCadastro />
     </>
   );
 }

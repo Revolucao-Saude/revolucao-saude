@@ -16,6 +16,7 @@ import FooterCadastro from '../../components/footer/footerCadastro/Footer';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import UserLogin from '../../models/UserLogin';
+import { login } from '../../services/Service';
 
 
 function Copyright() {
@@ -50,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-function Login(url: any,dados: any,setDado: any) {
+function Login() {
   const classes = useStyles();
 
   let navigate = useNavigate();
@@ -64,29 +65,29 @@ function Login(url: any,dados: any,setDado: any) {
     }
   )
 
-  function updatedModel (e: ChangeEvent<HTMLInputElement>) {
+   function updatedModel (e: ChangeEvent<HTMLInputElement>) {
     setUserLogin({
       ...userLogin,
       [e.target.name]: e.target.value
     })
-  }
+  } 
 
   useEffect(()=>{
-    if(token != ''){
-      navigate('/home')
+    if(token !== ''){
+      navigate('/inicio')
     }
   }, [token])
 
-  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
     try{
-      await Login(`/usuarios/logar`, userLogin, setToken)
+      await login(`/auth/logar`, userLogin, setToken)
 
       alert('Usuario logado com sucesso!');
     }catch(error){
       alert('Dados do usuário inconsistentes. Erro ao logar!');
     }
-  }
+  } 
   return (
     <>
     <Container component="main" maxWidth="xs">
@@ -98,28 +99,30 @@ function Login(url: any,dados: any,setDado: any) {
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={onSubmit} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Email"
-            name="email"
-            autoComplete="email"
+            id="usuario"
+            label="Usuario"
+            name="usuario"
+            autoComplete="usuario"
             autoFocus
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
           />
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            name="password"
+            name="senha"
             label="Senha"
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
           />
           {/* <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
