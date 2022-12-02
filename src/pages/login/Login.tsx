@@ -152,9 +152,9 @@ function Login() {
 
         </form>
       </div>
-      <Box mt={8}>
+      {/* <Box mt={8}>
         <Copyright />
-      </Box> 
+      </Box>  */}
     </Container>
 
     <FooterCadastro /> 

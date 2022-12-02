@@ -1,27 +1,21 @@
 import React from 'react';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Typography, Grid } from '@material-ui/core';
 import {Box} from '@mui/material';
 
-function FooterPerfil() {
+function Footer() {
     return (
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
-                    <Box style={{ backgroundColor: "#a6d4fa", height: "120px" }}>
-                        <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h6" align="center" gutterBottom style={{ color: "white" }}>Revolução Saúde. Todos os direitos reservados </Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" justifyContent="center">
-                        </Box>
+                    <Box style={{ backgroundColor: "transparent", height: "12rem" }}>
+
                     </Box>
-                    <Box style={{ backgroundColor: "#90caf9", height: "60px" }}>
+                    <Box className='box2' >
                         <Box paddingTop={1}>
-                            <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2022 Copyright:</Typography>
+                            <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "#737373" }} >© 2020 Copyright:</Typography>
                         </Box>
-                        <Box>
+                        <Box paddingTop={0}>
+                            <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "#737373" }} >Revolução Saúde. Todos os direitos reservados</Typography>
                         </Box>
                     </Box>
                 </Grid>
@@ -30,4 +24,5 @@ function FooterPerfil() {
     )
 }
 
-export default FooterPerfil;
+
+export default Footer;
