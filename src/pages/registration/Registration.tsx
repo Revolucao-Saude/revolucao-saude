@@ -64,7 +64,6 @@ export default function Registration() {
         <Typography component="h1" variant="h5">
         Criar uma conta
         </Typography>
-        É rápdido e fácil!
           <Grid container spacing={2}>
             <Grid item xs={12} >
               <TextField
@@ -77,9 +76,7 @@ export default function Registration() {
                 label="Nome completo"
                
               />
-            </Grid>
-            <br />
-            
+            </Grid>            
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -90,7 +87,6 @@ export default function Registration() {
                 name="email"
                 autoComplete="email"
               />
-              <p>Você pode usar letras, números e pontos finais</p>
             </Grid>
             
             <Grid item xs={12}>
@@ -114,6 +110,7 @@ export default function Registration() {
             className={classes.submit}
           >
             Cadastre-se
+            
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
