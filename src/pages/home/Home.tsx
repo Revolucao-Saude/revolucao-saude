@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import { Grid } from "@material-ui/core";
 import { PrimarySearchAppBar } from "../../components/static/NavBar/NavBar";
+import ImageAvatars from "../../components/stories/Stories";
 
 function Home() {
   return (
@@ -10,7 +11,9 @@ function Home() {
           <PrimarySearchAppBar />
         </Grid>
 
-      <Grid item xs={4}></Grid>
+      <Grid item xs={4}>
+        {/* < ImageAvatars /> */}
+      </Grid>
       <Grid item xs={4}></Grid>
       <Grid item xs={8}></Grid>
     </Grid>
