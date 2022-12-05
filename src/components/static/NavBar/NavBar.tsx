@@ -10,11 +10,13 @@ import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
+import SettingsIcon from '@mui/icons-material/Settings';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -169,14 +171,15 @@ function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-    </Menu>
-  );
-
-  return (
-    <div className={classes.grow}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
+          <MenuItem>
+            <IconButton aria-label='show 4 new mails' color= 'inherit'>
+              <Badge badgeContent={4} color='secondary'>
+                <SettingsIcon />
+              </Badge>
+            </IconButton>
+            <p> Configuração </p>
+            </MenuItem>
+            <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
@@ -184,7 +187,14 @@ function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
+    </Menu>
+    
+  );
 
+  return (
+    <div className={classes.grow}>
+      <AppBar position="static">
+        <Toolbar>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -219,6 +229,13 @@ function PrimarySearchAppBar() {
               color="inherit"
             >
               <AccountCircle />
+              
+            </IconButton>
+            <Divider orientation="vertical" variant="middle" flexItem />
+            <IconButton aria-label='show 4 new mails' color= 'inherit'>
+              <Badge /*badgeContent={}*/ color='secondary'>
+                <SettingsIcon />
+              </Badge>
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
@@ -232,6 +249,7 @@ function PrimarySearchAppBar() {
               <MoreIcon />
             </IconButton>
           </div>
+         
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
