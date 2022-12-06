@@ -17,7 +17,7 @@ function Profile() {
        * @descricao Container das informações do usuário
        */}
       <Grid container item>
-        
+        <ImageProfile />
       </Grid>
 
       {/**

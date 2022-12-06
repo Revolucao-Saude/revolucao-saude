@@ -5,6 +5,7 @@ import { Home } from "./pages/home/Home";
 import Registration from './pages/registration/Registration';
 import { Login } from "./pages/login/Login";
 import { Profile } from "./pages/profile/Profile";
+import Config from "./pages/config/config";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/perfil' element={<Profile />} />
         <Route path='/cadastro' element={<Registration />} />
         {/* <Route path='/sobre' element={<Sobre />} /> */}
+        <Route path='/config' element={<Config />} />
       </Routes>
     </Router>
   );
