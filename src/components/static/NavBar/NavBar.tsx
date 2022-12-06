@@ -4,7 +4,6 @@ import { alpha, makeStyles, Theme, createStyles } from '@material-ui/core/styles
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -13,10 +12,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { Divider } from '@material-ui/core';
+import HomeIcon from '@material-ui/icons/Home';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -148,14 +147,6 @@ function PrimarySearchAppBar() {
         <p>Profile</p>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
           <Badge badgeContent={11} color="secondary">
             <NotificationsIcon />
@@ -195,6 +186,11 @@ function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
+        <IconButton aria-label="show 4 new mails" color="inherit">
+              <Badge /*badgeContent={4}*/ color="secondary">
+                <HomeIcon />
+              </Badge>
+            </IconButton>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -210,11 +206,7 @@ function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge /*badgeContent={4}*/ color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
+           
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge /*badgeContent={17}*/ color="secondary">
                 <NotificationsIcon />
