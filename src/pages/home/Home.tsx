@@ -2,20 +2,41 @@ import React from "react";
 import "./Home.css";
 import { Grid } from "@material-ui/core";
 import { PrimarySearchAppBar } from "../../components/static/NavBar/NavBar";
-import ImageAvatars from "../../components/stories/Stories";
+import Paper from "@mui/material/Paper";
 
 function Home() {
   return (
     <Grid container spacing={0}>
-        <Grid item xs={12}>
-          <PrimarySearchAppBar />
+      {/* Menu - Nav Bar */}
+      <Grid item xs={12}>
+        <PrimarySearchAppBar />
+      </Grid>
+
+      {/**
+       * @descricao Grid-Container que armazena todos os conteúdos da home
+       */}
+      <Grid container item className="grid-content">
+        {/**
+         * @descricao  Coluna da Esquerda
+         */}
+        <Grid container item xs={3} direction-column>
+        
         </Grid>
 
-      <Grid item xs={4}>
-        {/* < ImageAvatars /> */}
+        {/**
+         * @descricao Coluna principal - meio / Feed
+         */}
+        <Grid container item xs={6} direction-column>
+          
+        </Grid>
+
+        {/**
+         * @descricao Coluna da Direita
+         */}
+        <Grid container item xs={3} direction-column>
+         
+        </Grid>
       </Grid>
-      <Grid item xs={4}></Grid>
-      <Grid item xs={8}></Grid>
     </Grid>
   );
 }
