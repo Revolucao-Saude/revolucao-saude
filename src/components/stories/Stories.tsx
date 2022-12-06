@@ -4,17 +4,6 @@ import Stack from '@mui/material/Stack';
 import { useEffect, useState } from 'react';
 
 export default function ImageAvatars() {
-  const [data ,setData] = useState([])
-
-
-  useEffect(() => {
-    fetch('http://localhost:3000/')
-    .then ((response) => response.json())
-    .then(console.log)
-  }, []);
-
-  if(!data || data.length) return null
-
   return (
     <>
     <Stack direction="row" spacing={4}>
