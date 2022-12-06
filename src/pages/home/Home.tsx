@@ -2,7 +2,8 @@ import React from "react";
 import "./Home.css";
 import { Grid } from "@material-ui/core";
 import { PrimarySearchAppBar } from "../../components/static/NavBar/NavBar";
-import Paper from "@mui/material/Paper";
+import { CreatePublication } from "../../components/publication/createPublication/createPublication";
+
 
 function Home() {
   return (
@@ -20,14 +21,16 @@ function Home() {
          * @descricao  Coluna da Esquerda
          */}
         <Grid container item xs={3} direction-column>
-        
+
         </Grid>
 
         {/**
          * @descricao Coluna principal - meio / Feed
          */}
         <Grid container item xs={6} direction-column>
-          
+          <Grid item>
+              <CreatePublication/>
+          </Grid>
         </Grid>
 
         {/**

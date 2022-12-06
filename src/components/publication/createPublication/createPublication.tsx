@@ -1,37 +1,33 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
-import CardMedia from "@mui/material/CardMedia";
-import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
-import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
-import IconButton, { IconButtonProps } from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { Button, Divider, Grid } from "@material-ui/core";
+import { Button, Divider, Grid, TextField } from "@material-ui/core";
 import PhotoIcon from "@mui/icons-material/Photo";
 import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
 import EventIcon from "@mui/icons-material/Event";
-import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
+import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 
 function CreatePublication() {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <Grid container spacing={1}>
         <Grid container item>
-          <Grid item>
+          <Grid item direction-row>
             <CardHeader
               avatar={
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
                   R
                 </Avatar>
               }
+            />
+            <TextField
+              id="outlined-basic"
+              label="Outlined"
+              variant="outlined"
+              className="textField-publication"
             />
           </Grid>
         </Grid>
@@ -59,7 +55,6 @@ function CreatePublication() {
                 <AddLocationAltIcon />
                 Localização
               </Button>
-
             </CardActions>
           </Grid>
         </Grid>
