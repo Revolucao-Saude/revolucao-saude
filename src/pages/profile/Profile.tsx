@@ -7,6 +7,8 @@ import FooterPerfil from "../../components/footer/footerPerfil/FooterPerfil";
 import { ImageProfile } from "../../components/imageProfile/ImageProfile";
 import { PersonalPosts } from "../../components/personalPosts/PersonalPosts";
 import "./Profile.css"
+import { IconPhoto } from "../../components/iconPhoto/IconPhoto";
+import ImageAvatars from "../../components/stories/Stories";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -35,6 +37,8 @@ function Profile () {
                 </Grid>
                 <Grid item xs={2} sm={6}>
                 <PersonalPosts />
+                <IconPhoto />
+                <ImageAvatars /> 
                 </Grid>
 
                 <FooterPerfil />
