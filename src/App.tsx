@@ -6,6 +6,7 @@ import Registration from './pages/registration/Registration';
 import { Login } from "./pages/login/Login";
 import { Profile } from "./pages/profile/Profile";
 import Config from "./pages/config/config";
+import PaginaContrucao from "./pages/paginaconstrucao/PaginaConstrucao";
 
 
 function App() {
