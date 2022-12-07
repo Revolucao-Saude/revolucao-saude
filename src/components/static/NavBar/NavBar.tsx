@@ -16,6 +16,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { Divider } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -136,7 +137,7 @@ function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
         <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
+         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
@@ -144,7 +145,7 @@ function PrimarySearchAppBar() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        <Link to='/perfil'>   <p> Profile </p> </Link>
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
@@ -168,7 +169,7 @@ function PrimarySearchAppBar() {
                 <SettingsIcon />
               </Badge>
             </IconButton>
-            <p> Configuração </p>
+           <Link to='/config'> <p> Configuração </p> </Link>
             </MenuItem>
             <IconButton
             edge="start"
@@ -188,8 +189,11 @@ function PrimarySearchAppBar() {
         <Toolbar>
         <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge /*badgeContent={4}*/ color="secondary">
+              <Link to='/inicio'>
                 <HomeIcon />
+                </Link>
               </Badge>
+              
             </IconButton>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -220,15 +224,18 @@ function PrimarySearchAppBar() {
               //onClick={handleProfileMenuOpen}
               color="inherit"
             >
+                <Link to='/perfil'>
               <AccountCircle />
-              
+              </Link>
             </IconButton>
             <Divider orientation="vertical" variant="middle" flexItem />
+            <Link to='/config'>
             <IconButton aria-label='show 4 new mails' color= 'inherit'>
               <Badge /*badgeContent={}*/ color='secondary'>
                 <SettingsIcon />
               </Badge>
             </IconButton>
+            </Link>
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
