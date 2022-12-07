@@ -187,7 +187,7 @@ function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-        <IconButton aria-label="show 4 new mails" color="inherit">
+        <IconButton aria-label="show 4 new home" color="inherit">
               <Badge /*badgeContent={4}*/ color="secondary">
               <Link to='/inicio'>
                 <HomeIcon />

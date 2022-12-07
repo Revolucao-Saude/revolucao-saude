@@ -8,6 +8,10 @@ import { Profile } from "./pages/profile/Profile";
 import Config from "./pages/config/config";
 
 
+import PaginaContrucao from "./pages/paginaconstrucao/PaginaConstrucao";
+
+
+
 function App() {
   return(
     <Router>
@@ -19,6 +23,7 @@ function App() {
         <Route path='/cadastro' element={<Registration />} />
         <Route path='/config' element={<Config />} />
         {/* <Route path='/sobre' element={<Sobre />} /> */}
+        <Route path='/config' element={<Config />} />
       </Routes>
     </Router>
   );
