@@ -14,8 +14,8 @@ function CreatePublication() {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <Grid container spacing={1}>
-        <Grid container item>
-          <Grid item direction-row>
+        <Grid container item alignItems="center">
+          <Grid item>
             <CardHeader
               avatar={
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -23,11 +23,12 @@ function CreatePublication() {
                 </Avatar>
               }
             />
+          </Grid>
+          <Grid item>
             <TextField
               id="outlined-basic"
               label="Outlined"
               variant="outlined"
-              className="textField-publication"
             />
           </Grid>
         </Grid>

@@ -8,7 +8,7 @@ import { ImageProfile } from "../../components/imageProfile/ImageProfile";
 import { PersonalPosts } from "../../components/personalPosts/PersonalPosts";
 import "./Profile.css";
 import { IconPhoto } from "../../components/iconPhoto/IconPhoto";
-import ImageAvatars from "../../components/stories/Stories";
+import { Stories } from "../../components/stories/Stories";
 
 function Profile() {
   return (
@@ -18,6 +18,7 @@ function Profile() {
        */}
       <Grid container item>
         <ImageProfile />
+        <Stories />
       </Grid>
 
       {/**
