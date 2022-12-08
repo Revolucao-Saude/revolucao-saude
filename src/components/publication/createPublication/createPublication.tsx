@@ -9,6 +9,7 @@ import PhotoIcon from "@mui/icons-material/Photo";
 import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
 import EventIcon from "@mui/icons-material/Event";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
+import './createPublication.css';
 
 function CreatePublication() {
   return (
@@ -25,7 +26,7 @@ function CreatePublication() {
             />
           </Grid>
           <Grid item xs={12} sm={9}>
-            <Button variant="outlined" href="#" size="large" fullWidth={true}>
+            <Button className='btnCreatePost' variant="outlined" href="#" size="large" fullWidth={true}>
               Criar nova publicação...
             </Button>
           </Grid>
