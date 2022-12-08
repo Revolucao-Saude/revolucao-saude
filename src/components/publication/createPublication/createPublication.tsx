@@ -15,7 +15,7 @@ function CreatePublication() {
     <Card>
       <Grid container xs={12} spacing={1}>
         <Grid container item alignItems="center" justifyContent="center">
-          <Grid item>
+          <Grid item xs={5} sm={2}>
             <CardHeader
               avatar={
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -24,7 +24,7 @@ function CreatePublication() {
               }
             />
           </Grid>
-          <Grid item>
+          <Grid item xs={12} sm={9}>
             <Button variant="outlined" href="#" size="large" fullWidth={true}>
               Criar nova publicação...
             </Button>

@@ -68,7 +68,6 @@ function Login() {
   }
   return (
     <>
-      <CssBaseline />
       <Grid className={classes.grid} container alignItems="center" justifyContent="center" spacing={10}>
         <Grid item xs={10} sm={7} md={6} lg={5} xl={4}>
           <h1>Revolução Saúde</h1>
