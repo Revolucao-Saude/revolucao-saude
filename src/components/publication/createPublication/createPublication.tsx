@@ -9,7 +9,8 @@ import PhotoIcon from "@mui/icons-material/Photo";
 import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
 import EventIcon from "@mui/icons-material/Event";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
-import './createPublication.css';
+import PublicIcon from "@mui/icons-material/Public";
+import MenuTheme from "../menuTheme/MenuTheme";
 
 function CreatePublication() {
   return (
@@ -26,15 +27,19 @@ function CreatePublication() {
             />
           </Grid>
           <Grid item xs={12} sm={9}>
-            <Button className='btnCreatePost' variant="outlined" href="#" size="large" fullWidth={true}>
+            <Button
+              className="btnCreatePost"
+              variant="outlined"
+              href="#"
+              size="large"
+              fullWidth={true}
+            >
               Criar nova publicação...
             </Button>
           </Grid>
         </Grid>
 
-        <Grid item>
-          <Divider variant="middle" />
-        </Grid>
+        <Divider variant="middle" />
 
         <Grid container item justifyContent="center" alignContent="center">
           <Grid item>
@@ -50,6 +55,12 @@ function CreatePublication() {
               </Button>
               <Button variant="text" startIcon={<AddLocationAltIcon />}>
                 Localização
+              </Button>
+            </CardActions>
+            <CardActions>
+              <MenuTheme />
+              <Button variant="text" startIcon={<PublicIcon />}>
+                Publicar
               </Button>
             </CardActions>
           </Grid>
