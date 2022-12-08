@@ -5,6 +5,9 @@ import { PrimarySearchAppBar } from "../../components/static/NavBar/NavBar";
 import { CreatePublication } from "../../components/publication/createPublication/createPublication";
 import ButtonExplorer from "../../components/sidebar/buttonExplorer/ButtonExplorar";
 import { ImageProfile } from "../../components/imageProfile/ImageProfile";
+import CardPublication from "../../components/publication/cardPublication/cardPublication";
+
+
 
 function Home() {
   return (
@@ -21,16 +24,17 @@ function Home() {
             <ImageProfile />
           </Grid>
         </Grid>
-
         {/**
          * @descricao Coluna principal - meio / Feed
          */}
         <Grid container item xs={6} direction-column>
-          <Grid item>
+          <Grid container item>
             <CreatePublication />
           </Grid>
+          <Grid container item xs = {12} direction-column>
+            <CardPublication />
+          </Grid>
         </Grid>
-
         {/**
          * @descricao Coluna da Direita
          */}

@@ -1,13 +1,16 @@
-import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import React from 'react';
+import { makeStyles, Theme } from '@material-ui/core/styles';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import {ButtonGrid2, ButtonGrid3 } from '../../components/tabButton/TabButton';
+import ButtonGrid1 from '../../components/tabButton/TabButton';
 
 interface TabPanelProps {
   children?: React.ReactNode;
-  index: number;
-  value: number;
+  index: any;
+  value: any;
 }
 
 function TabPanel(props: TabPanelProps) {
@@ -22,7 +25,7 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box p={3}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -30,45 +33,56 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
-function a11yProps(index: number) {
+function a11yProps(index: any) {
   return {
     id: `vertical-tab-${index}`,
     'aria-controls': `vertical-tabpanel-${index}`,
   };
 }
 
-export default function Config() {
+const useStyles = makeStyles((theme: Theme) => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+    display: 'flex',
+    height: 224,
+  },
+  tabs: {
+    borderRight: `1px solid ${theme.palette.divider}`,
+  },
+}));
+
+export default function VerticalTabs() {
+  const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };
 
   return (
-    <Box
-      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224 }}
-    >
+    <div className={classes.root}>
       <Tabs
         orientation="vertical"
         variant="scrollable"
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider' }}
+        className={classes.tabs}
       >
         <Tab label="Geral" {...a11yProps(0)} />
-        <Tab label="Visibilidade" {...a11yProps(1)} />
-        <Tab label="Segurança e login" {...a11yProps(2)} />
+        <Tab label="Exibição" {...a11yProps(1)} />
+        <Tab label="Segurança e Login" {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        Item One
+        <ButtonGrid1 />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <ButtonGrid2 />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <ButtonGrid3 />
       </TabPanel>
-    </Box>
+    </div>
   );
 }

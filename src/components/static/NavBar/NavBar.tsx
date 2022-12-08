@@ -194,7 +194,7 @@ function PrimarySearchAppBar() {
   );
 
   return (
-    <div className={classes.grow}>
+    <div className={classes.grow} >
       <AppBar position="static">
         <Toolbar>
           <IconButton aria-label="show 4 new home" color="inherit">
