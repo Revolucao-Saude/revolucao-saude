@@ -62,62 +62,7 @@ export default function Registration() {
           <Avatar className={classes.avatar} >
             <AccountBoxIcon />
           </Avatar>
-        <Typography component="h1" variant="h5">
-        Criar uma conta
-        </Typography>
-          <Grid container spacing={2}>
-            <Grid item xs={12} >
-              <TextField
-                autoComplete="fname"
-                name="firstName"
-                variant="outlined"
-                required
-                fullWidth
-                id="firstName"
-                label="Nome completo"
-               
-              />
-            </Grid>            
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="email"
-                label="Email"
-                name="email"
-                autoComplete="email"
-              />
-            </Grid>
-            
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="Senha"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </Grid>
-          </Grid>
-          <Button 
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Cadastre-se
-            
-          </Button>
-
-          <Typography component="h1" variant="h5">
-            Criar uma conta
-          </Typography>
-          É rápdido e fácil!
+                        
           <CadastroUsuario />
 
           <Grid container justifyContent="flex-end">
