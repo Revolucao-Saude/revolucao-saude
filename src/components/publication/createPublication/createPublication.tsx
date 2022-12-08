@@ -4,7 +4,7 @@ import CardHeader from "@mui/material/CardHeader";
 import CardActions from "@mui/material/CardActions";
 import Avatar from "@mui/material/Avatar";
 import { red } from "@mui/material/colors";
-import { Button, Divider, Grid, TextField } from "@material-ui/core";
+import { Button, Divider, Grid } from "@material-ui/core";
 import PhotoIcon from "@mui/icons-material/Photo";
 import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
 import EventIcon from "@mui/icons-material/Event";
@@ -12,9 +12,9 @@ import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 
 function CreatePublication() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <Grid container spacing={1}>
-        <Grid container item alignItems="center">
+    <Card>
+      <Grid container xs={12} spacing={1}>
+        <Grid container item alignItems="center" justifyContent="center">
           <Grid item>
             <CardHeader
               avatar={
@@ -25,11 +25,9 @@ function CreatePublication() {
             />
           </Grid>
           <Grid item>
-            <TextField
-              id="outlined-basic"
-              label="Outlined"
-              variant="outlined"
-            />
+            <Button variant="outlined" href="#" size="large" fullWidth={true}>
+              Criar nova publicação...
+            </Button>
           </Grid>
         </Grid>
 
@@ -37,23 +35,19 @@ function CreatePublication() {
           <Divider variant="middle" />
         </Grid>
 
-        <Grid container item>
+        <Grid container item justifyContent="center" alignContent="center">
           <Grid item>
             <CardActions disableSpacing>
-              <Button variant="text">
-                <PhotoIcon />
+              <Button variant="text" startIcon={<PhotoIcon />}>
                 Fotos
               </Button>
-              <Button variant="text">
-                <SmartDisplayIcon />
+              <Button variant="text" startIcon={<SmartDisplayIcon />}>
                 Vídeo
               </Button>
-              <Button variant="text">
-                <EventIcon />
+              <Button variant="text" startIcon={<EventIcon />}>
                 Eventos
               </Button>
-              <Button variant="text">
-                <AddLocationAltIcon />
+              <Button variant="text" startIcon={<AddLocationAltIcon />}>
                 Localização
               </Button>
             </CardActions>
