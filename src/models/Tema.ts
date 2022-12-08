@@ -1,12 +1,9 @@
-import { ReactNode } from 'react';
-import Tema from './Tema'
 
-interface Postagem{
-    descricao: ReactNode;
+interface Tema{
+  
     id: number;
-    titulo: string;
-    texto: string;
-    tema?: Tema| null
+    lista_assunto: string;
+    descricao: string;
 }
 
-export default Postagem;
+export default Tema;

@@ -37,6 +37,7 @@ function CadastroPost() {
     const [tema, setTema] = useState<Tema>(
         {
             id: 0,
+            lista_assunto: '',
             descricao: ''
         })
     const [postagem, setPostagem] = useState<Postagem>({
