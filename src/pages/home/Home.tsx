@@ -6,6 +6,7 @@ import { CreatePublication } from "../../components/publication/createPublicatio
 import ButtonExplorer from "../../components/sidebar/buttonExplorer/ButtonExplorar";
 import { ImageProfile } from "../../components/imageProfile/ImageProfile";
 import CardPublication from "../../components/publication/cardPublication/cardPublication";
+import { Stories } from "../../components/stories/Stories";
 
 
 
@@ -28,8 +29,12 @@ function Home() {
          * @descricao Coluna principal - meio / Feed
          */}
         <Grid container item xs={6} direction-column>
+        <Grid container item>
+            <Stories />
+        </Grid>
           <Grid container item>
             <CreatePublication />
+            
           </Grid>
           <Grid container item xs = {12} direction-column>
             <CardPublication />

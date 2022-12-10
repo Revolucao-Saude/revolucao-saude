@@ -1,35 +1,69 @@
-.container {
-    max-width: 75vw;
+#root { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
 }
 
-.container .carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
 }
 
-.container .carousel .item {
-    background-color: white;
-    margin: 10px;
-    padding: 10px;
-    width: 280px;
+.swiper-container {
+  width: 100%;
+  height: 100%;
 }
 
-.container .carousel .item .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
-.container .carousel .item .info {
-    height: 140px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.container .buttons .button {
-    background-color: transparent;
-    cursor: pointer;
-    border: none
+.swiper-container {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+}
+.append-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.append-buttons button {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #007aff;
+  color: #007aff;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin: 0 10px;
+  font-size: 13px;
 }
