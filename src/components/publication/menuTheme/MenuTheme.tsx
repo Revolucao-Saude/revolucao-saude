@@ -24,7 +24,7 @@ export default function BasicMenu() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        Tags
+        Temas
       </Button>
       <Menu
         id="basic-menu"

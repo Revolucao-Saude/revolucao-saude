@@ -1,14 +1,11 @@
 import React from "react";
 import "./Home.css";
 import { Grid } from "@material-ui/core";
-import { PrimarySearchAppBar } from "../../components/static/NavBar/NavBar";
 import { CreatePublication } from "../../components/publication/createPublication/createPublication";
 import ButtonExplorer from "../../components/sidebar/buttonExplorer/ButtonExplorar";
 import { ImageProfile } from "../../components/imageProfile/ImageProfile";
 import CardPublication from "../../components/publication/cardPublication/cardPublication";
 import { Stories } from "../../components/stories/Stories";
-
-
 
 function Home() {
   return (
@@ -28,16 +25,19 @@ function Home() {
         {/**
          * @descricao Coluna principal - meio / Feed
          */}
-        <Grid container item xs={6} direction-column>
-        <Grid container item>
-            <Stories />
-        </Grid>
+        <Grid container item xs={6}>
           <Grid container item>
-            <CreatePublication />
-            
+            <Stories />
           </Grid>
-          <Grid container item xs = {12} direction-column>
-            <CardPublication />
+          <Grid container item>
+            <Grid item>
+              <CreatePublication />
+            </Grid>
+          </Grid>
+          <Grid container item xs={12} direction-column>
+            <Grid item>
+              <CardPublication />
+            </Grid>
           </Grid>
         </Grid>
         {/**
