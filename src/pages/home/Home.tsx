@@ -1,7 +1,6 @@
 import React from "react";
 import "./Home.css";
 import { Grid } from "@material-ui/core";
-import { PrimarySearchAppBar } from "../../components/static/NavBar/NavBar";
 import { CreatePublication } from "../../components/publication/createPublication/createPublication";
 import ButtonExplorer from "../../components/sidebar/buttonExplorer/ButtonExplorar";
 import { ImageProfile } from "../../components/imageProfile/ImageProfile";
