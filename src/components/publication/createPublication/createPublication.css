@@ -1,3 +1,7 @@
 .btnCreatePost {
-    border-radius: 10px !important
+  border-radius: 10px !important;
+}
+
+.cardCreatePublication {
+  padding-top: 20px;
 }

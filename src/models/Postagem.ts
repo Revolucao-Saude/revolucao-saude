@@ -2,8 +2,10 @@ import Tema from './Tema'
 
 interface Postagem{
     id: number;
-    titulo: string;
     texto: string;
+    arquivos_midia: string;
+    data_horario: string;
+    local: string;
     tema?: Tema| null
 }
 

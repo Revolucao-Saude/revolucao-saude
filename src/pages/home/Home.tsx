@@ -7,8 +7,6 @@ import { ImageProfile } from "../../components/imageProfile/ImageProfile";
 import CardPublication from "../../components/publication/cardPublication/cardPublication";
 import { Stories } from "../../components/stories/Stories";
 
-
-
 function Home() {
   return (
     <Grid container spacing={0}>
@@ -27,16 +25,19 @@ function Home() {
         {/**
          * @descricao Coluna principal - meio / Feed
          */}
-        <Grid container item xs={6} direction-column>
-        <Grid container item>
-            <Stories />
-        </Grid>
+        <Grid container item xs={6}>
           <Grid container item>
-            <CreatePublication />
-            
+            <Stories />
           </Grid>
-          <Grid container item xs = {12} direction-column>
-            <CardPublication />
+          <Grid container item>
+            <Grid item>
+              <CreatePublication />
+            </Grid>
+          </Grid>
+          <Grid container item xs={12} direction-column>
+            <Grid item>
+              <CardPublication />
+            </Grid>
           </Grid>
         </Grid>
         {/**
