@@ -27,6 +27,7 @@ function App() {
           {/* <Route path='/sobre' element={<Sobre />} /> */}
           <Route path="/explorar" element={<Explore />} />
           <Route path="/criar-postagem" element={<CadastroPost />} />
+          
 
         </Routes>
       </Router>
