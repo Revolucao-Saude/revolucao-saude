@@ -29,10 +29,10 @@ function App() {
           <Route path="/cadastro" element={<Registration />} />
           <Route path="/config" element={<Config />} />
           {/* <Route path='/sobre' element={<Sobre />} /> */}
-          {/* <Route path="/temas" element={<ListaTema />} /> */}
+          {/* <Route path="/tema" element={<ListaTema />} /> */}
+          <Route path="/explorar" element={<Explore />} />
           <Route path="/postagens" element={<ListaPostagem />} />
           <Route path="/postagens/:id" element={<ListaPostagem />} />
-          <Route path="/explorar" element={<Explore />} />
           <Route path="/criar-postagem" element={<CadastroPost />} />
           <Route path="/criar-postagem/:id" element={<CadastroPost />} />
           <Route path="/deletar-postagem/:id" element={<DeletarPostagem />} />
