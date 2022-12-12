@@ -1,8 +1,9 @@
-import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import * as React from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { Button } from "@material-ui/core";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -33,11 +34,15 @@ function TabPanel(props: TabPanelProps) {
 function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
   };
 }
 
 export default function BasicTabs() {
+  function callCreateTheme() {
+    window.location.href = "/criar-tema";
+  }
+  
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -45,23 +50,29 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+    <Box sx={{ width: "100%" }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+        >
           <Tab label="Dicas de Saúde" {...a11yProps(0)} />
           <Tab label="Palestras" {...a11yProps(1)} />
           <Tab label="Campanhas" {...a11yProps(2)} />
+          <Button
+            variant="text"
+            onClick={() => {
+              callCreateTheme();
+            }}
+          >
+            Criar Tema
+          </Button>
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
-        
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        
-      </TabPanel>
+      <TabPanel value={value} index={0}></TabPanel>
+      <TabPanel value={value} index={1}></TabPanel>
+      <TabPanel value={value} index={2}></TabPanel>
     </Box>
   );
 }

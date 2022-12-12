@@ -23,25 +23,30 @@ function CadastroPost() {
   let navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const [temas, setTemas] = useState<Tema[]>([]);
+  {
+    /*
+     *TODO: Trocar o useSelector para o useLocalStorage (Pois um ta usando o Redux e o outro o useLocalStoraged)
+     */
+  }
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
 
-//   useEffect(() => {
-//     if (token == "") {
-//       toast.error("Você precisa estar logado", {
-//         position: "top-right",
-//         autoClose: 2000,
-//         hideProgressBar: false,
-//         closeOnClick: true,
-//         pauseOnHover: false,
-//         draggable: false,
-//         theme: "colored",
-//         progress: undefined,
-//       });
-//       navigate("/login");
-//     }
-//   }, [token]);
+  //   useEffect(() => {
+  //     if (token == "") {
+  //       toast.error("Você precisa estar logado", {
+  //         position: "top-right",
+  //         autoClose: 2000,
+  //         hideProgressBar: false,
+  //         closeOnClick: true,
+  //         pauseOnHover: false,
+  //         draggable: false,
+  //         theme: "colored",
+  //         progress: undefined,
+  //       });
+  //       navigate("/login");
+  //     }
+  //   }, [token]);
 
   const [tema, setTema] = useState<Tema>({
     id: 0,

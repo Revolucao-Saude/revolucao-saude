@@ -8,6 +8,7 @@ import CardPublication from "../../components/publication/cardPublication/cardPu
 import { Stories } from "../../components/stories/Stories";
 import CadastroPost from "../../components/publication/postagens/cadastroPost/CadastroPost";
 import { Link } from "react-router-dom";
+import ListaPostagem from "../../components/publication/postagens/listaPostagem/ListaPostagem";
 
 function Home() {
   return (
@@ -38,7 +39,9 @@ function Home() {
           </Grid>
           <Grid container item xs={12} direction-column>
             <Grid item>
-              <CardPublication />
+              <ListaPostagem/>
+            
+              {/* <CardPublication /> */}
             </Grid>
           </Grid>
         </Grid>

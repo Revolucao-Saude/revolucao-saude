@@ -11,6 +11,9 @@ import Explore from "./pages/explore/Explore";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import CadastroPost from "./components/publication/postagens/cadastroPost/CadastroPost";
+import DeletarPostagem from "./components/publication/postagens/deletarPostagem/deletarPostagem";
+import CadastroTema from "./components/temas/cadastroTema/CadastroTema";
+import DeletarTema from "./components/temas/deletarTema/DeletarTema";
 
 function App() {
   return (
@@ -27,8 +30,11 @@ function App() {
           {/* <Route path='/sobre' element={<Sobre />} /> */}
           <Route path="/explorar" element={<Explore />} />
           <Route path="/criar-postagem" element={<CadastroPost />} />
-          
-
+          <Route path="/criar-postagem/:id" element={<CadastroPost />} />
+          <Route path="/deletar-postagem/:id" element={<DeletarPostagem />} />
+          <Route path="/criar-tema" element={<CadastroTema />} />
+          <Route path="/criar-tema/:id" element={<CadastroTema />} />
+          <Route path="/deletar-tema/:id" element={<DeletarTema />} />
         </Routes>
       </Router>
     </Provider>
