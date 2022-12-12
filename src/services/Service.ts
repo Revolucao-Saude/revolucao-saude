@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const api = axios.create({
     baseURL: 'https://revolucao-saude.onrender.com'
+    // baseURL: 'http://localhost:4000'
 })
 
 export const cadastroUsuario = async(url: any,dados: any,setDado: any) => { 
