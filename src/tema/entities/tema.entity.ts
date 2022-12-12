@@ -16,7 +16,7 @@ export class Tema{
     @ApiProperty()
     lista_assunto: string
 
-    @IsNotEmpty()
+    
     @Column({length: 200, nullable: false})
     @ApiProperty()
     descricao: string;

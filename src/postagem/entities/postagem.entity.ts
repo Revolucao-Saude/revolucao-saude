@@ -18,7 +18,6 @@ export class Postagem{
     texto: string;
 
     @ApiProperty()
-    @IsNotEmpty()
     @Column({length: 300, nullable:true})
     arquivos_midia: string;
 
