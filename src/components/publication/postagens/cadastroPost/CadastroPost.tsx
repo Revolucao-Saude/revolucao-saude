@@ -140,7 +140,7 @@ function CadastroPost() {
   }
 
   function back() {
-    navigate("/posts");
+    navigate("/postagens");
   }
 
   return (
@@ -181,7 +181,7 @@ function CadastroPost() {
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
             onChange={(e) =>
-              buscaId(`/tema/${e.target.value}`, setTema, {
+              buscaId(`/temas/${e.target.value}`, setTema, {
                 headers: {
                   Authorization: token,
                 },
@@ -189,7 +189,7 @@ function CadastroPost() {
             }
           >
             {temas.map((tema) => (
-              <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
+              <MenuItem value={tema.id}>{tema.lista_assunto}</MenuItem>
             ))}
           </Select>
           <FormHelperText>Escolha um tema para a postagem</FormHelperText>

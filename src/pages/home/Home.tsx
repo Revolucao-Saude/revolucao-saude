@@ -39,6 +39,7 @@ function Home() {
           </Grid>
           <Grid container item xs={12} direction-column>
             <Grid item>
+              {/* <ListaTema> */}
               <ListaPostagem/>
             
               {/* <CardPublication /> */}

@@ -14,6 +14,7 @@ import CadastroPost from "./components/publication/postagens/cadastroPost/Cadast
 import DeletarPostagem from "./components/publication/postagens/deletarPostagem/deletarPostagem";
 import CadastroTema from "./components/temas/cadastroTema/CadastroTema";
 import DeletarTema from "./components/temas/deletarTema/DeletarTema";
+import ListaPostagem from "./components/publication/postagens/listaPostagem/ListaPostagem";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           <Route path="/cadastro" element={<Registration />} />
           <Route path="/config" element={<Config />} />
           {/* <Route path='/sobre' element={<Sobre />} /> */}
+          {/* <Route path="/temas" element={<ListaTema />} /> */}
+          <Route path="/postagens" element={<ListaPostagem />} />
+          <Route path="/postagens/:id" element={<ListaPostagem />} />
           <Route path="/explorar" element={<Explore />} />
           <Route path="/criar-postagem" element={<CadastroPost />} />
           <Route path="/criar-postagem/:id" element={<CadastroPost />} />
