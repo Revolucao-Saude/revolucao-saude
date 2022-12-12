@@ -4,6 +4,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Button } from "@material-ui/core";
+import MouseOverPopover from "../../components/mousemove/MouseMove";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -60,6 +61,7 @@ export default function BasicTabs() {
           <Tab label="Dicas de Saúde" {...a11yProps(0)} />
           <Tab label="Palestras" {...a11yProps(1)} />
           <Tab label="Campanhas" {...a11yProps(2)} />
+          <MouseOverPopover />
           <Button
             variant="text"
             onClick={() => {

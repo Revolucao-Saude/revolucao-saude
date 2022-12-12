@@ -18,6 +18,7 @@ import { busca, buscaId, post, put } from "../../../../services/Service";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
+import useLocalStorage from "react-use-localstorage";
 
 function CadastroPost() {
   let navigate = useNavigate();
@@ -28,9 +29,10 @@ function CadastroPost() {
      *TODO: Trocar o useSelector para o useLocalStorage (Pois um ta usando o Redux e o outro o useLocalStoraged)
      */
   }
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+ /*  const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
-  );
+  ); */
+  const [token, setToken] = useLocalStorage('token');
 
   //   useEffect(() => {
   //     if (token == "") {
