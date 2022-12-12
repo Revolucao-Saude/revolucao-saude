@@ -10,6 +10,7 @@ import { PrimarySearchAppBar } from "./components/static/NavBar/NavBar";
 import Explore from "./pages/explore/Explore";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import CadastroPost from "./components/publication/postagens/cadastroPost/CadastroPost";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           <Route path="/config" element={<Config />} />
           {/* <Route path='/sobre' element={<Sobre />} /> */}
           <Route path="/explorar" element={<Explore />} />
+          <Route path="/criar-postagem" element={<CadastroPost />} />
+
         </Routes>
       </Router>
     </Provider>

@@ -6,6 +6,8 @@ import ButtonExplorer from "../../components/sidebar/buttonExplorer/ButtonExplor
 import { ImageProfile } from "../../components/imageProfile/ImageProfile";
 import CardPublication from "../../components/publication/cardPublication/cardPublication";
 import { Stories } from "../../components/stories/Stories";
+import CadastroPost from "../../components/publication/postagens/cadastroPost/CadastroPost";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
