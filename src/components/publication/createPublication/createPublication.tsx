@@ -19,11 +19,13 @@ import Postagem from "../../../models/Postagem";
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { busca, buscaId, post, put } from "../../../services/Service";
+import ModalPostagem from "../postagens/modalPostagem/ModalPostagem";
 
 function CreatePublication() {
   const navigate = useNavigate();
   function callCreatePublication() {
     window.location.href = "/criar-postagem";
+    // return <ModalPostagem/>
   }
 
   return (
@@ -40,6 +42,7 @@ function CreatePublication() {
             />
           </Grid>
           <Grid item xs={12} sm={9}>
+            <ModalPostagem/>
             {/* <form>
               <TextField
                 // value={postagem.texto}
@@ -56,7 +59,7 @@ function CreatePublication() {
 
               <FormControl></FormControl>
             </form> */}
-            <Button
+            {/* <Button
               className="btnCreatePost"
               variant="outlined"
               href="#"
@@ -67,7 +70,7 @@ function CreatePublication() {
               }}
             >
               Criar nova publicação...
-            </Button>
+            </Button> */}
           </Grid>
         </Grid>
 

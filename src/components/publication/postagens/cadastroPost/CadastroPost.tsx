@@ -35,6 +35,7 @@ function CadastroPost() {
   ); */
   const [token, setToken] = useLocalStorage("token");
   const [userid, setId] = useLocalStorage("id");
+  console.log(userid);
 
   //   useEffect(() => {
   //     if (token == "") {
