@@ -69,7 +69,7 @@ function CadastroPost() {
     id: 0,
     texto: "",
     arquivos_midia: "",
-    data_horario: "",
+    data_horario: null,
     local: "",
     tema: null,
     usuario: null
@@ -201,7 +201,7 @@ function CadastroPost() {
           fullWidth
         />
 
-        <TextField
+        {/* <TextField
           value={postagem.data_horario}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
           id="data_horario"
@@ -210,7 +210,7 @@ function CadastroPost() {
           name="data_horario"
           margin="normal"
           fullWidth
-        />
+        /> */}
         <TextField
           value={postagem.local}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
