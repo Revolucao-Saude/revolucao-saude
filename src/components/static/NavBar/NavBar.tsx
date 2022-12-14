@@ -86,6 +86,9 @@ const useStyles = makeStyles((theme: Theme) =>
         display: "none",
       },
     },
+    cWhite: {
+      color: '#fff'
+    }
   })
 );
 
@@ -198,13 +201,13 @@ function PrimarySearchAppBar() {
     <div className={classes.grow} >
       <AppBar position="static">
         <Toolbar>
-          <IconButton aria-label="show 4 new home" color="inherit">
-            <Badge /*badgeContent={4}*/ color="secondary">
-              <Link to="/inicio">
+          <Link to="/inicio">
+            <IconButton aria-label="show 4 new home" className={classes.cWhite}>
+              <Badge /*badgeContent={4}*/ color="secondary">
                 <HomeIcon />
-              </Link>
-            </Badge>
-          </IconButton>
+              </Badge>
+            </IconButton>
+          </Link>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -225,10 +228,10 @@ function PrimarySearchAppBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-          <AccountMenu />
+            <AccountMenu />
             <Divider orientation="vertical" variant="middle" flexItem />
             <Link to="/config">
-              <IconButton aria-label="show 4 new mails" color="inherit">
+              <IconButton aria-label="show 4 new mails" className={classes.cWhite} >
                 <Badge /*badgeContent={}*/ color="secondary">
                   <SettingsIcon />
                 </Badge>
