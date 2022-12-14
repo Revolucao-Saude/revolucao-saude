@@ -9,6 +9,8 @@ import {
   MenuItem,
   FormControl,
   FormHelperText,
+  IconButton,
+  Grid,
 } from "@material-ui/core";
 import "./CadastroPost.css";
 import { useNavigate, useParams } from "react-router-dom";
@@ -20,6 +22,7 @@ import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
 import useLocalStorage from "react-use-localstorage";
 import User from "../../../../models/User";
+import { PhotoCamera } from "@material-ui/icons";
 
 function CadastroPost() {
   let navigate = useNavigate();
@@ -52,15 +55,13 @@ function CadastroPost() {
   //       navigate("/login");
   //     }
   //   }, [token]);
-  const [user, setUser] = useState<User>(
-    {
-      id:0,
-      nome: "",
-      email: "",
-      senha: "",
-      foto: "",
-    }
-  )
+  const [user, setUser] = useState<User>({
+    id: 0,
+    nome: "",
+    email: "",
+    senha: "",
+    foto: "",
+  });
   const [tema, setTema] = useState<Tema>({
     id: 0,
     lista_assunto: "",
@@ -73,20 +74,20 @@ function CadastroPost() {
     data_horario: null,
     local: "",
     tema: null,
-    usuario: null
+    usuario: null,
   });
 
-  useEffect(()=>{
+  useEffect(() => {
     buscaId(`/usuarios/${userid}`, setUser, {
       headers: {
         Authorization: token,
-      }})
-      setPostagem({
-        ...postagem,
-        usuario: user,
-      })
-  }, [user])
-  
+      },
+    });
+    setPostagem({
+      ...postagem,
+      usuario: user,
+    });
+  }, [user]);
 
   useEffect(() => {
     setPostagem({
@@ -172,35 +173,87 @@ function CadastroPost() {
   return (
     <Container maxWidth="sm" className="topo">
       <form onSubmit={onSubmit}>
-        <Typography
-          variant="h3"
-          color="textSecondary"
-          component="h1"
-          align="center"
-        >
-          Formulário de cadastro postagem
-        </Typography>
-        <TextField
-          value={postagem.texto}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-          id="texto"
-          label="texto"
-          name="texto"
-          variant="outlined"
-          margin="normal"
-          fullWidth
-        />
+        <div className="form__group field">
+          <input
+            placeholder="Texto"
+            className="form__field"
+            type="input"
+            value={postagem.texto}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+            id="texto"
+            name="texto"
+          />
+          <label className="form__label">Texto</label>
+        </div>
 
-        <TextField
-          value={postagem.arquivos_midia}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-          id="arquivos_midia"
-          label="arquivos_midia"
-          name="arquivos_midia"
-          variant="outlined"
-          margin="normal"
-          fullWidth
-        />
+        <div className="form__group field">
+          <input
+            placeholder="Local"
+            className="form__field"
+            type="input"
+            value={postagem.local}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+            id="local"
+            name="local"
+          />
+          <label className="form__label">Local</label>
+        </div>
+
+        {/* 
+        <div className="form__group field">
+            <input
+              placeholder="arquivos_midia"
+              className="form__field"
+              type="input"
+              
+
+              id="arquivos_midia"
+              
+            />
+            <label className="form__label">Arquivos de Mídias</label>
+        </div> */}
+
+        <Grid container>
+        
+          <Grid item xs={5}>
+            <div className="form__group field">
+              <input
+                placeholder="Arquivo Mídia"
+                className="form__field"
+                type="input"
+                value={postagem.arquivos_midia}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  updatedPostagem(e)
+                }
+                id="arquivos"
+                name="arquivos_midia"
+              />
+              <label className="form__label">URL da mídia</label>
+            </div>
+          </Grid>
+
+                
+          <Grid item className="d-flex" alignItems="flex-end" xs={1}>
+            <input
+              accept="image/*"
+              className="botao"
+              id="arquivos_midia"
+              type="file"
+              name="arquivos_midia"
+            />
+            <label htmlFor="arquivos_midia">
+              <IconButton
+                color="primary"
+                aria-label="upload picture"
+                component="span"
+              >
+                <PhotoCamera />
+              </IconButton>
+            </label>
+          </Grid>
+
+
+        </Grid>
 
         {/* <TextField
           value={postagem.data_horario}
@@ -212,38 +265,46 @@ function CadastroPost() {
           margin="normal"
           fullWidth
         /> */}
-        <TextField
-          value={postagem.local}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-          id="local"
-          label="local"
-          variant="outlined"
-          name="local"
-          margin="normal"
-          fullWidth
-        />
-        <FormControl>
-          <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
-          <Select
-            labelId="demo-simple-select-helper-label"
-            id="demo-simple-select-helper"
-            onChange={(e) =>
-              buscaId(`/tema/${e.target.value}`, setTema, {
-                headers: {
-                  Authorization: token,
-                },
-              })
-            }
-          >
-            {temas.map((tema) => (
-              <MenuItem value={tema.id}>{tema.lista_assunto}</MenuItem>
-            ))}
-          </Select>
-          <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-          <Button type="submit" variant="contained" color="primary">
-            Finalizar
-          </Button>
-        </FormControl>
+
+        <InputLabel
+          className="tema" id="demo-simple-select-helper-label">Tema </InputLabel>
+        <Select
+        className="w-50"
+          labelId="demo-simple-select-helper-label"
+          id="demo-simple-select-helper"
+          onChange={(e) =>
+            buscaId(`/tema/${e.target.value}`, setTema, {
+              headers: {
+                Authorization: token,
+              },
+            })
+          }
+        >
+          {temas.map((tema) => (
+            <MenuItem value={tema.id}>{tema.lista_assunto}</MenuItem>
+          ))}
+        </Select>
+        <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+
+        <button type="submit" className="enviar">
+          <div className="svg-wrapper-1">
+            <div className="svg-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  fill="currentColor"
+                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <span>Enviar</span>
+        </button>
       </form>
     </Container>
   );
