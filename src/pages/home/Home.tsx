@@ -22,7 +22,7 @@ function Home() {
          * @descricao  Coluna da Esquerda
          */}
         <Grid container item xs={3} direction-column>
-          <Grid item>
+          <Grid item >
             <ImageProfile />
           </Grid>
         </Grid>
