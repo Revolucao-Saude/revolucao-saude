@@ -16,6 +16,7 @@ import CadastroTema from "./components/temas/cadastroTema/CadastroTema";
 import DeletarTema from "./components/temas/deletarTema/DeletarTema";
 import ListaPostagem from "./components/publication/postagens/listaPostagem/ListaPostagem";
 import ListaTema from "./components/temas/listatema/ListarTema";
+import PageSobre from "./pages/sobre/Sobre";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           <Route path="/perfil" element={<Profile />} />
           <Route path="/cadastro" element={<Registration />} />
           <Route path="/config" element={<Config />} />
-          {/* <Route path='/sobre' element={<Sobre />} /> */}
+          <Route path='/sobre' element={<PageSobre />} />
           <Route path="/explorar" element={<Explore />} />
           <Route path="/tema" element={<ListaTema />} />
           <Route path="/tema/:id" element={<ListaTema />} />
