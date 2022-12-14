@@ -36,6 +36,7 @@ function Login() {
   const classes = styles();
   let navigate = useNavigate();
   const [token, setToken] = useLocalStorage("token");
+  const [id, setId] = useLocalStorage("id");
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     usuario: "",
@@ -60,6 +61,7 @@ function Login() {
     e.preventDefault();
     try {
       await login(`/auth/logar`, userLogin, setToken);
+      setId(userLogin.id + '');
 
       alert("Usuario logado com sucesso!");
     } catch (error) {

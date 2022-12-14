@@ -9,25 +9,28 @@ import { PersonalPosts } from "../../components/personalPosts/PersonalPosts";
 import "./Profile.css";
 import { IconPhoto } from "../../components/iconPhoto/IconPhoto";
 import { Stories } from "../../components/stories/Stories";
+import PaginaContrucao from "../paginaconstrucao/PaginaConstrucao";
 
 function Profile() {
   return (
-    <Grid container spacing={0} direction-column>
-      {/**
-       * @descricao Container das informações do usuário
-       */}
-      <Grid container item>
-        <ImageProfile />
-        <Stories />
-      </Grid>
+    // <Grid container spacing={0} direction-column>
+    //   {/**
+    //    * @descricao Container das informações do usuário
+    //    */}
+    //   <Grid container item>
+    //     <ImageProfile />
+    //     <Stories />
+    //   </Grid>
 
-      {/**
-       * @descricao Container das publicações do usuário
-       */}
-      <Grid container item>
+    //   {/**
+    //    * @descricao Container das publicações do usuário
+    //    */}
+    //   <Grid container item>
 
-      </Grid>
-    </Grid>
+    //   </Grid>
+    // </Grid>
+
+    <PaginaContrucao/>
   );
 }
 

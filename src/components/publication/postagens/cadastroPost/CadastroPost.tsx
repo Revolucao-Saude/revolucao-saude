@@ -18,6 +18,8 @@ import { busca, buscaId, post, put } from "../../../../services/Service";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
+import useLocalStorage from "react-use-localstorage";
+import User from "../../../../models/User";
 
 function CadastroPost() {
   let navigate = useNavigate();
@@ -28,9 +30,12 @@ function CadastroPost() {
      *TODO: Trocar o useSelector para o useLocalStorage (Pois um ta usando o Redux e o outro o useLocalStoraged)
      */
   }
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  /*  const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
-  );
+  ); */
+  const [token, setToken] = useLocalStorage("token");
+  const [userid, setId] = useLocalStorage("id");
+  console.log(userid);
 
   //   useEffect(() => {
   //     if (token == "") {
@@ -47,7 +52,15 @@ function CadastroPost() {
   //       navigate("/login");
   //     }
   //   }, [token]);
-
+  const [user, setUser] = useState<User>(
+    {
+      id:0,
+      nome: "",
+      email: "",
+      senha: "",
+      foto: "",
+    }
+  )
   const [tema, setTema] = useState<Tema>({
     id: 0,
     lista_assunto: "",
@@ -57,10 +70,23 @@ function CadastroPost() {
     id: 0,
     texto: "",
     arquivos_midia: "",
-    data_horario: "",
+    data_horario: null,
     local: "",
     tema: null,
+    usuario: null
   });
+
+  useEffect(()=>{
+    buscaId(`/usuarios/${userid}`, setUser, {
+      headers: {
+        Authorization: token,
+      }})
+      setPostagem({
+        ...postagem,
+        usuario: user,
+      })
+  }, [user])
+  
 
   useEffect(() => {
     setPostagem({
@@ -140,7 +166,11 @@ function CadastroPost() {
   }
 
   function back() {
+<<<<<<< HEAD
     navigate("/inicio");
+=======
+    navigate("/postagens");
+>>>>>>> 694bd83e76ab2bf79c840b23940ca659b41677b4
   }
 
   return (
@@ -154,16 +184,6 @@ function CadastroPost() {
         >
           Formulário de cadastro postagem
         </Typography>
-        {/* <TextField
-          value={postagem.titulo}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-          id="titulo"
-          label="titulo"
-          variant="outlined"
-          name="titulo"
-          margin="normal"
-          fullWidth
-        /> */}
         <TextField
           value={postagem.texto}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
@@ -175,6 +195,37 @@ function CadastroPost() {
           fullWidth
         />
 
+        <TextField
+          value={postagem.arquivos_midia}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+          id="arquivos_midia"
+          label="arquivos_midia"
+          name="arquivos_midia"
+          variant="outlined"
+          margin="normal"
+          fullWidth
+        />
+
+        {/* <TextField
+          value={postagem.data_horario}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+          id="data_horario"
+          label="data horário"
+          variant="outlined"
+          name="data_horario"
+          margin="normal"
+          fullWidth
+        /> */}
+        <TextField
+          value={postagem.local}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+          id="local"
+          label="local"
+          variant="outlined"
+          name="local"
+          margin="normal"
+          fullWidth
+        />
         <FormControl>
           <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
           <Select
@@ -189,7 +240,7 @@ function CadastroPost() {
             }
           >
             {temas.map((tema) => (
-              <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
+              <MenuItem value={tema.id}>{tema.lista_assunto}</MenuItem>
             ))}
           </Select>
           <FormHelperText>Escolha um tema para a postagem</FormHelperText>

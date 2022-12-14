@@ -6,11 +6,11 @@ function Footer() {
     return (
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center">
-                <Grid alignItems="center" item xs={12}>
-                    <Box style={{ backgroundColor: "transparent", height: "12rem" }}>
+                <Grid alignItems="center" item xs={12} >
+                    {/* <Box style={{ backgroundColor: "transparent", height: "12rem" }}>
 
-                    </Box>
-                    <Box className='box2' >
+                    </Box> */}
+                    <Box className='box2' m={5} >
                         <Box paddingTop={1}>
                             <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "#737373" }} >© 2020 Copyright:</Typography>
                         </Box>

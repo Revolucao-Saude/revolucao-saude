@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const api = axios.create({
     baseURL: 'https://revolucao-saude.onrender.com'
+    // baseURL: 'http://localhost:4000'
 })
 
 export const cadastroUsuario = async(url: any,dados: any,setDado: any) => { 
@@ -25,6 +26,9 @@ export const buscaId = async(url: any,setDado: any, header: any) => {
 }
 
 export const post = async(url: any, dados: any, setDado: any, header: any) => { 
+    console.log(dados);
+    console.log(header);
+    
     const resposta = await api.post(url,dados,header)
     setDado(resposta.data)
 }
