@@ -21,6 +21,7 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import { Divider } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 import { Link } from "react-router-dom";
+import AccountMenu from "../../perfilIconMenu/perfilIconMenu";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -141,7 +142,7 @@ function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem onClick={handleProfileMenuOpen}>
+      {/* <MenuItem onClick={handleProfileMenuOpen}> 
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
@@ -155,7 +156,7 @@ function PrimarySearchAppBar() {
           <p> Profile </p>{" "}
         </Link>
       </MenuItem>
-      <MenuItem>
+       <MenuItem> 
         <IconButton aria-label="show 11 new notifications" color="inherit">
           <Badge badgeContent={11} color="secondary">
             <NotificationsIcon />
@@ -163,7 +164,7 @@ function PrimarySearchAppBar() {
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-      <IconButton
+      <IconButton 
         edge="start"
         className={classes.menuButton}
         color="inherit"
@@ -171,7 +172,7 @@ function PrimarySearchAppBar() {
       >
         <MenuIcon />
       </IconButton>
-      <MenuItem>
+       <MenuItem> 
         <IconButton aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="secondary">
             <SettingsIcon />
@@ -182,14 +183,14 @@ function PrimarySearchAppBar() {
           <p> Configuração </p>{" "}
         </Link>
       </MenuItem>
-      <IconButton
+       <IconButton 
         edge="start"
         className={classes.menuButton}
         color="inherit"
         aria-label="open drawer"
       >
         <MenuIcon />
-      </IconButton>
+      </IconButton>*/}
     </Menu>
   );
 
@@ -224,18 +225,7 @@ function PrimarySearchAppBar() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              //onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <Link to="/perfil">
-                <AccountCircle />
-              </Link>
-            </IconButton>
+          <AccountMenu />
             <Divider orientation="vertical" variant="middle" flexItem />
             <Link to="/config">
               <IconButton aria-label="show 4 new mails" color="inherit">

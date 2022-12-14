@@ -140,7 +140,7 @@ function CadastroPost() {
   }
 
   function back() {
-    navigate("/posts");
+    navigate("/inicio");
   }
 
   return (
