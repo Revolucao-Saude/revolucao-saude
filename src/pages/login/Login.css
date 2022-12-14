@@ -1,0 +1,20 @@
+.fotofundo{
+    
+    background-image: radial-gradient( circle farthest-corner at 92.3% 71.5%,  rgba(83,138,214,1) 0%, rgba(134,231,214,1) 90% );
+}
+.titulo{
+    font-family:Arial;
+   color: white;
+   font-size: 40px
+    
+}
+.descricao{
+    font-family:Arial;
+    color: white;
+    font-size: 15px
+}
+.titulo2{
+    font-family:Arial;
+   color: white;
+   font-size: 20px
+}
