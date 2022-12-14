@@ -18,6 +18,7 @@ import useLocalStorage from "react-use-localstorage";
 import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service";
 import { styles } from "./styles";
+import './Login.css' ;
 
 function Copyright() {
   return (
@@ -69,11 +70,11 @@ function Login() {
     }
   }
   return (
-    <>
+    <div className="fotofundo">
       <Grid className={classes.grid} container alignItems="center" justifyContent="center" spacing={10}>
         <Grid item xs={10} sm={7} md={6} lg={5} xl={4}>
-          <h1>Revolução Saúde</h1>
-          <p>
+          <h1 className="titulo">Revolução Saúde</h1>
+          <p className="descricao">
             A Revolução Saúde é uma rede social com a finalidade de possibilitar
             que as pessoas troquem experiências/informações entre si.
           </p>
@@ -86,15 +87,17 @@ function Login() {
           md={4}
           lg={4}
           xl={2}
+          
         >
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h5" className="titulo2">
             Login
           </Typography>
           <form className={classes.form} onSubmit={onSubmit} noValidate>
             <TextField
+              
               variant="outlined"
               margin="normal"
               required
@@ -107,6 +110,7 @@ function Login() {
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
             />
             <TextField
+              
               variant="outlined"
               margin="normal"
               required
@@ -128,6 +132,7 @@ function Login() {
               variant="contained"
               color="primary"
               className={classes.submit}
+              
             >
               Entrar
             </Button>
@@ -151,7 +156,7 @@ function Login() {
       </Grid>
 
       <FooterCadastro />
-    </>
+    </div>
   );
 }
 
