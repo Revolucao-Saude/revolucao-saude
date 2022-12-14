@@ -9,6 +9,8 @@ import { useSelector } from 'react-redux';
 import { TokenState } from '../../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
 import useLocalStorage from 'react-use-localstorage';
+import RefreshIcon from '@mui/icons-material/Refresh';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
@@ -53,12 +55,11 @@ function ListaPostagem() {
     <>
       {
         posts.map(post => (
-          <Box key={post.id} m={2} >
-            <Card variant="outlined">
+          <Box key={post.id} m={2}  >
+            
+            <Card variant="outlined" >
+              
               <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                  Postagens
-                </Typography>
                 <Typography variant="body2" component="p">
                   {post.texto}
                 </Typography>
@@ -71,14 +72,14 @@ function ListaPostagem() {
 
                   <Link to={`/criar-postagem/${post.id}`} className="text-decorator-none" >
                     <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                      <Button startIcon={<RefreshIcon />} variant="contained" className="marginLeft" size='small' color="primary" >
                         atualizar
                       </Button>
                     </Box>
                   </Link>
                   <Link to={`/deletar-postagem/${post.id}`} className="text-decorator-none">
                     <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
+                      <Button startIcon={<DeleteIcon />} variant="contained" size='small' color="secondary">
                         deletar
                       </Button>
                     </Box>
