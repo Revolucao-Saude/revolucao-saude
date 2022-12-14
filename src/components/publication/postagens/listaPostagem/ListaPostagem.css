@@ -1,3 +1,18 @@
 .text-decorator-none{
   text-decoration: none;
 }
+
+.avatar {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
