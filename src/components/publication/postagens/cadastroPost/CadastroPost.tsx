@@ -166,11 +166,7 @@ function CadastroPost() {
   }
 
   function back() {
-<<<<<<< HEAD
     navigate("/inicio");
-=======
-    navigate("/postagens");
->>>>>>> 694bd83e76ab2bf79c840b23940ca659b41677b4
   }
 
   return (
