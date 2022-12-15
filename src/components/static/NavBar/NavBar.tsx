@@ -21,7 +21,9 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import { Divider } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 import { Link } from "react-router-dom";
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import AccountMenu from "../../perfilIconMenu/perfilIconMenu";
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -152,7 +154,7 @@ function PrimarySearchAppBar() {
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle />
+          <AccountCircle />        
         </IconButton>
         <Link to="/perfil">
           {" "}
@@ -223,6 +225,11 @@ function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+            <IconButton >
+            <Link to="/sobre">
+                <HelpOutlineOutlinedIcon />
+              </Link>
+            </IconButton>
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge /*badgeContent={17}*/ color="secondary">
                 <NotificationsIcon />

@@ -6,7 +6,8 @@ const styles = makeStyles((theme) => ({
       flexDirection: 'column',
       alignItems: 'center',
       borderRadius: '30px',
-      backgroundColor: 'rgba(255, 255, 255, 0.3)'
+      backgroundColor:'rgba(255, 255,255,0.6)'
+     // backgroundColor: 'rgba(255, 255, 255, 0.3)'
     },
     avatar: {
       margin: theme.spacing(1),
@@ -15,13 +16,20 @@ const styles = makeStyles((theme) => ({
     form: {
       width: '100%', // Fix IE 11 issue.
       marginTop: theme.spacing(1),
+      
+      
     },
     submit: {
       margin: theme.spacing(3, 0, 2),
+      boxShadow: ' 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)',
+      
+      
     },
     grid: {
         marginTop: theme.spacing(8),
-        width: '100%'
+        width: '100%',
+        
+
     }
 }));
 

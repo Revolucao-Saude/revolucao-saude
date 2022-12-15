@@ -131,7 +131,7 @@ function CadastroPost() {
     e.preventDefault();
 
     if (id !== undefined) {
-      put(`/postagens`, postagem, setPostagem, {
+      put(`/criar-postagens/${id}`, postagem, setPostagem, {
         headers: {
           Authorization: token,
         },
@@ -167,6 +167,7 @@ function CadastroPost() {
   }
 
   function back() {
+    navigate("/inicio");
     navigate("/inicio");
   }
 

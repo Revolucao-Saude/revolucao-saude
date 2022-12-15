@@ -15,6 +15,8 @@ import DeletarPostagem from "./components/publication/postagens/deletarPostagem/
 import CadastroTema from "./components/temas/cadastroTema/CadastroTema";
 import DeletarTema from "./components/temas/deletarTema/DeletarTema";
 import ListaPostagem from "./components/publication/postagens/listaPostagem/ListaPostagem";
+import ListaTema from "./components/temas/listatema/ListarTema";
+import PageSobre from "./pages/sobre/Sobre";
 
 function App() {
   return (
@@ -28,17 +30,18 @@ function App() {
           <Route path="/perfil" element={<Profile />} />
           <Route path="/cadastro" element={<Registration />} />
           <Route path="/config" element={<Config />} />
-          {/* <Route path='/sobre' element={<Sobre />} /> */}
-          {/* <Route path="/tema" element={<ListaTema />} /> */}
+          <Route path='/sobre' element={<PageSobre />} />
           <Route path="/explorar" element={<Explore />} />
+          <Route path="/tema" element={<ListaTema />} />
+          <Route path="/tema/:id" element={<ListaTema />} />
+          <Route path="/criar-tema" element={<CadastroTema />} />
+          <Route path="/criar-tema/:id" element={<CadastroTema />} />
+          <Route path="/deletar-tema/:id" element={<DeletarTema />} />
           <Route path="/postagens" element={<ListaPostagem />} />
           <Route path="/postagens/:id" element={<ListaPostagem />} />
           <Route path="/criar-postagem" element={<CadastroPost />} />
           <Route path="/criar-postagem/:id" element={<CadastroPost />} />
           <Route path="/deletar-postagem/:id" element={<DeletarPostagem />} />
-          <Route path="/criar-tema" element={<CadastroTema />} />
-          <Route path="/criar-tema/:id" element={<CadastroTema />} />
-          <Route path="/deletar-tema/:id" element={<DeletarTema />} />
         </Routes>
       </Router>
     </Provider>

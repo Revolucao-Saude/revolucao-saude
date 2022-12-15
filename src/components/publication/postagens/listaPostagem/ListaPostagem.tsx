@@ -1,8 +1,8 @@
  import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Postagem from '../../../../models/Postagem';
-import { busca } from '../../../../services/Service'
-import {  Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { busca, post } from '../../../../services/Service'
+import {  Card, CardActions, CardContent, Button, Typography, Avatar } from '@material-ui/core';
 import {Box} from '@mui/material';
 import './ListaPostagem.css';
 import { useSelector } from 'react-redux';
@@ -11,6 +11,7 @@ import { toast } from 'react-toastify';
 import useLocalStorage from 'react-use-localstorage';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import DeleteIcon from '@mui/icons-material/Delete';
+import User from '../../../../models/User';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
@@ -19,6 +20,7 @@ function ListaPostagem() {
   //   (state) => state.tokens
   // );
   const [token, setToken] = useLocalStorage('token');
+  // const [user, setUsers] = useState<User>
 
 //   useEffect(() => {
 //     if (token == "") {
@@ -60,20 +62,40 @@ function ListaPostagem() {
             <Card variant="outlined" >
               
               <CardContent>
-                <Typography variant="body2" component="p">
+                <div className='avatar'>
+                    <Avatar>
+                    </Avatar>
+                    <div className='column'>
+                      {/* <Typography gutterBottom variant="h5" component="div">
+                        {user.nome}
+                      </Typography> */}
+                      <Box flexDirection="row" sx={{ fontWeight: 'bold', m: 1, fontSize: 'h6.fontSize'  }}>
+                        <Typography variant='body1' component="p">
+                          {/* {post.data_horario} */}
+                        </Typography>
+                        <Typography variant='body1' component="p">
+                        •{post.local}
+                        </Typography>
+                      </Box>
+                    </div>
+                </div>
+                <Box sx={{ fontWeight: 'bold', m: 1, fontSize: 'h6.fontSize'  }}>
+                <Typography variant="body1" component="p">
                   {post.texto}
                 </Typography>
-                <Typography variant="body2" component="p">
+                </Box>
+                <Typography variant="body1" component="p">
                   {post.tema?.lista_assunto}
                 </Typography>
+                <Box mt={3}>
+                  <img width="100%"  src={post.arquivos_midia}></img>
+                </Box>
               </CardContent>
-              <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5}>
-
+              <CardActions className='flex'>
                   <Link to={`/criar-postagem/${post.id}`} className="text-decorator-none" >
                     <Box mx={1}>
                       <Button startIcon={<RefreshIcon />} variant="contained" className="marginLeft" size='small' color="primary" >
-                        atualizar
+                        editar
                       </Button>
                     </Box>
                   </Link>
@@ -84,7 +106,6 @@ function ListaPostagem() {
                       </Button>
                     </Box>
                   </Link>
-                </Box>
               </CardActions>
             </Card>
           </Box>

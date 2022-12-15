@@ -54,10 +54,10 @@ function CadastroUsuario() {
         }
     }
     return (
-        <Grid container justifyContent='center' >
-            <Box padding={10}>
-                <form onSubmit={onSubmit}>
-                    <Typography variant='h5' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'> Criar uma conta </Typography>
+        <Grid container justifyContent='center'>
+            <Box padding={10} >
+                <form onSubmit={onSubmit} >
+                    <Typography variant='h5' gutterBottom component='h3' align='center'> Criar uma conta </Typography>
 
                     <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='nome' label='Nome Completo *' variant='outlined' name='nome' margin='normal' fullWidth />
                     <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='email' label='E-mail *' variant="outlined" name='email' margin='normal' fullWidth />
