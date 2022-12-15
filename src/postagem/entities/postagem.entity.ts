@@ -22,7 +22,7 @@ export class Postagem{
     arquivos_midia: string;
 
     @ApiProperty()
-    @UpdateDateColumn()
+    @UpdateDateColumn({nullable: true})
     data_horario: Date;
 
     @ApiProperty()
@@ -30,7 +30,7 @@ export class Postagem{
     local: string;
 
     @ApiProperty({ type: () => Tema})
-    @OneToMany(() => Tema, (tema) => tema.postagem, {
+    @ManyToOne(() => Tema, (tema) => tema.postagem, {
         onDelete: "CASCADE"
     })
     tema: Tema;
