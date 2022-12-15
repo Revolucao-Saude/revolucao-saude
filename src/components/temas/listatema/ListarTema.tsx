@@ -56,7 +56,7 @@ function ListaTema() {
   return (
     <>
       {temas.map((tema) => (
-        <Box m={2}>
+        <Box key={tema.id}m={2}>
           <Card variant="outlined">
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
