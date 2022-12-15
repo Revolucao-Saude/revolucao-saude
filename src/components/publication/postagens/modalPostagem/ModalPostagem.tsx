@@ -23,10 +23,15 @@ const useStyles = makeStyles((theme: Theme) =>
     paper: {
       position: "absolute",
       width: 400,
-      backgroundColor: theme.palette.background.paper,
-      border: "2px solid #000",
-      boxShadow: theme.shadows[5],
+      boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
       padding: theme.spacing(2, 4, 3),
+      borderRadius: "20px",
+      background: "rgba(255,255,255,0.7)",
+      backdropFilter: "saturate(600%) blur(10px);", 
+      
+      // backgroundColor: "#fff",
+      //  opacity: 0.9,
+      
     },
   })
 );
