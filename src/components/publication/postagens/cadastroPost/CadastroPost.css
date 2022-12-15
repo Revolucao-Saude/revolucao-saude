@@ -40,8 +40,8 @@
     display: block;
     transition: 0.2s;
     font-size: 17px;
-    color: #38caef;
-    font-weight: 500;
+    color: #2e2f30;
+    font-weight: 400;
     pointer-events: none;
   }
   
@@ -132,8 +132,8 @@
   }
   
   .tema {
-    color: #38caef !important;
-    font-weight: 500 !important;
+    color: #191a1b !important;
+    font-weight: 400 !important;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     font-size: 17px !important;
     margin-top: 25px;
