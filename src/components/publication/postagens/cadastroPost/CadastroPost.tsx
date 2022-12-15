@@ -174,7 +174,7 @@ function CadastroPost() {
   return (
     <Container maxWidth="sm" className="topo">
       <form onSubmit={onSubmit}>
-        <h2 className="titulo">Criar Publicação</h2>
+        <h2 className="titulopost">Criar Publicação</h2>
         <div className="form__group field">
           <input
             placeholder="Texto"
