@@ -20,7 +20,7 @@ function ListaPostagem() {
   //   (state) => state.tokens
   // );
   const [token, setToken] = useLocalStorage('token');
-  // const [user, setUsers] = useState<User>
+  const [users, setUsers] = useState<User[]>([]);
 
 //   useEffect(() => {
 //     if (token == "") {
@@ -68,7 +68,7 @@ function ListaPostagem() {
                     <div className='column'>
                       <Box className='nomeUsuario'>
                         <Typography gutterBottom variant="h6" component="div">
-                          {/* {user.nome} */} Pedrin Reflexo
+                          {post.usuario?.nome} 
                         </Typography>
                       </Box>
                       <Box flexDirection="row" className='local'>
