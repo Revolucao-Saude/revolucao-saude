@@ -66,14 +66,16 @@ function ListaPostagem() {
                     <Avatar>
                     </Avatar>
                     <div className='column'>
-                      {/* <Typography gutterBottom variant="h5" component="div">
-                        {user.nome}
-                      </Typography> */}
-                      <Box flexDirection="row" sx={{ fontWeight: 'bold', m: 1, fontSize: 'h6.fontSize'  }}>
+                      <Box className='nomeUsuario'>
+                        <Typography gutterBottom variant="h6" component="div">
+                          {/* {user.nome} */} Pedrin Reflexo
+                        </Typography>
+                      </Box>
+                      <Box flexDirection="row" className='local'>
                         <Typography variant='body1' component="p">
                           {/* {post.data_horario} */}
                         </Typography>
-                        <Typography variant='body1' component="p">
+                        <Typography variant='body2' >
                         •{post.local}
                         </Typography>
                       </Box>

@@ -16,3 +16,13 @@
   display: flex;
   flex-direction: column;
 }
+
+.nomeUsuario {
+  margin-left: 10px;
+  margin-bottom: -10px;
+}
+
+.local {
+  margin-left: 10px;
+  color: rgb(182, 179, 179);
+}
