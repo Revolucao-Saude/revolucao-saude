@@ -20,7 +20,7 @@ function ListaPostagem() {
   //   (state) => state.tokens
   // );
   const [token, setToken] = useLocalStorage('token');
-  // const [user, setUsers] = useState<User>
+  const [users, setUsers] = useState<User[]>([]);
 
 //   useEffect(() => {
 //     if (token == "") {
