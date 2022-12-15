@@ -11,7 +11,7 @@ import { Box } from "@mui/material";
 import Tema from "../../../models/Tema";
 import "./ListarTema.css";
 import { useNavigate } from "react-router-dom";
-import { busca } from "../../../services/Service";
+import { busca, buscaId } from "../../../services/Service";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
@@ -20,7 +20,7 @@ import useLocalStorage from "react-use-localstorage";
 function ListaTema() {
   const [temas, setTemas] = useState<Tema[]>([]);
   let navigate = useNavigate();
-  const token = useLocalStorage("token");
+  const [token, setToken] = useLocalStorage('token');
   //   const token = useSelector<TokenState, TokenState["tokens"]>(
   //     (state) => state.tokens
   //   );
@@ -55,52 +55,54 @@ function ListaTema() {
 
   return (
     <>
-      {temas.map((tema) => (
-        <Box m={2}>
-          <Card variant="outlined">
-            <CardContent>
-              <Typography color="textSecondary" gutterBottom>
-                Tema
-              </Typography>
-              <Typography color="textSecondary" gutterBottom>
-                {tema.lista_assunto}
-              </Typography>
-              <Typography variant="h5" component="h2">
-                {tema.descricao}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Box display="flex" justifyContent="center" mb={1.5}>
-                <Link
-                  to={`/criar-tema/${tema.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                    <Button
-                      variant="contained"
-                      className="marginLeft"
-                      size="small"
-                      color="primary"
-                    >
-                      atualizar
-                    </Button>
-                  </Box>
-                </Link>
-                <Link
-                  to={`/deletar-tema/${tema.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary">
-                      deletar
-                    </Button>
-                  </Box>
-                </Link>
-              </Box>
-            </CardActions>
-          </Card>
-        </Box>
-      ))}
+      {
+        temas.map((tema) => (
+          <Box key={tema.id} m={2}>
+            <Card variant="outlined">
+              <CardContent>
+                <Typography color="textSecondary" gutterBottom>
+                  Tema
+                </Typography>
+                <Typography color="textSecondary" gutterBottom>
+                  {tema.lista_assunto}
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {tema.descricao}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Box display="flex" justifyContent="center" mb={1.5}>
+                  <Link
+                    to={`/criar-tema/${tema.id}`}
+                    className="text-decorator-none"
+                  >
+                    <Box mx={1}>
+                      <Button
+                        variant="contained"
+                        className="marginLeft"
+                        size="small"
+                        color="primary"
+                      >
+                        editar
+                      </Button>
+                    </Box>
+                  </Link>
+                  <Link
+                    to={`/deletar-tema/${tema.id}`}
+                    className="text-decorator-none"
+                  >
+                    <Box mx={1}>
+                      <Button variant="contained" size="small" color="secondary">
+                        deletar
+                      </Button>
+                    </Box>
+                  </Link>
+                </Box>
+              </CardActions>
+            </Card>
+          </Box>
+        ))
+      }
     </>
   );
 }

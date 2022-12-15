@@ -14,14 +14,16 @@ import Tema from "../../../models/Tema";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
+import useLocalStorage from "react-use-localstorage";
 
 function DeletarTema() {
-  let navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const token = useSelector<TokenState, TokenState["tokens"]>(
-    (state) => state.tokens
-  );
+  let navigate = useNavigate();
+  // const token = useSelector<TokenState, TokenState["tokens"]>(
+  //   (state) => state.tokens
+  // );
   const [tema, setTema] = useState<Tema>();
+  const [token, setToken] = useLocalStorage('token');
 
   // useEffect(() => {
   //     if (token == "") {
@@ -49,16 +51,16 @@ function DeletarTema() {
   async function findById(id: string) {
     buscaId(`/tema/${id}`, setTema, {
       headers: {
-        Authorization: token,
-      },
+        'Authorization': token,
+      }
     });
   }
 
   function sim() {
-    navigate("/temas");
+    navigate("/inicio");
     deleteId(`/tema/${id}`, {
       headers: {
-        Authorization: token,
+        'Authorization': token,
       },
     });
     toast.success("Tema deletado com sucesso", {
