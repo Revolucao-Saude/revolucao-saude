@@ -58,7 +58,7 @@
     display: block;
     transition: 0.2s;
     font-size: 17px;
-    color: #38caef;
+    color: #191a1b;
     font-weight: 700;
   }
   
@@ -142,4 +142,12 @@
 
   .w-50{
     width: 50%;
+  }
+
+  .titulo {
+    font-family: 'Quicksand', sans-serif !important;
+    color: #2e2f30 !important;
+    font-size: 25px !important;
+
+    
   }
