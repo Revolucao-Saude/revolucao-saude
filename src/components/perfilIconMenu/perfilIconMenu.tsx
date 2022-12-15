@@ -14,6 +14,7 @@ import Logout from '@mui/icons-material/Logout';
 import { Link } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { useEffect } from 'react';
+import './perfilIconMenu.css'
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -76,23 +77,26 @@ export default function AccountMenu() {
         }}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-      >
+      ><Link to="/perfil">
         <MenuItem>
-          <Link to="/perfil">
-           <Avatar />Perfil
-          </Link>
-          
+            <div>
+           <Avatar />
+           </div>
+           Perfil
         </MenuItem>
-        <MenuItem>
+        </Link>
+        
         <Link onClick={() => {
             localStorage.removeItem('token');
             userAuthentication();
-          } } to={'/login'}>Sair
+          } } to={'/login'}>
+        <MenuItem>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          </Link>
+          Sair
         </MenuItem>
+        </Link>
       </Menu>
     </React.Fragment>
   );
