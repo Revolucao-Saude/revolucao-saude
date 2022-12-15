@@ -1,19 +1,17 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
-import { Container, Typography, TextField, Button } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 import { useNavigate, useParams } from "react-router-dom";
 import "./CadastroTema.css";
 import Tema from "../../../models/Tema";
 import { buscaId, post, put } from "../../../services/Service";
-import { useSelector } from "react-redux";
-import { TokenState } from "../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
+import useLocalStorage from "react-use-localstorage";
 
 function CadastroTema() {
   let navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const token = useSelector<TokenState, TokenState["tokens"]>(
-    (state) => state.tokens
-  );
+  const [token, setToken] = useLocalStorage("token");
+//   const [userId, setuserId] = useLocalStorage("id");
   const [tema, setTema] = useState<Tema>({
     id: 0,
     lista_assunto: "",
@@ -63,7 +61,6 @@ function CadastroTema() {
     console.log("tema " + JSON.stringify(tema));
 
     if (id !== undefined) {
-      console.log(tema);
       put(`/tema`, tema, setTema, {
         headers: {
           Authorization: token,
@@ -100,7 +97,7 @@ function CadastroTema() {
   }
 
   function back() {
-    navigate("/temas");
+    navigate("/inicio");
   }
 
   return (
@@ -115,27 +112,6 @@ function CadastroTema() {
         >
           Criar tema
         </Typography>
-        {/* <TextField
-          className="form__field"
-          value={tema.lista_assunto}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)}
-          id="lista_assunto"
-          label="lista_assunto"
-          variant="outlined"
-          name="lista_assunto"
-          margin="normal"
-          fullWidth
-        /> */}
-        {/* <TextField
-          value={tema.descricao}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)}
-          id="descricao"
-          label="descricao"
-          variant="outlined"
-          name="descricao"
-          margin="normal"
-          fullWidth
-        /> */}
 
         <div className="form__group field">
           <input
