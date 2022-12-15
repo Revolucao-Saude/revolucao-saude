@@ -1,0 +1,140 @@
+body{
+  background-color: rgb(240, 240, 240);
+}
+
+a{
+  text-decoration: none;
+  color: rgb(169, 169, 169);
+}
+
+
+#model3 .member
+{
+    margin: 10px 5px;
+    border-radius: 15px;
+    width: 300px;
+    padding: 40px 0;
+    height: max-content;
+    background-color: #fff;
+    transition: all 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+#model3 .member::after
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 0;
+    height: 20px;
+    transition: all 1s;
+    background: rgba(8,61,119);
+}
+
+#model3 .member::before
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    width: 0;
+    height: 20px;
+    transition: all 1s;
+    background: rgba(8,61,119);
+}
+
+#model3 img
+{
+    border-radius: 50%;
+    transition: all 1s;
+}
+
+#model3 .description h1
+{
+    color: rgba(8,61,119);
+    text-align: center;
+}
+
+#model3 .description h2
+{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #F21B3F;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+#model3 .description p
+{
+    color: rgba(8,61,119);
+    text-align: justify;
+    padding: 0 15px;
+}
+
+#model3 .social-media
+{
+    position: absolute;
+    background-color: rgba(8,61,119);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-around;
+    transition: all 1s;
+    width: 0;
+    opacity: 0;
+    border-radius: 0 0 15px 15px;
+    color: #fff;
+}
+
+#model3 .description .social-media svg
+{
+    font-size: 30px;
+    transition: all 1s;
+}
+
+#model3 .member:hover .social-media
+{
+    width: 100%;
+    opacity: 1;
+}
+
+#model3 .member:hover
+{
+    background-color: rgba(8,61,119,0.2);
+    transform: scale(1.01);
+}
+
+#model3 .member:hover img
+{
+    transform: scale(1.1);
+    border: 2px solid rgba(8,61,119);
+}
+
+#model3 .description .social-media svg:hover
+{
+    transform: scale(1.1);
+    color: #F21B3F;
+}
+
+#model3 .member:hover::before
+{
+    width: 50%;
+}
+
+#model3 .member:hover::after
+{
+    width: 50%;
+}
+
+.model-title{
+  justify-content: center;
+  text-align: center;
+}
