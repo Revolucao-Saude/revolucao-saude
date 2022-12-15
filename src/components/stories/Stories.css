@@ -23,6 +23,7 @@ body {
   text-align: center;
   font-size: 18px;
   background: #fff;
+  padding: 100px;
 
   /* Center slide text vertically */
   display: -webkit-box;
@@ -70,4 +71,17 @@ body {
 
 .margin {
   margin-left: 100px;
+}
+
+.storiesPersonal {
+  width: 100%;
+}
+
+.margin {
+  margin-left: 10px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
