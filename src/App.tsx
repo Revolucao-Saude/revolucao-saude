@@ -4,7 +4,6 @@ import "./App.css";
 import { Home } from "./pages/home/Home";
 import Registration from "./pages/registration/Registration";
 import { Login } from "./pages/login/Login";
-import { Profile } from "./pages/profile/Profile";
 import Config from "./pages/config/config";
 import { PrimarySearchAppBar } from "./components/static/NavBar/NavBar";
 import Explore from "./pages/explore/Explore";
@@ -17,6 +16,9 @@ import DeletarTema from "./components/temas/deletarTema/DeletarTema";
 import ListaPostagem from "./components/publication/postagens/listaPostagem/ListaPostagem";
 import ListaTema from "./components/temas/listatema/ListarTema";
 import PageSobre from "./pages/sobre/Sobre";
+import Profile from "./pages/profile/Profile";
+import PaginaContrucao from "./pages/paginaconstrucao/PaginaConstrucao";
+import PageFriends from "./pages/friends/PageFriends";
 
 function App() {
   return (
@@ -27,7 +29,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/inicio" element={<Home />} />
-          <Route path="/perfil" element={<Profile />} />
+          <Route path="/perfil/:id" element={<Profile />} />
           <Route path="/cadastro" element={<Registration />} />
           <Route path="/config" element={<Config />} />
           <Route path='/sobre' element={<PageSobre />} />
@@ -42,6 +44,8 @@ function App() {
           <Route path="/criar-postagem" element={<CadastroPost />} />
           <Route path="/criar-postagem/:id" element={<CadastroPost />} />
           <Route path="/deletar-postagem/:id" element={<DeletarPostagem />} />
+          <Route path="/pagina-construcao" element={<PaginaContrucao/>}/>
+          <Route path="/amigos" element={<PageFriends/>}></Route>
         </Routes>
       </Router>
     </Provider>

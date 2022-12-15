@@ -23,6 +23,11 @@ import HomeIcon from "@material-ui/icons/Home";
 import { Link } from "react-router-dom";
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import AccountMenu from "../../perfilIconMenu/perfilIconMenu";
+import Button from '@mui/material/Button';
+import Fade from '@mui/material/Fade';
+import NotificationButton from "../NotificationButton/NotificationButton";
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -225,14 +230,19 @@ function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton >
+          <IconButton aria-label="show 4 new home">
+            <Link to="/amigos" className={classes.cWhite}>
+                <PeopleAltIcon />
+              </Link>
+            </IconButton>
+            <IconButton aria-label="show 4 new home" className={classes.cWhite}>
             <Link to="/sobre">
                 <HelpOutlineOutlinedIcon />
               </Link>
             </IconButton>
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge /*badgeContent={17}*/ color="secondary">
-                <NotificationsIcon />
+                <NotificationButton/>
               </Badge>
             </IconButton>
             <AccountMenu />

@@ -13,46 +13,41 @@ import ModalPostagem from "../../components/publication/postagens/modalPostagem/
 
 function Home() {
   return (
-    <Grid container spacing={0}>
+    <Grid container spacing={0} className="grid-content">
       {/**
-       * @descricao Grid-Container-item que armazena todos os conteúdos da home
+       * @descricao  Coluna da Esquerda
        */}
-      <Grid container item className="grid-content">
-        {/**
-         * @descricao  Coluna da Esquerda
-         */}
-        <Grid container item xs={3} direction-column>
-          <Grid item >
-            <ImageProfile />
-          </Grid>
+      <Grid container item xs={3} direction-column>
+        <Grid item>
+          <ImageProfile />
         </Grid>
-        {/**
-         * @descricao Coluna principal - meio / Feed
-         */}
-        <Grid container item xs={6}>
-          <Grid container item>
-            <Stories />
-          </Grid>
-          <Grid container item>
-            <Grid item>
-              <CreatePublication />
-            </Grid>
-          </Grid>
-          <Grid container item xs={12} direction-column>
-            <Grid item>
-              {/* <ListaTema> */}
-              <ListaPostagem/>
-              {/* <CardPublication /> */}
-            </Grid>
-          </Grid>
+      </Grid>
+      {/**
+       * @descricao Coluna principal - meio / Feed
+       */}
+      <Grid container item xs={6}>
+        <Grid container item>
+          <Stories />
         </Grid>
-        {/**
-         * @descricao Coluna da Direita
-         */}
-        <Grid container item xs={3} direction-column>
+        <Grid container item>
           <Grid item>
-            <ButtonExplorer />
+            <CreatePublication />
           </Grid>
+        </Grid>
+        <Grid container item xs={12} direction-column>
+          <Grid item>
+            {/* <ListaTema> */}
+            <ListaPostagem />
+            {/* <CardPublication /> */}
+          </Grid>
+        </Grid>
+      </Grid>
+      {/**
+       * @descricao Coluna da Direita
+       */}
+      <Grid container item xs={3} direction-column>
+        <Grid item>
+          <ButtonExplorer />
         </Grid>
       </Grid>
     </Grid>

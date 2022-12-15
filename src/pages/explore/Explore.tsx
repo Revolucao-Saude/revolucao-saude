@@ -7,6 +7,7 @@ import { Button } from "@material-ui/core";
 import MouseOverPopover from "../../components/mousemove/MouseMove";
 import ListaPostagem from "../../components/publication/postagens/listaPostagem/ListaPostagem";
 import ListaTema from "../../components/temas/listatema/ListarTema";
+import PaginaConstrucao from "../paginaconstrucao/PaginaConstrucao";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -81,9 +82,15 @@ export default function BasicTabs() {
       <TabPanel value={value} index={1}>
         <ListaTema/>
       </TabPanel>
-      <TabPanel value={value} index={2}></TabPanel>
-      <TabPanel value={value} index={3}></TabPanel>
-      <TabPanel value={value} index={4}></TabPanel>
+      <TabPanel value={value} index={2}>
+        <PaginaConstrucao/>
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+      <PaginaConstrucao/>
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+      <PaginaConstrucao/>
+      </TabPanel>
 
     </Box>
   );

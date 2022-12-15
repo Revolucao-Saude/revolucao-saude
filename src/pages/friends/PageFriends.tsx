@@ -1,22 +1,26 @@
-import { Divider, Grid, Link } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import "./ImageProfile.css";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea, Stack } from "@mui/material";
-import Avatar from "@mui/material/Avatar";
-import User from "../../models/User";
+import "./PageFriends.css";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import {
+  Avatar,
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Grid,
+  Link,
+  Typography,
+} from "@material-ui/core";
 import useLocalStorage from "react-use-localstorage";
+import User from "../../models/User";
 import { buscaId } from "../../services/Service";
 
-function ImageProfile() {
-  const [users, setUsers] = useState<User[]>([]);
+export default function PageFriends() {
   const [token, setToken] = useLocalStorage("token");
+  const [users, setUsers] = useState<User[]>([]);
 
   async function getUser() {
-    await buscaId(`/usuarios/:id`, setUsers, {
+    await buscaId(`/usuarios/todos`, setUsers, {
       headers: {
         Authorization: token,
       },
@@ -28,15 +32,12 @@ function ImageProfile() {
   }, [users.length]);
 
   return (
+    <>
       <Grid container spacing={2}>
         {users.map((user) => (
           <Grid key={user.id} item xs={6}>
-            <Card className="margin">
-              <Avatar
-                src={user?.foto}
-                sx={{ width: 70, height: 70 }}
-                alt="Foto de Perfil"
-              />
+            <Card className="margin cardSize">
+              <Avatar src={user.foto} alt="Foto de Perfil" />
 
               <Link href="/perfil/:id">
                 <CardActionArea>
@@ -55,7 +56,6 @@ function ImageProfile() {
           </Grid>
         ))}
       </Grid>
+    </>
   );
 }
-
-export { ImageProfile };
