@@ -5,9 +5,13 @@ const styles = makeStyles((theme) => ({
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      borderRadius: '30px',
-      backgroundColor:'rgba(255, 255,255,0.6)'
-     // backgroundColor: 'rgba(255, 255, 255, 0.3)'
+      
+
+      boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
+      background: "rgba(225,225,225, 0.5)",
+    
+      borderRadius: "25px"
+     
     },
     avatar: {
       margin: theme.spacing(1),
@@ -26,9 +30,9 @@ const styles = makeStyles((theme) => ({
       
     },
     grid: {
-        marginTop: theme.spacing(8),
+        paddingTop: '7rem',
         width: '100%',
-        
+        margin: '0px'
 
     }
 }));

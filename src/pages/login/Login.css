@@ -1,20 +1,38 @@
 .fotofundo{
-    
-    background-image: radial-gradient( circle farthest-corner at 92.3% 71.5%,  rgba(83,138,214,1) 0%, rgba(134,231,214,1) 90% );
+    border-radius: 0px;
+    background-image: radial-gradient( circle farthest-corner at 92.3% 71.5%,  rgba(83,138,214,1) 0%, rgb(20, 52, 83) 90% );
 }
 .titulo{
     font-family:Arial;
-   color: white;
-   font-size: 40px
+   color: white !important;
+   font-size: 70px !important;
+   
+   font-family: 'Source Code Pro', monospace !important;
     
 }
 .descricao{
     font-family:Arial;
     color: white;
-    font-size: 15px
+    font-size: 18px;
+    
 }
 .titulo2{
     font-family:Arial;
    color: white;
    font-size: 20px
 }
+
+.bot {
+    position: relative;
+    font-size: 14px;
+    letter-spacing: 3px;
+    height: 3em;
+    width: 100%;
+    border: none;
+    background-color: #c41b54;
+    color: #fff;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+   }
