@@ -68,7 +68,7 @@ function ListaPostagem() {
                     <div className='column'>
                       <Box className='nomeUsuario'>
                         <Typography gutterBottom variant="h6" component="div">
-                          {/* {user.nome} */} Pedrin Reflexo
+                          {post.usuario?.nome} 
                         </Typography>
                       </Box>
                       <Box flexDirection="row" className='local'>
