@@ -21,11 +21,9 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import { Divider } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
-=======
 import AccountMenu from "../../perfilIconMenu/perfilIconMenu";
->>>>>>> 10a20b330569ccbb13134a04665c54a35710f646
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
