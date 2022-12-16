@@ -28,8 +28,6 @@ import Fade from '@mui/material/Fade';
 import NotificationButton from "../NotificationButton/NotificationButton";
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
-
-
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     grow: {
@@ -235,12 +233,12 @@ function PrimarySearchAppBar() {
                 <PeopleAltIcon />
               </Link>
             </IconButton>
-            <IconButton aria-label="show 4 new home" className={classes.cWhite}>
-            <Link to="/sobre">
+            <IconButton aria-label="show 4 new home" >
+            <Link to="/sobre" className={classes.cWhite}>
                 <HelpOutlineOutlinedIcon />
               </Link>
             </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
+            <IconButton aria-label="show 17 new notifications">
               <Badge /*badgeContent={17}*/ color="secondary">
                 <NotificationButton/>
               </Badge>

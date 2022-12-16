@@ -55,7 +55,6 @@ function ListaTema() {
 
   return (
     <>
-
       {
         temas.map((tema) => (
           <Box key={tema.id} m={2}>
@@ -104,54 +103,6 @@ function ListaTema() {
           </Box>
         ))
       }
-
-      {temas.map((tema) => (
-        <Box key={tema.id}m={2}>
-          <Card variant="outlined">
-            <CardContent>
-              <Typography color="textSecondary" gutterBottom>
-                Tema
-              </Typography>
-              <Typography color="textSecondary" gutterBottom>
-                {tema.lista_assunto}
-              </Typography>
-              <Typography variant="h5" component="h2">
-                {tema.descricao}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Box display="flex" justifyContent="center" mb={1.5}>
-                <Link
-                  to={`/criar-tema/${tema.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                    <Button
-                      variant="contained"
-                      className="marginLeft"
-                      size="small"
-                      color="primary"
-                    >
-                      atualizar
-                    </Button>
-                  </Box>
-                </Link>
-                <Link
-                  to={`/deletar-tema/${tema.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary">
-                      deletar
-                    </Button>
-                  </Box>
-                </Link>
-              </Box>
-            </CardActions>
-          </Card>
-        </Box>
-      ))}
-
     </>
   );
 }

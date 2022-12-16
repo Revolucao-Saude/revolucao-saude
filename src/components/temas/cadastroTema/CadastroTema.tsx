@@ -58,7 +58,7 @@ function CadastroTema() {
 
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log("tema " + JSON.stringify(tema));
+    // console.log("tema " + JSON.stringify(tema));
 
     if (id !== undefined) {
       put(`/tema`, tema, setTema, {

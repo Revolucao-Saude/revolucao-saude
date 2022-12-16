@@ -8,6 +8,16 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import ConstructionIcon from "@mui/icons-material/Construction";
 import PaginaContrucao from "../../../pages/paginaconstrucao/PaginaConstrucao";
 import { Link } from "react-router-dom";
+import { Theme, createStyles, makeStyles } from "@material-ui/core";
+import { ClassNames, ThemeContext } from "@emotion/react";
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    cWhite: {
+      color: "#fff",
+    },
+  })
+);
 
 export default function FadeMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -40,8 +50,8 @@ export default function FadeMenu() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose}>
-          <Link to="/pagina-construcao">
+        <MenuItem onClick={handleClose} color="#fff">
+          <Link to="/pagina-construcao" >
             <ConstructionIcon />
             Em Breve
           </Link>
