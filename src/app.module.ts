@@ -16,20 +16,6 @@ import { UsuarioModule } from './usuario/usuario.module';
  */
 @Module({
   imports: [
-<<<<<<< HEAD
-    TypeOrmModule.forRoot({
-      type:'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'root',
-      database: 'db_revolucaosaude',
-      entities: [Postagem,Tema,Usuario],
-      synchronize: true,
-      
-    }), 
-    /* TypeOrmModule.forRoot({
-=======
   //  TypeOrmModule.forRoot({
   //     type:'mysql',
   //     host: 'localhost',
@@ -39,10 +25,8 @@ import { UsuarioModule } from './usuario/usuario.module';
   //     database: 'db_revolucaosaude',
   //     entities: [Postagem,Tema,Usuario],
   //     synchronize: true,
-      
   //   }),
      TypeOrmModule.forRoot({
->>>>>>> a445429a2a2278037a839006abdd8e640282bfa3
       type: 'postgres',
       url: process.env.DATABASE_URL,
       logging: false,
@@ -52,7 +36,7 @@ import { UsuarioModule } from './usuario/usuario.module';
       },
       synchronize: true,
       autoLoadEntities: true
-    }), */
+    }), 
     PostagemModule,
     TemaModule,
     UsuarioModule,
