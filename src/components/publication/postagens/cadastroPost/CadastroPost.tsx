@@ -28,6 +28,8 @@ function CadastroPost() {
   let navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const [temas, setTemas] = useState<Tema[]>([]);
+  // const [open, setOpen] = React.useState(false);
+
   {
     /*
      *TODO: Trocar o useSelector para o useLocalStorage (Pois um ta usando o Redux e o outro o useLocalStoraged)
@@ -55,6 +57,9 @@ function CadastroPost() {
   //       navigate("/login");
   //     }
   //   }, [token]);
+  // const handleClose:any = () => {
+  //   setOpen(false);
+  // };
   const [user, setUser] = useState<User>({
     id: 0,
     nome: "",
@@ -288,7 +293,7 @@ function CadastroPost() {
         </Select>
         <FormHelperText>Escolha um tema para a postagem</FormHelperText>
 
-        <button type="submit" className="enviar">
+        <button type="submit" className="enviar" /*onClick={handleClose()}*/>
           <div className="svg-wrapper-1">
             <div className="svg-wrapper">
               <svg

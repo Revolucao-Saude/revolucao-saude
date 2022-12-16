@@ -54,27 +54,29 @@ function CadastroUsuario() {
         }
     }
     return (
-        <Grid container justifyContent='center'>
-            <Box padding={10} >
-                <form onSubmit={onSubmit} >
-                    <Typography variant='h5' gutterBottom component='h3' align='center'> Criar uma conta </Typography>
+        <Grid >
+            <Grid container justifyContent='center'>
+                <Box padding={10} >
+                    <form onSubmit={onSubmit} >
+                        <Typography variant='h5' gutterBottom component='h3' align='center'> Criar uma conta </Typography>
 
-                    <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='nome' label='Nome Completo *' variant='outlined' name='nome' margin='normal' fullWidth />
-                    <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='email' label='E-mail *' variant="outlined" name='email' margin='normal' fullWidth />
-                    <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='senha' label='Senha *' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
-                    <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar senha *' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
-                    <Box marginTop={2} textAlign='center' className="space">
-                        <Link to='/Login' className='text-decorator-none formatar'>
-                            <Button variant='contained' color='secondary' className='btnCancelar '>
-                                Cancelar
+                        <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='nome' label='Nome Completo *' variant='outlined' name='nome' margin='normal' fullWidth />
+                        <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='email' label='E-mail *' variant="outlined" name='email' margin='normal' fullWidth />
+                        <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='senha' label='Senha *' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
+                        <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar senha *' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
+                        <Box marginTop={2} textAlign='center' className="space">
+                            <Link to='/Login' className='text-decorator-none formatar'>
+                                <Button variant='contained' color='secondary' className='btnCancelar '>
+                                    Cancelar
+                                </Button>
+                            </Link>
+                            <Button type='submit' variant='contained' color='primary'>
+                                Cadastrar
                             </Button>
-                        </Link>
-                        <Button type='submit' variant='contained' color='primary'>
-                            Cadastrar
-                        </Button>
-                    </Box>
-                </form>
-            </Box>
+                        </Box>
+                    </form>
+                </Box>
+            </Grid>
         </Grid>
     )
 

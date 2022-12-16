@@ -12,6 +12,7 @@ import FooterCadastro from '../../components/footer/footerCadastro/Footer';
 import Avatar from '@material-ui/core/Avatar';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import CadastroUsuario from '../cadastroUsuario/CadastroUsuario';
+import './Registration.css';
 
 function Copyright() {
   return (
@@ -56,6 +57,7 @@ export default function Registration() {
 
   return (
     <>
+    <div className="fotofundo">
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
@@ -80,6 +82,7 @@ export default function Registration() {
       </Container>
 
       <FooterCadastro />
+      </div>
     </>
   );
 }
