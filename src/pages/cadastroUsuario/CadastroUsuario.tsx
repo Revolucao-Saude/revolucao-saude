@@ -54,7 +54,7 @@ function CadastroUsuario() {
         }
     }
     return (
-        <Grid >
+        <Grid className="backgroundcadastro" >
             <Grid container justifyContent='center'>
                 <Box padding={10} >
                     <form onSubmit={onSubmit} >
