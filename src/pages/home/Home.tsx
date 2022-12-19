@@ -5,7 +5,7 @@ import { CreatePublication } from "../../components/publication/createPublicatio
 import ButtonExplorer from "../../components/sidebar/buttonExplorer/ButtonExplorar";
 import { ImageProfile } from "../../components/imageProfile/ImageProfile";
 import CardPublication from "../../components/publication/cardPublication/cardPublication";
-import { Stories } from "../../components/stories/Stories";
+// import { Stories } from "../../components/stories/Stories";
 import CadastroPost from "../../components/publication/postagens/cadastroPost/CadastroPost";
 import { Link } from "react-router-dom";
 import ListaPostagem from "../../components/publication/postagens/listaPostagem/ListaPostagem";
@@ -27,7 +27,7 @@ function Home() {
        */}
       <Grid container item xs={6}>
         <Grid container item>
-          <Stories />
+          {/* <Stories /> */}
         </Grid>
         <Grid container item>
           <Grid item>

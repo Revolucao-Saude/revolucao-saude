@@ -237,21 +237,18 @@ function PrimarySearchAppBar() {
             <Link to="/sobre" className={classes.cWhite}>
                 <HelpOutlineOutlinedIcon />
               </Link>
+              
             </IconButton>
-            <IconButton aria-label="show 17 new notifications">
-              <Badge /*badgeContent={17}*/ color="secondary">
-                <NotificationButton/>
-              </Badge>
-            </IconButton>
+
             <AccountMenu />
             <Divider orientation="vertical" variant="middle" flexItem />
-            <Link to="/config">
-              <IconButton aria-label="show 4 new mails" className={classes.cWhite} >
-                <Badge /*badgeContent={}*/ color="secondary">
-                  <SettingsIcon />
-                </Badge>
-              </IconButton>
-            </Link>
+            {/* <Link to="/config"> */}
+              {/* <IconButton aria-label="show 4 new mails" className={classes.cWhite} > */}
+                {/* <Badge /*badgeContent={}*/ }
+                  {/* <SettingsIcon /> */}
+                {/* </Badge> */}
+              {/* </IconButton> */}
+            {/* </Link> */}
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
