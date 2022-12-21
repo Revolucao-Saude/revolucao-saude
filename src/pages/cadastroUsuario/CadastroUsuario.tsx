@@ -69,7 +69,7 @@ function CadastroUsuario() {
   return (
     <div>
       <Grid container justifyContent="center">
-        <Box padding={10}>
+        <Box>
           <form onSubmit={onSubmit}>
             <Typography
               className="text2"
