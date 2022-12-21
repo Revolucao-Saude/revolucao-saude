@@ -11,6 +11,7 @@ const styles = makeStyles((theme) => ({
       background: "rgba(225,225,225, 0.5)",
     
       borderRadius: "25px"
+
      
     },
     avatar: {

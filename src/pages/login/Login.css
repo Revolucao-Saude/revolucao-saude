@@ -1,6 +1,8 @@
 .fotofundo{
     border-radius: 0px;
     background-image: radial-gradient( circle farthest-corner at 92.3% 71.5%,  rgba(83,138,214,1) 0%, rgb(20, 52, 83) 90% );
+
+    padding-top: 3rem;
     
 }
 .titulo{

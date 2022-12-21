@@ -38,6 +38,8 @@ const useStyles = makeStyles((theme) =>
     flexDirection: 'column',
     alignItems: 'center',
 
+    paddingTop: '1rem',
+
   },
   avatar: {
     margin: theme.spacing(1),
@@ -59,7 +61,7 @@ export default function Registration() {
 
   return (
     <>
-    <div className="fotofundo">
+    <div  className="fotofundo">
       <Container className='backgroundcadastro' component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
