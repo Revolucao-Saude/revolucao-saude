@@ -3,17 +3,17 @@
 }
 
 .avatar {
-  display: flex;
+
   justify-content: flex-start;
 }
 
 .flex {
-  display: flex;
+  
   justify-content: space-between;
 }
 
 .column {
-  display: flex;
+  
   flex-direction: column;
 }
 
@@ -25,4 +25,8 @@
 .local {
   margin-left: 10px;
   color: rgb(182, 179, 179);
+}
+
+.width {
+  width: 100%;
 }

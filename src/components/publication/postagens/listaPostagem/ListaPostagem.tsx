@@ -45,6 +45,8 @@ function ListaPostagem() {
         'Authorization': token
       }
     })
+    console.log(posts);
+    
   }
 
   useEffect(() => {
@@ -59,7 +61,7 @@ function ListaPostagem() {
         posts.map(post => (
           <Box key={post.id} m={2}  >
             
-            <Card variant="outlined" >
+            <Card className='width' variant="outlined" >
               
               <CardContent>
                 <div className='avatar'>
@@ -90,7 +92,7 @@ function ListaPostagem() {
                   {post.tema?.lista_assunto}
                 </Typography>
                 <Box mt={3}>
-                  <img width="100%"  src={post.arquivos_midia}></img>
+                  <img src={post.arquivos_midia}></img>
                 </Box>
               </CardContent>
               <CardActions className='flex'>

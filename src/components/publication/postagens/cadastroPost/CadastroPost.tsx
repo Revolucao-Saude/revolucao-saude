@@ -11,6 +11,7 @@ import {
   FormHelperText,
   IconButton,
   Grid,
+  Box,
 } from "@material-ui/core";
 import "./CadastroPost.css";
 import { useNavigate, useParams } from "react-router-dom";
@@ -129,6 +130,7 @@ function CadastroPost() {
       ...postagem,
       [e.target.name]: e.target.value,
       tema: tema,
+      usuario:user
     });
   }
 
@@ -173,30 +175,33 @@ function CadastroPost() {
 
   function back() {
     navigate("/inicio");
-    navigate("/inicio");
   }
 
   return (
     <Container maxWidth="sm" className="topo">
+      <Box sx={{ width : '100vh' }}>
       <form onSubmit={onSubmit}>
         <h2 className="titulopost">Criar Publicação</h2>
         <div className="form__group field">
-          <input
+          <TextField
             placeholder="Texto"
-            className="form__field"
+            // className="form__field"
             type="input"
             value={postagem.texto}
             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
             id="texto"
             name="texto"
+            required
+            multiline
+            maxRows={5}
           />
           <label className="form__label">Texto</label>
         </div>
 
         <div className="form__group field">
-          <input
+          <TextField
             placeholder="Local"
-            className="form__field"
+            // className="form__field"
             type="input"
             value={postagem.local}
             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
@@ -220,13 +225,13 @@ function CadastroPost() {
             <label className="form__label">Arquivos de Mídias</label>
         </div> */}
 
-        <Grid container>
+        <Grid container className="direction">
         
-          <Grid item xs={5}>
-            <div className="form__group field">
-              <input
+          <Grid container item xs={5} className="direction">
+            <div className="form__group field direction">
+              <TextField
                 placeholder="Arquivo Mídia"
-                className="form__field"
+                // className="form__field"
                 type="input"
                 value={postagem.arquivos_midia}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -237,12 +242,12 @@ function CadastroPost() {
               />
               <label className="form__label">URL da mídia</label>
             </div>
-          </Grid>
+          {/* </Grid> */}
 
                 
-          <Grid item className="d-flex" alignItems="flex-end" xs={1}>
-            <input
-              accept="image/*"
+          <Grid item  xs={1}> 
+            <TextField
+              // accept="image/*" 
               className="botao"
               id="arquivos_midia"
               type="file"
@@ -257,6 +262,7 @@ function CadastroPost() {
                 <PhotoCamera />
               </IconButton>
             </label>
+            </Grid>
           </Grid>
 
 
@@ -313,6 +319,7 @@ function CadastroPost() {
           <span>Enviar</span>
         </button>
       </form>
+      </Box>
     </Container>
   );
 }

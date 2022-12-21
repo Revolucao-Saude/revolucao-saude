@@ -1,4 +1,4 @@
-.card {
+/* .card {
     width: 200px;
     height: 250px;
     background: #07182E;
@@ -25,7 +25,6 @@
   }
   
   p {
-    opacity: 0;
     transition: all 0.5s;
   }
   
@@ -48,4 +47,4 @@
   .card:hover h1,
   .card:hover p {
     opacity: 1;
-  }
+  } */
