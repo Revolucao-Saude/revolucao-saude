@@ -15,17 +15,19 @@ import {
 import useLocalStorage from "react-use-localstorage";
 import User from "../../models/User";
 import { buscaId } from "../../services/Service";
+import PaginaConstrucao from "../paginaconstrucao/PaginaConstrucao";
 
 export default function PageFriends() {
   const [token, setToken] = useLocalStorage("token");
 
   return (
     <>
-      <Grid container spacing={2}>
+      <PaginaConstrucao />
+      {/* <Grid container spacing={2}>
         <Grid item>
 
         </Grid>
-      </Grid>
+      </Grid> */}
     </>
   );
 }

@@ -24,9 +24,10 @@ import { toast } from "react-toastify";
 import useLocalStorage from "react-use-localstorage";
 import User from "../../../../models/User";
 import { PhotoCamera } from "@material-ui/icons";
+import { couldStartTrivia } from "typescript";
 
 function CadastroPost() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const [temas, setTemas] = useState<Tema[]>([]);
   // const [open, setOpen] = React.useState(false);
@@ -83,7 +84,7 @@ function CadastroPost() {
   });
 
   useEffect(() => {
-    buscaId(`/usuarios/${userid}`, setUser, {
+    buscaId(`/usuarios/todos`, setUser, {
       headers: {
         Authorization: token,
       },
@@ -127,9 +128,10 @@ function CadastroPost() {
         Authorization: token,
       },
     });
+    console.log(postagem);
   }
 
-  function updatedPostagem(e: ChangeEvent<HTMLInputElement>) {
+  async function updatedPostagem(e: ChangeEvent<HTMLInputElement>) {
     setPostagem({
       ...postagem,
       [e.target.name]: e.target.value,
@@ -142,7 +144,9 @@ function CadastroPost() {
     e.preventDefault();
 
     if (id !== undefined) {
-      put(`/criar-postagens/${id}`, postagem, setPostagem, {
+      console.log(postagem);
+      
+      put(`/postagens`, postagem, setPostagem, {
         headers: {
           Authorization: token,
         },

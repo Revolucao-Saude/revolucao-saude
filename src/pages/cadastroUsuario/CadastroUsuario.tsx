@@ -5,6 +5,7 @@ import User from "../../models/User";
 import { cadastroUsuario } from "../../services/Service";
 import { Link } from "react-router-dom";
 import "./CadastroUsuario.css";
+import Postagem from "../../models/Postagem";
 
 function CadastroUsuario() {
   let navigate = useNavigate();
@@ -22,6 +23,16 @@ function CadastroUsuario() {
     email: "",
     senha: "",
     foto: "",
+  });
+
+  const [postagem, setPostagem] = useState<Postagem>({
+    id: 0,
+    texto: "",
+    arquivos_midia: "",
+    data_horario: null,
+    local: "",
+    tema: null,
+    usuario: null,
   });
 
   useEffect(() => {
@@ -51,16 +62,25 @@ function CadastroUsuario() {
       );
     }
   }
+    function updatedPostagem(e: React.ChangeEvent<HTMLInputElement>): void {
+        throw new Error("Function not implemented.");
+    }
+
   return (
     <div>
       <Grid container justifyContent="center">
-        <Box padding={10}>
+        <Box>
           <form onSubmit={onSubmit}>
-            <Typography className="text2" variant="h5" gutterBottom component="h3" align="center">
+            <Typography
+              className="text2"
+              variant="h5"
+              gutterBottom
+              component="h3"
+              align="center"
+            >
               {" "}
               Criar uma conta{" "}
             </Typography>
-
             <TextField
               value={user.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)}
@@ -81,6 +101,22 @@ function CadastroUsuario() {
               margin="normal"
               fullWidth
             />
+
+            <TextField
+            value={postagem.arquivos_midia}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+            id="arquivos" 
+            name="arquivos_midia"
+            label="Arquivo de Mídia *"
+            variant="outlined"
+            margin="normal"
+            fullWidth
+            
+
+            />
+
+
+
             <TextField
               value={user.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)}

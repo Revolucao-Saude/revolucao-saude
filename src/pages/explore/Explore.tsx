@@ -63,9 +63,9 @@ export default function BasicTabs() {
         >
           <Tab label="Todas Publicações" {...a11yProps(0)} />
           <Tab label="Todos Temas" {...a11yProps(0)} />
-          <Tab label="Dicas de Saúde" {...a11yProps(0)} />
+          {/* <Tab label="Dicas de Saúde" {...a11yProps(0)} />
           <Tab label="Palestras" {...a11yProps(1)} />
-          <Tab label="Campanhas" {...a11yProps(2)} />
+          <Tab label="Campanhas" {...a11yProps(2)} /> */}
           <Button
             variant="text"
             onClick={() => {

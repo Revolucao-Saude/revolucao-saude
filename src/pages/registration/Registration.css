@@ -12,12 +12,18 @@
 
     backdrop-filter: blur (100px);
     -webkit-backdrop-filter: blur (100px);
-    
     border-radius: 25px;
+
+    width: 40px;
+
 }
 
 .text1 {
-    color: #000000 !important;
+   
+    color: #222 !important;
+    padding-bottom: 1rem;
+    display: block;
 
 }
+
 
