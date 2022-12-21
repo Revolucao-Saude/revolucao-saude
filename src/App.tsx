@@ -19,6 +19,7 @@ import PageSobre from "./pages/sobre/Sobre";
 import Profile from "./pages/profile/Profile";
 import PaginaContrucao from "./pages/paginaconstrucao/PaginaConstrucao";
 import PageFriends from "./pages/friends/PageFriends";
+import NotFound from "./pages/notFound/NotFound";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="/deletar-postagem/:id" element={<DeletarPostagem />} />
           <Route path="/pagina-construcao" element={<PaginaContrucao/>}/>
           <Route path="/amigos" element={<PageFriends/>}></Route>
+          <Route path='*' element={<NotFound/>} />
         </Routes>
       </Router>
     </Provider>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import { Grid } from "@material-ui/core";
+import { Divider, Grid } from "@material-ui/core";
 import { CreatePublication } from "../../components/publication/createPublication/createPublication";
 import ButtonExplorer from "../../components/sidebar/buttonExplorer/ButtonExplorar";
 import { ImageProfile } from "../../components/imageProfile/ImageProfile";
@@ -17,15 +17,15 @@ function Home() {
       {/**
        * @descricao  Coluna da Esquerda
        */}
-      <Grid container item xs={3} direction-column>
+      {/* <Grid container item xs={3}>
         <Grid item>
           <ImageProfile />
         </Grid>
-      </Grid>
+      </Grid> */}
       {/**
        * @descricao Coluna principal - meio / Feed
        */}
-      <Grid container item xs={6}>
+      <Grid container item xs={9}>
         <Grid container item>
           {/* <Stories /> */}
         </Grid>
@@ -34,7 +34,7 @@ function Home() {
             <CreatePublication />
           </Grid>
         </Grid>
-        <Grid container item xs={12} direction-column>
+        <Grid container item>
           <Grid item>
             {/* <ListaTema> */}
             <ListaPostagem />
@@ -42,10 +42,11 @@ function Home() {
           </Grid>
         </Grid>
       </Grid>
+      
       {/**
        * @descricao Coluna da Direita
        */}
-      <Grid container item xs={3} direction-column>
+      <Grid container item xs={3}>
         <Grid item>
           <ButtonExplorer />
         </Grid>
