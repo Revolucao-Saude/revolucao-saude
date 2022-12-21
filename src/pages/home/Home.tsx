@@ -25,17 +25,17 @@ function Home() {
       {/**
        * @descricao Coluna principal - meio / Feed
        */}
-      <Grid container item xs={9}>
+      <Grid container item xs={9} >
         <Grid container item>
           {/* <Stories /> */}
         </Grid>
-        <Grid container item>
+        <Grid container item className="w-100" justifyContent="center">
           <Grid item>
             <CreatePublication />
           </Grid>
         </Grid>
         <Grid container item xs={12} direction-column>
-          <Grid item className="w-100">
+          <Grid item >
             {/* <ListaTema> */}
             <ListaPostagem />
             {/* <CardPublication /> */}

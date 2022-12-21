@@ -5,3 +5,7 @@
 .cardCreatePublication {
   padding-top: 20px;
 }
+
+.MuiGrid-item {
+  width: 100% ;
+}

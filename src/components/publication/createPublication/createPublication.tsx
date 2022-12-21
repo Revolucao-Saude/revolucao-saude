@@ -30,8 +30,8 @@ function CreatePublication() {
 
   return (
     <Card className="cardCreatePublication">
-      <Grid container xs={12} spacing={1}>
-        <Grid container item alignItems="center" justifyContent="center">
+      <Grid container spacing={1}>
+        <Grid container item>
           <Grid item xs={5} sm={2}>
             <CardHeader
               avatar={
