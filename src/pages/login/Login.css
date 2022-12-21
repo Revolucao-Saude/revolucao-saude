@@ -1,23 +1,37 @@
 .fotofundo{
     border-radius: 0px;
     background-image: radial-gradient( circle farthest-corner at 92.3% 71.5%,  rgba(83,138,214,1) 0%, rgb(20, 52, 83) 90% );
-
     padding-top: 3rem;
-    
+    height: 100%;
+    position: absolute;
+    width: 100%;
+
 }
+    @media (max-width: 960px)
+    {
+        .fotofundo {padding-top: 0px}
+    }
 .titulo{
     font-family:Arial;
    color: white !important;
-   font-size: 70px !important;
+   font-size: 70px;
    
    font-family: 'Source Code Pro', monospace !important;
     
 }
+
+@media (max-width: 960px) {
+    .titulo {font-size: 40px}
+
+}
+
 .descricao{
     font-family:Arial;
     color: white;
     font-size: 18px;
     opacity: 100;
+    
+    
     
 }
 .titulo2{
@@ -45,11 +59,24 @@
     margin-top: 10px;
    }
 
-    @media (max-width: 700px) {
+    @media (max-width: 960px) {
     .descricao{display: none;}
     .btn-toggle{display: block;}
     
   }
+
+    .grid {
+        padding-top: 7rem;
+        width: 100%;
+        margin: 0px;
+
+    }
+    @media (max-width: 960px) 
+    {
+
+        .grid {padding-top:0px}
+
+    }
 
   .margemup {
     margin-top: 10px;
