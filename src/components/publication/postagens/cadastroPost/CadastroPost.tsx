@@ -109,6 +109,11 @@ function CadastroPost() {
     }
   }, [id]);
 
+  useEffect(() => {
+    if (temas.length > 0)
+      setTema(temas[0]);
+  }, [temas]);
+
   async function getTemas() {
     await busca("/tema", setTemas, {
       headers: {
@@ -131,7 +136,7 @@ function CadastroPost() {
       ...postagem,
       [e.target.name]: e.target.value,
       tema: tema,
-      usuario:user
+      usuario: user,
     });
   }
 
@@ -181,40 +186,29 @@ function CadastroPost() {
   }
 
   return (
-    <Container maxWidth="sm" className="topo">
-      <Box sx={{ width : '100vh' }}>
-      <form onSubmit={onSubmit}>
-        <h2 className="titulopost">Criar Publicação</h2>
-        <div className="form__group field">
-          <TextField
-            placeholder="Texto"
-            // className="form__field"
-            type="input"
-            value={postagem.texto}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-            id="texto"
-            name="texto"
-            required
-            multiline
-            maxRows={5}
-          />
-          <label className="form__label">Texto</label>
-        </div>
+    <Container maxWidth="sm" className="direction ">
+      <Box>
+        <form onSubmit={onSubmit}>
+          <h2 className="titulopost">Criar Publicação</h2>
+          <div className="form__group field">
+            <TextField
+              placeholder="Texto"
+              className="form__field"
+              type="input"
+              value={postagem.texto}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                updatedPostagem(e)
+              }
+              id="texto"
+              name="texto"
+              required
+              multiline
+              maxRows={5}
+            />
+            <label className="form__label">Texto</label>
+          </div>
 
-        <div className="form__group field">
-          <TextField
-            placeholder="Local"
-            // className="form__field"
-            type="input"
-            value={postagem.local}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-            id="local"
-            name="local"
-          />
-          <label className="form__label">Local</label>
-        </div>
-
-        {/* 
+          {/* 
         <div className="form__group field">
             <input
               placeholder="arquivos_midia"
@@ -228,50 +222,100 @@ function CadastroPost() {
             <label className="form__label">Arquivos de Mídias</label>
         </div> */}
 
-        <Grid container className="direction">
-        
-          <Grid container item xs={5} className="direction">
-            <div className="form__group field direction">
-              <TextField
-                placeholder="Arquivo Mídia"
-                // className="form__field"
-                type="input"
-                value={postagem.arquivos_midia}
-                onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  updatedPostagem(e)
-                }
-                id="arquivos"
-                name="arquivos_midia"
-              />
-              <label className="form__label">URL da mídia</label>
-            </div>
-          {/* </Grid> */}
+          <Grid container className="direction" xs={12}>
+            <Grid container item xs={12} spacing={1}>
+              <Box className="direction">
+                <Grid item>
+                  <Box className="form__group">
+                    <TextField
+                      placeholder="Local"
+                      // className="form__field"
+                      className="w"
+                      type="input"
+                      value={postagem.local}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                        updatedPostagem(e)
+                      }
+                      id="local"
+                      name="local"
+                    />
+                    <label className="form__label">Local</label>
+                  </Box>
+                </Grid>
 
-                
-          <Grid item  xs={1}> 
-            <TextField
-              // accept="image/*" 
-              className="botao"
-              id="arquivos_midia"
-              type="file"
-              name="arquivos_midia"
-            />
-            <label htmlFor="arquivos_midia">
-              <IconButton
-                color="primary"
-                aria-label="upload picture"
-                component="span"
-              >
-                <PhotoCamera />
-              </IconButton>
-            </label>
+                <Grid item>
+                  <Box className="form__group field">
+                    <TextField
+                      placeholder="Arquivo Mídia"
+                      // className="form__field"
+                      className="w"
+                      type="input"
+                      value={postagem.arquivos_midia}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                        updatedPostagem(e)
+                      }
+                      id="arquivos"
+                      name="arquivos_midia"
+                    />
+                    <label className="form__label">URL da mídia</label>
+                  </Box>
+                </Grid>
+
+                {/* <label htmlFor="arquivos_midia">
+                  
+                  <IconButton
+                  
+                    color="primary"
+                    aria-label="upload picture"
+                    component="span"
+                    >
+                  
+                    <PhotoCamera />
+                    <TextField
+                    // accept="image/*" 
+                    className="botao"
+                    id="arquivos_midia"
+                    type="file"
+                    name="arquivos_midia"
+                  />
+
+                    
+                    </IconButton>
+                </label> */}
+                <Grid item>
+                  <Box>
+                    <InputLabel
+                      className="tema"
+                      id="demo-simple-select-helper-label"
+                    >
+                      Tema
+                    </InputLabel>
+                    <Select
+                      className="w-50 mw-160"
+                      labelId="demo-simple-select-helper-label"
+                      value={tema.id||''}
+                      id="demo-simple-select-helper"
+                      onChange={(e) =>
+                        buscaId(`/tema/${e.target.value}`, setTema, {
+                          headers: {
+                            Authorization: token,
+                          },
+                        })
+                      }
+                    >
+                      {temas.map((tema) => (
+                        <MenuItem value={tema.id}>
+                          {tema.lista_assunto}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </Box>
+                </Grid>
+              </Box>
             </Grid>
           </Grid>
 
-
-        </Grid>
-
-        {/* <TextField
+          {/* <TextField
           value={postagem.data_horario}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
           id="data_horario"
@@ -282,46 +326,26 @@ function CadastroPost() {
           fullWidth
         /> */}
 
-        <InputLabel
-          className="tema" id="demo-simple-select-helper-label">Tema </InputLabel>
-        <Select
-        className="w-50"
-          labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
-          onChange={(e) =>
-            buscaId(`/tema/${e.target.value}`, setTema, {
-              headers: {
-                Authorization: token,
-              },
-            })
-          }
-        >
-          {temas.map((tema) => (
-            <MenuItem value={tema.id}>{tema.lista_assunto}</MenuItem>
-          ))}
-        </Select>
-        <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-
-        <button type="submit" className="enviar" /*onClick={handleClose()}*/>
-          <div className="svg-wrapper-1">
-            <div className="svg-wrapper">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-              >
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path
-                  fill="currentColor"
-                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                ></path>
-              </svg>
+          <button type="submit" className="enviar" /*onClick={handleClose()}*/>
+            <div className="svg-wrapper-1">
+              <div className="svg-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    fill="currentColor"
+                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                  ></path>
+                </svg>
+              </div>
             </div>
-          </div>
-          <span>Enviar</span>
-        </button>
-      </form>
+            <span>Enviar</span>
+          </button>
+        </form>
       </Box>
     </Container>
   );

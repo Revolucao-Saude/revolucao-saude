@@ -34,8 +34,8 @@ function Home() {
             <CreatePublication />
           </Grid>
         </Grid>
-        <Grid container item>
-          <Grid item>
+        <Grid container item xs={12} direction-column>
+          <Grid item className="w-100">
             {/* <ListaTema> */}
             <ListaPostagem />
             {/* <CardPublication /> */}

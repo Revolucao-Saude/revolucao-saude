@@ -45,7 +45,7 @@ function ListaPostagem() {
         'Authorization': token
       }
     })
-    console.log(posts);
+    // console.log(posts);
     
   }
 
@@ -61,7 +61,7 @@ function ListaPostagem() {
         posts.map(post => (
           <Box key={post.id} m={2}  >
             
-            <Card className='width' variant="outlined" >
+            <Card variant="outlined" >
               
               <CardContent>
                 <div className='avatar'>
@@ -75,7 +75,7 @@ function ListaPostagem() {
                       </Box>
                       <Box flexDirection="row" className='local'>
                         <Typography variant='body1' component="p">
-                          {/* {post.data_horario} */}
+                          {/* {post.data_horario?.getTime} */}
                         </Typography>
                         <Typography variant='body2' >
                         •{post.local}
@@ -92,7 +92,7 @@ function ListaPostagem() {
                   {post.tema?.lista_assunto}
                 </Typography>
                 <Box mt={3}>
-                  <img src={post.arquivos_midia}></img>
+                  <img className='width' src={post.arquivos_midia} />
                 </Box>
               </CardContent>
               <CardActions className='flex'>
