@@ -35,7 +35,7 @@ function Home() {
           </Grid>
         </Grid>
         <Grid container item xs={12} direction-column>
-          <Grid item>
+          <Grid item className="w-100">
             {/* <ListaTema> */}
             <ListaPostagem />
             {/* <CardPublication /> */}
