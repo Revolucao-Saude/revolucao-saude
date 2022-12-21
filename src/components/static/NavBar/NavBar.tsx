@@ -21,12 +21,12 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import { Divider } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 import { Link } from "react-router-dom";
-import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import AccountMenu from "../../perfilIconMenu/perfilIconMenu";
-import Button from '@mui/material/Button';
-import Fade from '@mui/material/Fade';
+import Button from "@mui/material/Button";
+import Fade from "@mui/material/Fade";
 import NotificationButton from "../NotificationButton/NotificationButton";
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -92,8 +92,8 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     cWhite: {
-      color: '#fff'
-    }
+      color: "#fff",
+    },
   })
 );
 
@@ -203,7 +203,7 @@ function PrimarySearchAppBar() {
   );
 
   return (
-    <div className={classes.grow} >
+    <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
           <Link to="/inicio">
@@ -228,26 +228,25 @@ function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-          <IconButton aria-label="show 4 new home">
-            <Link to="/amigos" className={classes.cWhite}>
+            {/* <IconButton aria-label="show 4 new home">
+              <Link to="/amigos" className={classes.cWhite}>
                 <PeopleAltIcon />
               </Link>
-            </IconButton>
-            <IconButton aria-label="show 4 new home" >
-            <Link to="/sobre" className={classes.cWhite}>
+            </IconButton> */}
+            <IconButton aria-label="show 4 new home">
+              <Link to="/sobre" className={classes.cWhite}>
                 <HelpOutlineOutlinedIcon />
               </Link>
-              
             </IconButton>
 
             <AccountMenu />
-            <Divider orientation="vertical" variant="middle" flexItem />
+            {/* <Divider orientation="vertical" variant="middle" flexItem /> */}
             {/* <Link to="/config"> */}
-              {/* <IconButton aria-label="show 4 new mails" className={classes.cWhite} > */}
-                {/* <Badge /*badgeContent={}*/ }
-                  {/* <SettingsIcon /> */}
-                {/* </Badge> */}
-              {/* </IconButton> */}
+            {/* <IconButton aria-label="show 4 new mails" className={classes.cWhite} > */}
+            {/* <Badge /*badgeContent={}*/}
+            {/* <SettingsIcon /> */}
+            {/* </Badge> */}
+            {/* </IconButton> */}
             {/* </Link> */}
           </div>
           <div className={classes.sectionMobile}>
