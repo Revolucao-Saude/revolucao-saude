@@ -12,12 +12,12 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import FooterCadastro from "../../components/footer/footerCadastro/Footer";
 import { useNavigate } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service";
 import { styles } from "./styles";
+import FooterCadastro from '../../components/footer/footerCadastro/Footer'
 import "./Login.css";
 
 
@@ -133,16 +133,18 @@ function Login() {
             <button className="bot">
               <span className="label">Entrar</span>
             </button>
-            <Grid container>
+            <Grid container >
               <Grid item xs>
-                <Link href="#" variant="body2">
+                {/* <Link  className='text1' href="#" variant="body2">
                   Esqueceu sua senha?
-                </Link>
+                </Link> */}
               </Grid>
-              <Grid item>
-                <Link href="./cadastro" variant="body2">
+              <Grid container className="margemup" justifyContent="center">
+              <Grid item justifyContent="center" >
+                <Link  className='text1' href="./cadastro" variant="body2">
                   {"Não tem uma conta? Cadastre-se"}
                 </Link>
+              </Grid>
               </Grid>
             </Grid>
           </form>
@@ -153,6 +155,7 @@ function Login() {
       </Grid>
 
       <FooterCadastro />
+
     </div>
   );
 }

@@ -12,7 +12,7 @@ function Footer() {
                     </Box> */}
                     <Box className='box2' m={5} >
                         <Box paddingTop={1}>
-                            <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2020 Copyright:</Typography>
+                            <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2022 Copyright:</Typography>
                         </Box>
                         <Box paddingTop={0}>
                             <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >Revolução Saúde. Todos os direitos reservados</Typography>

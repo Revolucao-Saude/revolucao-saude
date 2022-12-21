@@ -8,11 +8,12 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import FooterCadastro from '../../components/footer/footerCadastro/Footer';
 import Avatar from '@material-ui/core/Avatar';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import CadastroUsuario from '../cadastroUsuario/CadastroUsuario';
 import './Registration.css';
+import FooterCadastro from '../../components/footer/footerCadastro/Footer'
+
 
 function Copyright() {
   return (
@@ -36,6 +37,7 @@ const useStyles = makeStyles((theme) =>
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+
   },
   avatar: {
     margin: theme.spacing(1),
@@ -58,7 +60,7 @@ export default function Registration() {
   return (
     <>
     <div className="fotofundo">
-      <Container component="main" maxWidth="xs">
+      <Container className='backgroundcadastro' component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
           <Avatar className={classes.avatar} >
@@ -67,9 +69,9 @@ export default function Registration() {
                         
           <CadastroUsuario />
 
-          <Grid container justifyContent="flex-end">
-            <Grid item>
-              <Link href="/login" variant="body2">
+          <Grid container justifyContent="center">
+            <Grid item  className="margemup">
+              <Link  className='text1' href="/login" variant="body2">
                 Já tem uma conta? Clique aqui
               </Link>
             </Grid>
@@ -82,6 +84,7 @@ export default function Registration() {
       </Container>
 
       <FooterCadastro />
+
       </div>
     </>
   );

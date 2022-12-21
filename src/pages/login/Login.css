@@ -20,8 +20,10 @@
 }
 .titulo2{
     font-family:Arial;
-   color: white;
-   font-size: 20px
+   color: #000000;
+   font-size: 20px;
+   margin-bottom: 50px;
+
 }
 
 .bot {
@@ -37,10 +39,16 @@
     overflow: hidden;
     border-radius: 5px;
     cursor: pointer;
+
+    margin-top: 10px;
    }
 
     @media (max-width: 700px) {
     .descricao{display: none;}
     .btn-toggle{display: block;}
     
+  }
+
+  .margemup {
+    margin-top: 10px;
   }

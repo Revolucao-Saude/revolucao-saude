@@ -4,13 +4,16 @@
 
 .space {
     display: flex;
-    justify-content: space-between;
     margin-top: 5px;
     margin-bottom: 10px;
+    justify-content: center;
 }
 
-.backgroundcadastro {
-    
-    borderRadius: "25px"
-   
+.cadastro1{
+    padding: 50px;
+}
+
+.text2 {
+    text-align: center;
+    color: #000000;
 }
