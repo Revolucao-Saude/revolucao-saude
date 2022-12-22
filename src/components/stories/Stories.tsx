@@ -63,13 +63,15 @@ function Stories() {
       >
         <SwiperSlide className="center">
           
-            <div className="center container ml-75">
+            <div className="container ml-75">
               <div className="center ml-75">
                 {/* <Avatar className="center" sx={{ width: 110, height: 110 }}>  */}
+                <Avatar sx={{ width: 110, height: 110 }}>
                 <ModalStories/>
+                </Avatar>
                 {/* </Avatar> */}
               </div>
-              <div className="ml-75">
+              <div className="ml-59">
                 Revolução Saúde
               </div>
             </div>
@@ -79,7 +81,7 @@ function Stories() {
           <div  className="center container ml-75">
           
           <Avatar  sx={{ width: 110, height: 110 }}>
-              <img width={100} height={100} src={lilian}/>
+              <img className="circular" width={100} height={100} src={lilian}/>
             </Avatar>
           <div className="mLilian"> 
             Lilian
@@ -90,7 +92,7 @@ function Stories() {
          
           <div className="center container ml-75">
           <Avatar sx={{ width: 110, height: 110 }}>
-              <img width={100} height={100} src={anderson}/>
+              <img className="circular" width={100} height={100} src={anderson}/>
           </Avatar>           
           <div className="mA"> 
             Anderson
@@ -101,7 +103,7 @@ function Stories() {
        
           <div className="center container ml-75">
           <Avatar sx={{ width: 110, height: 110 }}>
-              <img width={100} height={100} src={joao}/>
+              <img className="circular" width={100} height={100} src={joao}/>
           </Avatar> 
           <div className="mJ"> 
             João
@@ -112,7 +114,7 @@ function Stories() {
         
           <div className="center container ml-75">
           <Avatar sx={{ width: 110, height: 110 }}>
-              <img width={100} height={100} src={alice}/>
+              <img className="circular" width={100} height={100} src={alice}/>
           </Avatar> 
           <div className="mAlice"> 
             Alice
@@ -123,7 +125,7 @@ function Stories() {
         
           <div className="center container ml-75">
           <Avatar sx={{ width: 110, height: 110 }}>
-              <img width={100} height={100} src={pedro}/>
+              <img className="circular" width={100} height={100} src={pedro}/>
           </Avatar> 
           <div className="mP"> 
             Pedro
@@ -134,7 +136,7 @@ function Stories() {
         
           <div className="center container ml-75">
           <Avatar sx={{ width: 110, height: 110 }}>
-              <img width={100} height={100} src={marcos}/>
+              <img className="circular" width={100} height={100} src={marcos}/>
           </Avatar> 
           <div className="mM"> 
             Marcos
@@ -145,7 +147,7 @@ function Stories() {
         
           <div className="center container ml-75">
           <Avatar sx={{ width: 110, height: 110 }}>
-              <img width={100} height={100} src={ismael}/>
+              <img className="circular" width={100} height={100} src={ismael}/>
           </Avatar>         
           <div className="mI"> 
             Ismael

@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paper: {
       position: "absolute",
-      width: "50%",
-      height:"50%",
+      width: "40%",
+      height:"40%",
       boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
       padding: theme.spacing(2, 4, 3),
       borderRadius: "20px",
@@ -64,11 +64,12 @@ function ModalStories() {
 
   return (
     <div>
+        <Avatar className="width1 circular-color">
+        <img width={100} height={100}  onClick={handleOpen} src={revolucao} />
         
-        <img className="width1" onClick={handleOpen} src={revolucao} />
-        {/* <Avatar className="center" sx={{ width: 110, height: 110 }}>
-              <img width={100} height={100} src={revolucao}/>
-        </Avatar>  */}
+              {/* <img width={100} height={100} src={revolucao}/> */}
+        </Avatar>  
+        
         <Modal
         open={open}
         onClose={handleClose}
