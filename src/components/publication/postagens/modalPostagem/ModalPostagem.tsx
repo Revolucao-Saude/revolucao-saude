@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paper: {
       position: "absolute",
-      width: "100%",
+      width: "50%",
+      height: "50%",
       boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
       padding: theme.spacing(2, 4, 3),
       borderRadius: "20px",
