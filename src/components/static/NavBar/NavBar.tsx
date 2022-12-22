@@ -94,6 +94,9 @@ const useStyles = makeStyles((theme: Theme) =>
     cWhite: {
       color: "#fff",
     },
+    navColor:{
+      backgroundImage: "radial-gradient( circle farthest-corner at 92.3% 71.5%,  rgba(83,138,214,1) 0%, rgb(20, 52, 83) 90% )",
+  }
   })
 );
 
@@ -205,7 +208,7 @@ function PrimarySearchAppBar() {
   return (
     <div className={classes.grow}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className={classes.navColor}>
           <Link to="/inicio">
             <IconButton aria-label="show 4 new home" className={classes.cWhite}>
               <Badge /*badgeContent={4}*/ color="secondary">

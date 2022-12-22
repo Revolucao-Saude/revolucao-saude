@@ -30,7 +30,7 @@ export default function AccountMenu() {
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <Tooltip title="Account settings">
+        {/* <Tooltip title="Conta"> */}
           <IconButton
             onClick={handleClick}
             size="small"
@@ -41,7 +41,7 @@ export default function AccountMenu() {
           >
             <Avatar sx={{ width: 32, height: 32 }}></Avatar>
           </IconButton>
-        </Tooltip>
+        {/* </Tooltip> */}
       </Box>
       <Menu
         anchorEl={anchorEl}
