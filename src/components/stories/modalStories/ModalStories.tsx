@@ -65,7 +65,7 @@ function ModalStories() {
   return (
     <div>
         
-        <img className="width" onClick={handleOpen} src={revolucao} />
+        <img className="width1" onClick={handleOpen} src={revolucao} />
         {/* <Avatar className="center" sx={{ width: 110, height: 110 }}>
               <img width={100} height={100} src={revolucao}/>
         </Avatar>  */}
