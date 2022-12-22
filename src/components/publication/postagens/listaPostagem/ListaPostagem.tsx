@@ -50,6 +50,7 @@ function ListaPostagem() {
   }
 
   useEffect(() => {
+console.log(posts);
 
     getPost()
 

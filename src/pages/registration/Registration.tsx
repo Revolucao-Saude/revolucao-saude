@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) =>
 
 ({
 
-  paper: {
+  userForm: {
     // marginTop: theme.spacing(0),
     display: 'flex',
     flexDirection: 'column',
@@ -61,14 +61,14 @@ export default function Registration() {
 
   return (
     <>
-    <div  className="fotofundo">
-      <Container className='backgroundcadastro' component="main" maxWidth="xs">
+    <div  className="fotofundo" >
+      <Container  className='backgroundcadastro' component="main" maxWidth="xs">
         <CssBaseline />
-        <div className={classes.paper}>
+        <div className={classes.userForm}>
           <Avatar className={classes.avatar} >
             <AccountBoxIcon />
           </Avatar>
-                        
+          
           <CadastroUsuario />
 
           <Grid container justifyContent="center">
