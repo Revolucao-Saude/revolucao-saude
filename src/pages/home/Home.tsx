@@ -10,6 +10,7 @@ import CadastroPost from "../../components/publication/postagens/cadastroPost/Ca
 import { Link } from "react-router-dom";
 import ListaPostagem from "../../components/publication/postagens/listaPostagem/ListaPostagem";
 import ModalPostagem from "../../components/publication/postagens/modalPostagem/ModalPostagem";
+import { Stories } from "../../components/stories/Stories";
 
 function Home() {
   return (
@@ -27,7 +28,7 @@ function Home() {
        */}
       <Grid container item xs={9} >
         <Grid container item>
-          {/* <Stories /> */}
+          <Stories />
         </Grid>
         <Grid container item className="w-100" justifyContent="center">
           <Grid item>

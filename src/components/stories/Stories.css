@@ -1,3 +1,9 @@
+.m0 {
+  margin: 0px;
+  padding: 0px;
+}
+
+
 .storiesPersonal {
   width: 100%;
 }
@@ -9,6 +15,42 @@
 .center {
   display: flex;
   justify-content: center;
+}
+
+.ml-75 {
+  margin-left: 75px;
+}
+
+.mb {
+  margin-bottom: 30px;
+}
+
+.mLilian {
+  margin-left: 30px;
+}
+
+.mA {
+  margin-left: 20px;
+}
+
+.mJ {
+  margin-left: 40px;
+}
+
+.mAlice {
+  margin-left: 35px;
+}
+
+.mP {
+  margin-left: 30px;
+}
+
+.mM {
+  margin-left: 30px;
+}
+
+.mI {
+  margin-left: 30px;
 }
 
 .container {
