@@ -73,7 +73,7 @@ function Login() {
   return (
     <div className="fotofundo">
       <Grid
-        className={classes.grid}
+        className='grid'
         container
         alignItems="center"
         justifyContent="space-evenly"
@@ -89,7 +89,7 @@ function Login() {
         <Grid
           item
           className={classes.paper}
-          xs={10}
+          xs={9}
           sm={7}
           md={4}
           lg={3}
@@ -114,7 +114,7 @@ function Login() {
               autoFocus
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
             />
-            <TextField
+            <TextField className="p-05"
               variant="outlined"
               margin="normal"
               required

@@ -68,9 +68,9 @@ function CadastroUsuario() {
 
   return (
     <div>
-      <Grid container justifyContent="center">
+      <Grid container justifyContent="center" >
         <Box>
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} >
             <Typography
               className="text2"
               variant="h5"
