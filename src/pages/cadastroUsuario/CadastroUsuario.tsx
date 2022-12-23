@@ -102,7 +102,7 @@ function CadastroUsuario() {
               fullWidth
             />
 
-            <TextField
+            {/* <TextField
             value={postagem.arquivos_midia}
             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
             id="arquivos" 
@@ -113,7 +113,7 @@ function CadastroUsuario() {
             fullWidth
             
 
-            />
+            /> */}
 
 
 
