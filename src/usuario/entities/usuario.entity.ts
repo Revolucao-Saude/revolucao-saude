@@ -2,7 +2,7 @@ import { IsEmail, IsNotEmpty, MinLength } from "class-validator";
 import { Postagem } from "../../postagem/entities/postagem.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { ApiProperty } from "@nestjs/swagger";
-import { Story } from "src/stories/entities/stories.entity";
+import { Story } from "src/stories/entities/story.entity";
 
 @Entity({name: 'tb_usuarios'})
 export class Usuario{
@@ -39,7 +39,9 @@ export class Usuario{
     postagem: Postagem[];
 
     @ApiProperty()
-    @OneToMany(() => Story, (story) => story.usuario)
+    @OneToMany(() => Story, (story) => story.usuario, {
+        onDelete: "CASCADE"
+    })
     story: Story[];
 
 }

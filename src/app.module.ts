@@ -8,6 +8,8 @@ import { Tema } from './tema/entities/tema.entity';
 import { TemaModule } from './tema/tema.module';
 import { Usuario } from './usuario/entities/usuario.entity';
 import { UsuarioModule } from './usuario/usuario.module';
+import { Story } from './stories/entities/story.entity';
+import { StoriesModule } from './stories/stories.module';
 
 /**
  *@desc Nessa parte fazemos a integração com o banco de dados, a propriedade synchronize definida como
@@ -23,7 +25,7 @@ import { UsuarioModule } from './usuario/usuario.module';
   //     username: 'root',
   //     password: 'root',
   //     database: 'db_revolucaosaude',
-  //     entities: [Postagem,Tema,Usuario],
+  //     entities: [Postagem,Tema,Usuario, Story],
   //     synchronize: true,
   //   }),
      TypeOrmModule.forRoot({
@@ -40,6 +42,7 @@ import { UsuarioModule } from './usuario/usuario.module';
     PostagemModule,
     TemaModule,
     UsuarioModule,
+    StoriesModule,
     AuthModule 
   ],
   controllers: [AppController],
