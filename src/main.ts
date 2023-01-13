@@ -10,7 +10,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
   .setTitle('Revolução Saúde')
   .setDescription('Projeto Revolução Saúde')
-  .setContact("Revolução Saúde","http://www.generationbrasil.online","projetointgrupo6@hotmail.com")
+  .setContact("Revolução Saúde","https://revolucao-saude.vercel.app/","projetointgrupo6@hotmail.com")
   .setVersion('1.0')
   .addBearerAuth()
   .build();
