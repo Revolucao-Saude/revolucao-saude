@@ -11,10 +11,13 @@ import { Link } from "react-router-dom";
 import ListaPostagem from "../../components/publication/postagens/listaPostagem/ListaPostagem";
 import ModalPostagem from "../../components/publication/postagens/modalPostagem/ModalPostagem";
 import { Stories } from "../../components/stories/Stories";
+import { PrimarySearchAppBar } from "../../components/static/NavBar/NavBar";
 
 function Home() {
   return (
+    <><PrimarySearchAppBar />
     <Grid container spacing={0} className="grid-content">
+      
       {/**
        * @descricao  Coluna da Esquerda
        */}
@@ -53,6 +56,7 @@ function Home() {
         </Grid>
       </Grid>
     </Grid>
+    </>
   );
 }
 
