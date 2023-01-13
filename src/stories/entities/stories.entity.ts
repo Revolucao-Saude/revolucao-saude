@@ -13,7 +13,7 @@ export class Story{
     conteudo: string;
 
     @ApiProperty()
-    @ManyToOne(() => Usuario, (usuario) => usuario.stories)
+    @ManyToOne(() => Usuario, (usuario) => usuario.story)
     usuario: Usuario; 
 
 }

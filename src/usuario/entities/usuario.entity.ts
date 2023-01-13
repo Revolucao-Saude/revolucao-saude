@@ -39,7 +39,7 @@ export class Usuario{
     postagem: Postagem[];
 
     @ApiProperty()
-    @OneToMany(() => Story, (stories) => stories.usuario)
-    stories: Story[];
+    @OneToMany(() => Story, (story) => story.usuario)
+    story: Story[];
 
 }
