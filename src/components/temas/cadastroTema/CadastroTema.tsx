@@ -6,6 +6,7 @@ import Tema from "../../../models/Tema";
 import { buscaId, post, put } from "../../../services/Service";
 import { toast } from "react-toastify";
 import useLocalStorage from "react-use-localstorage";
+import { PrimarySearchAppBar } from "../../static/NavBar/NavBar";
 
 function CadastroTema() {
   let navigate = useNavigate();
@@ -101,7 +102,9 @@ function CadastroTema() {
   }
 
   return (
+   <><PrimarySearchAppBar />
     <Container maxWidth="sm" className="topo">
+      
       <form onSubmit={onSubmit}>
         <Typography
           className="form__field"
@@ -160,6 +163,7 @@ function CadastroTema() {
         </button>
       </form>
     </Container>
+    </>
   );
 }
 

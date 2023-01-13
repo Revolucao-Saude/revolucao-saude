@@ -25,7 +25,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <PrimarySearchAppBar />
+       
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />

@@ -8,6 +8,7 @@ import MouseOverPopover from "../../components/mousemove/MouseMove";
 import ListaPostagem from "../../components/publication/postagens/listaPostagem/ListaPostagem";
 import ListaTema from "../../components/temas/listatema/ListarTema";
 import PaginaConstrucao from "../paginaconstrucao/PaginaConstrucao";
+import { PrimarySearchAppBar } from "../../components/static/NavBar/NavBar";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -54,7 +55,9 @@ export default function BasicTabs() {
   };
 
   return (
+    <><PrimarySearchAppBar />
     <Box sx={{ width: "100%" }}>
+      
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
           value={value}
@@ -93,5 +96,6 @@ export default function BasicTabs() {
       </TabPanel>
 
     </Box>
+    </>
   );
 }

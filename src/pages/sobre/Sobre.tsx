@@ -9,10 +9,12 @@ import joao from "../../assets/images/joao.jpg";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { Grid } from '@material-ui/core';
+import { PrimarySearchAppBar } from '../../components/static/NavBar/NavBar';
 
 
 export default function SobreNos() {
   return (
+    <><PrimarySearchAppBar /> 
     <Grid container>
     <div id='model3'>
         <h1 className='model-title'>Colaboradores</h1>
@@ -135,5 +137,6 @@ export default function SobreNos() {
         </div>
     </div>
   </Grid>
+  </>
   );
 }

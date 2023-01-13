@@ -19,10 +19,11 @@ import { login } from "../../services/Service";
 import { styles } from "./styles";
 import FooterCadastro from '../../components/footer/footerCadastro/Footer'
 import "./Login.css";
+import { PrimarySearchAppBar } from "../../components/static/NavBar/NavBar";
 
 
 function Copyright() {
-  return (
+  return ( 
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
@@ -72,6 +73,7 @@ function Login() {
   }
   return (
     <div className="fotofundo">
+       
       <Grid
         className='grid'
         container
