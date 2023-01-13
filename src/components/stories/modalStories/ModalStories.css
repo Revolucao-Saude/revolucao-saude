@@ -1,14 +1,13 @@
-.width1 {
+.stories-image {
     width: 100% !important;
     height: 100% !important;
-    border-radius: 50px;
-}
-
-.circular {
     border-radius: 50%;
-    background-color: rgb(77, 8, 141);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#c82d8e, #f99d4c);
 }
 
-.circular-color {
-    background-color: rgb(77, 8, 141);
-}
+
+

@@ -21,40 +21,15 @@
   margin-left: 59px;
 }
 
-.ml-75 {
-  margin-left: 75px;
-}
-
-.mb {
-  margin-bottom: 30px;
-}
-
-.mLilian {
-  margin-left: 30px;
-}
-
-.mA {
-  margin-left: 20px;
-}
-
-.mJ {
-  margin-left: 40px;
-}
-
-.mAlice {
-  margin-left: 35px;
-}
-
-.mP {
-  margin-left: 30px;
-}
-
-.mM {
-  margin-left: 30px;
-}
-
-.mI {
-  margin-left: 30px;
+.stories-image {
+  width: 50% !important;
+  height: 100% !important;
+  border-radius: 50%;
+  border:3px solid #9f1a6e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {

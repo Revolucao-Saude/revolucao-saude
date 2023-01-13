@@ -20,10 +20,19 @@ import alice from "../../assets/images/alice.jpg";
 import joao from "../../assets/images/joao.jpg";
 import revolucao from "../../assets/images/revolucao-saude.png";
 import { ModalStories } from "./modalStories/ModalStories";
-import { Link } from "react-router-dom";
-import ButtonBases from "./complexButton/ComplexButton";
 
 function Stories() {
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <Swiper
@@ -65,11 +74,11 @@ function Stories() {
           
             <div className="container ml-75">
               <div className="center ml-75">
-                {/* <Avatar className="center" sx={{ width: 110, height: 110 }}>  */}
-                <Avatar sx={{ width: 110, height: 110 }}>
-                <ModalStories/>
-                </Avatar>
-                {/* </Avatar> */}
+                
+              <img onClick={handleOpen} src={revolucao} className="stories-image" />
+              {/* <ModalStories /> */}
+
+                
               </div>
               <div className="ml-59">
                 Revolução Saúde
@@ -78,81 +87,27 @@ function Stories() {
         </SwiperSlide>
         <SwiperSlide>
           
-          <div  className="center container ml-75">
-          
-          <Avatar  sx={{ width: 110, height: 110 }}>
-              <img className="circular" width={100} height={100} src={lilian}/>
-            </Avatar>
-          <div className="mLilian"> 
-            Lilian
-          </div>
-          </div>
+       
         </SwiperSlide>
         <SwiperSlide>
          
-          <div className="center container ml-75">
-          <Avatar sx={{ width: 110, height: 110 }}>
-              <img className="circular" width={100} height={100} src={anderson}/>
-          </Avatar>           
-          <div className="mA"> 
-            Anderson
-          </div>
-          </div>
+          
         </SwiperSlide>
         <SwiperSlide>
        
-          <div className="center container ml-75">
-          <Avatar sx={{ width: 110, height: 110 }}>
-              <img className="circular" width={100} height={100} src={joao}/>
-          </Avatar> 
-          <div className="mJ"> 
-            João
-          </div>
-          </div>
+         
         </SwiperSlide>
         <SwiperSlide>
         
-          <div className="center container ml-75">
-          <Avatar sx={{ width: 110, height: 110 }}>
-              <img className="circular" width={100} height={100} src={alice}/>
-          </Avatar> 
-          <div className="mAlice"> 
-            Alice
-          </div>
-          </div>
+        
         </SwiperSlide>
         <SwiperSlide>
         
-          <div className="center container ml-75">
-          <Avatar sx={{ width: 110, height: 110 }}>
-              <img className="circular" width={100} height={100} src={pedro}/>
-          </Avatar> 
-          <div className="mP"> 
-            Pedro
-          </div>
-          </div>
+      
         </SwiperSlide>
         <SwiperSlide>
         
-          <div className="center container ml-75">
-          <Avatar sx={{ width: 110, height: 110 }}>
-              <img className="circular" width={100} height={100} src={marcos}/>
-          </Avatar> 
-          <div className="mM"> 
-            Marcos
-          </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        
-          <div className="center container ml-75">
-          <Avatar sx={{ width: 110, height: 110 }}>
-              <img className="circular" width={100} height={100} src={ismael}/>
-          </Avatar>         
-          <div className="mI"> 
-            Ismael
-          </div>
-          </div>
+          
         </SwiperSlide>
       </Swiper>
       <Divider orientation="horizontal" />

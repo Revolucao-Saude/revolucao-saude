@@ -5,7 +5,6 @@ import { Avatar, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import CloseIcon from "@material-ui/icons/Close";
 import revolucao from "../../../assets/images/revolucao-saude.png";
-import ButtonBases from "../complexButton/ComplexButton";
 import "./ModalStories.css"
 import CadastroStories from "../cadastroStories/CadastroStories";
 
@@ -64,12 +63,9 @@ function ModalStories() {
 
   return (
     <div>
-        <Avatar className="width1 circular-color">
-        <img width={100} height={100}  onClick={handleOpen} src={revolucao} />
         
-              {/* <img width={100} height={100} src={revolucao}/> */}
-        </Avatar>  
-        
+        <img width={100} height={100}  onClick={handleOpen} src={revolucao} className="stories-image"/>
+
         <Modal
         open={open}
         onClose={handleClose}
