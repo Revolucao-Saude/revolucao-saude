@@ -64,7 +64,7 @@ function ModalStories() {
   return (
     <div>
         
-        <img width={100} height={100}  onClick={handleOpen} src={revolucao} className="stories-image"/>
+        <img onClick={handleOpen} src={revolucao} className="stories-image"/>
 
         <Modal
         open={open}

@@ -20,6 +20,8 @@ import alice from "../../assets/images/alice.jpg";
 import joao from "../../assets/images/joao.jpg";
 import revolucao from "../../assets/images/revolucao-saude.png";
 import { ModalStories } from "./modalStories/ModalStories";
+import { StoriesTeste } from "../storiesTeste/StoriesTeste";
+import '../storiesTeste/StoriesTeste.css'
 
 function Stories() {
 
@@ -75,24 +77,12 @@ function Stories() {
             <div className="container ml-75">
               <div className="center ml-75">
                 
-              <img onClick={handleOpen} src={revolucao} className="stories-image" />
-              {/* <ModalStories /> */}
-
-                
-              </div>
-              <div className="ml-59">
-                Revolução Saúde
+              {/* <img onClick={handleOpen} src={revolucao} className="stories-image" /> */}
+              <ModalStories />
               </div>
             </div>
         </SwiperSlide>
-        <SwiperSlide>
-          
-       
-        </SwiperSlide>
-        <SwiperSlide>
-         
-          
-        </SwiperSlide>
+
         <SwiperSlide>
        
          
