@@ -1,11 +1,11 @@
 import React from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import { Avatar, Button } from "@material-ui/core";
+import { Avatar, Button, Grid } from "@material-ui/core";
 import { Box } from "@mui/material";
 import CloseIcon from "@material-ui/icons/Close";
 import revolucao from "../../../assets/images/revolucao-saude.png";
-import "./ModalStories.css"
+import "./ModalStories.css";
 import CadastroStories from "../cadastroStories/CadastroStories";
 
 function getModalStyle() {
@@ -23,17 +23,16 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paper: {
       position: "absolute",
-      width: "40%",
-      height:"40%",
+      width: "60%",
+      height: "60%",
       boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
       padding: theme.spacing(2, 4, 3),
       borderRadius: "20px",
       background: "rgba(255,255,255,0.7)",
-      backdropFilter: "saturate(600%) blur(10px);", 
-      
+      backdropFilter: "saturate(600%) blur(10px);",
+
       // backgroundColor: "#fff",
       //  opacity: 0.9,
-      
     },
   })
 );
@@ -56,26 +55,31 @@ function ModalStories() {
       <Box display="flex" justifyContent="flex-end" className="cursor">
         <CloseIcon onClick={handleClose} />
       </Box>
-
-      <CadastroStories />
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <CadastroStories />
+      </Grid>
     </div>
   );
 
   return (
     <div>
-        
-        <img onClick={handleOpen} src={revolucao} className="stories-image"/>
-
-        <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
-        {body}
-      </Modal>
+      <Grid container xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          <img onClick={handleOpen} src={revolucao} className="stories-image" />
+        </Grid>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+          >
+            {body}
+          </Modal>
+        </Grid>
+      </Grid>
     </div>
   );
 }
 
-export { ModalStories }
+export { ModalStories };
