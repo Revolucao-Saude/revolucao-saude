@@ -25,7 +25,6 @@ function CreatePublication() {
   const navigate = useNavigate();
   function callCreatePublication() {
     window.location.href = "/criar-postagem";
-    // return <ModalPostagem/>
   }
 
   return (
@@ -83,9 +82,9 @@ function CreatePublication() {
                 type="submit"
                 variant="text"
                 startIcon={<PhotoIcon />}
-                onClick={() => {
-                  callCreatePublication();
-                }}
+                // onClick={() => {
+                //   callCreatePublication();
+                // }}
               >
                 Fotos
               </Button>
@@ -93,9 +92,9 @@ function CreatePublication() {
                 type="submit"
                 variant="text"
                 startIcon={<SmartDisplayIcon />}
-                onClick={() => {
-                  callCreatePublication();
-                }}
+                // onClick={() => {
+                //   callCreatePublication();
+                // }}
               >
                 Vídeos
               </Button>
@@ -103,9 +102,9 @@ function CreatePublication() {
                 type="submit"
                 variant="text"
                 startIcon={<EventIcon />}
-                onClick={() => {
-                  callCreatePublication();
-                }}
+                // onClick={() => {
+                //   callCreatePublication();
+                // }}
               >
                 Eventos
               </Button>
@@ -114,9 +113,9 @@ function CreatePublication() {
                 type="submit"
                 variant="text"
                 startIcon={<AddLocationAltIcon />}
-                onClick={() => {
-                  callCreatePublication();
-                }}
+                // onClick={() => {
+                //   callCreatePublication();
+                // }}
               >
                 Localização
               </Button>
