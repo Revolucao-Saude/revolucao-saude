@@ -18,32 +18,32 @@ import { StoriesModule } from './stories/stories.module';
  */
 @Module({
   imports: [
-  //  TypeOrmModule.forRoot({
-  //     type:'mysql',
-  //     host: 'localhost',
-  //     port: 3306,
-  //     username: 'root',
-  //     password: 'root',
-  //     database: 'db_revolucaosaude',
-  //     entities: [Postagem,Tema,Usuario, Story],
-  //     synchronize: true,
-  //   }),
-     TypeOrmModule.forRoot({
+    //  TypeOrmModule.forRoot({
+    //     type:'mysql',
+    //     host: 'localhost',
+    //     port: 3306,
+    //     username: 'root',
+    //     password: 'root',
+    //     database: 'db_revolucaosaude',
+    //     entities: [Postagem,Tema,Usuario, Story],
+    //     synchronize: true,
+    //   }),
+    TypeOrmModule.forRoot({
       type: 'postgres',
       url: process.env.DATABASE_URL,
       logging: false,
       dropSchema: false,
       ssl: {
-        rejectUnauthorized:false
+        rejectUnauthorized: false,
       },
       synchronize: true,
-      autoLoadEntities: true
-    }), 
+      autoLoadEntities: true,
+    }),
     PostagemModule,
     TemaModule,
     UsuarioModule,
     StoriesModule,
-    AuthModule 
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [],

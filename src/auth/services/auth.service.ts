@@ -18,7 +18,6 @@ export class AuthService {
             throw new HttpException("Usuário não Encontrado!", HttpStatus.NOT_FOUND);
 
         const match = await this.bcrypt.compararSenhas(buscaUsuario.senha, password)
-console.log(match);
 
         if(buscaUsuario && match) {
             const {senha, ...result} = buscaUsuario
