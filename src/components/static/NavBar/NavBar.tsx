@@ -18,15 +18,17 @@ import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
-import { Divider } from "@material-ui/core";
+import { Avatar, Divider } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import AccountMenu from "../../perfilIconMenu/perfilIconMenu";
 import Button from "@mui/material/Button";
 import Fade from "@mui/material/Fade";
 import NotificationButton from "../NotificationButton/NotificationButton";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import ListItemIcon from '@mui/material/ListItemIcon';
+import Logout from '@mui/icons-material/Logout';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -101,6 +103,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function PrimarySearchAppBar() {
+  const navigate = useNavigate()
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
@@ -153,55 +156,33 @@ function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      {/* <MenuItem onClick={handleProfileMenuOpen}> 
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />        
-        </IconButton>
-        <Link to="/perfil">
-          {" "}
-          <p> Profile </p>{" "}
+      <Link to="/perfil">
+        <MenuItem>
+            <div>
+           <Avatar />
+           </div>
+           Perfil
+        </MenuItem>
         </Link>
+       <MenuItem>
+       <Link onClick={() => {
+            localStorage.removeItem('token');
+            userAuthentication();
+          } } to={'/login'}
+          > 
+          <MenuItem>
+          <ListItemIcon>
+            <Logout fontSize="small" />
+          </ListItemIcon>
+          Sair
+        </MenuItem>
+        </Link> 
+        
       </MenuItem>
-       <MenuItem> 
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <IconButton 
-        edge="start"
-        className={classes.menuButton}
-        color="inherit"
-        aria-label="open drawer"
-      >
-        <MenuIcon />
-      </IconButton>
-       <MenuItem> 
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <SettingsIcon />
-          </Badge>
-        </IconButton>
-        <Link to="/config">
-          {" "}
-          <p> Configuração </p>{" "}
-        </Link>
-      </MenuItem>
-       <IconButton 
-        edge="start"
-        className={classes.menuButton}
-        color="inherit"
-        aria-label="open drawer"
-      >
-        <MenuIcon />
-      </IconButton>*/}
+ 
+       
+        
+       
     </Menu>
   );
 
@@ -272,3 +253,7 @@ function PrimarySearchAppBar() {
 }
 
 export { PrimarySearchAppBar };
+  function userAuthentication() {
+    throw new Error("Function not implemented.");
+  }
+
