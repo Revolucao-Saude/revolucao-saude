@@ -164,6 +164,11 @@
     display: flex;
     flex-direction: row;
   }
+  @media(max-width: 780px){
+    .direction{
+      flex-direction: column;
+    }
+  }
 
   .makeStyles-paper-20{
     width: 40% !important;

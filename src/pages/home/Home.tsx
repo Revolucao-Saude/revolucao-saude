@@ -34,13 +34,13 @@ function Home() {
         <Grid container item xs={12} sm={10} md={10} lg={10} xl={10}>
           <Stories />
         </Grid>
-        <Grid container item xs={12} sm={12} md={11} lg={11} xl={11} className="w-100" justifyContent="center">
-          <Grid item xs={12} sm={12} md={9} lg={9} xl={9}> 
+        <Grid container item xs={12} sm={12} md={12} lg={12} xl={12} className="w-100" justifyContent="center">
+          <Grid item xs={12} sm={12} md={12} lg={11} xl={11}> 
             <CreatePublication />
           </Grid>
         </Grid>
         <Grid container item xs={12} sm={12} md={11} lg={11} xl={11} direction-column justifyContent="center">
-          <Grid item xs={12} sm={8} md={8} lg={8} xl={8}>
+          <Grid item xs={12} sm={10} md={9} lg={8} xl={8}>
             {/* <ListaTema> */}
             <ListaPostagem />
             {/* <CardPublication /> */}

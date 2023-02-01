@@ -94,7 +94,7 @@ function ListaPostagem() {
               <Typography variant="body2" className="style-tema" component="p">
                 #{post.tema?.lista_assunto}
               </Typography>
-              <Box mt={3}>
+              <Box mt={3} className="width" >
                 <img className="width" src={post.arquivos_midia} />
               </Box>
             </CardContent>
