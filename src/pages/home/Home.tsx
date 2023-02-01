@@ -35,7 +35,7 @@ function Home() {
           <Stories />
         </Grid>
         <Grid container item xs={12} sm={12} md={12} lg={12} xl={12} className="w-100" justifyContent="center">
-          <Grid item xs={12} sm={12} md={12} lg={11} xl={11}> 
+          <Grid item xs={12} sm={12} md={12} lg={9} xl={9}> 
             <CreatePublication />
           </Grid>
         </Grid>
