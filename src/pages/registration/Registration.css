@@ -1,13 +1,7 @@
 .backgroundcadastro{
 
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255, 0.2),
-        rgba(255,255,255, 0.3)
-    );
-
-
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36);
+    background: rgba(225,225,225, 0.8);
+    box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
     /* background-color: rgba(225,225,225, 0.5); */
 
     backdrop-filter: blur (100px);

@@ -1,6 +1,7 @@
 .fotofundo{
     border-radius: 0px;
-    background-image: radial-gradient( circle farthest-corner at 92.3% 71.5%,  rgba(83,138,214,1) 0%, rgb(20, 52, 83) 90% );
+    /* background-image: radial-gradient( circle farthest-corner at 92.3% 71.5%,  rgba(83,138,214,1) 0%, rgb(20, 52, 83) 90% ); */
+    background-image: url(https://hostorphansworldwide.org/wp-content/uploads/2020/10/online-programming-course-hero-section-bg.svg);
     padding-top: 3rem;
     min-height: 100vh;
     width: 100%;
@@ -12,7 +13,7 @@
     }
 .titulo{
     font-family:Arial;
-   color: white !important;
+   color: #ffffff !important;
    font-size: 70px;
    font-family: 'Source Code Pro', monospace !important;
     
@@ -25,8 +26,8 @@
 
 .descricao{
     font-family:Arial;
-    color: white;
-    font-size: 18px;
+    color: #aebcff;
+    font-size: 16px;
     opacity: 100;
     
     
@@ -47,7 +48,7 @@
     height: 3em;
     width: 100%;
     border: none;
-    background-color: #c41b54;
+    background-color: #2f385e;
     color: #fff;
     text-transform: uppercase;
     overflow: hidden;

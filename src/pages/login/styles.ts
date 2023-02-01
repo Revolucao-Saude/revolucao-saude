@@ -8,7 +8,7 @@ const styles = makeStyles((theme) => ({
       
 
       boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
-      background: "rgba(225,225,225, 0.5)",
+      background: "rgba(225,225,225, 0.8)",
     
       borderRadius: "25px"
 
@@ -16,7 +16,8 @@ const styles = makeStyles((theme) => ({
     },
     avatar: {
       margin: theme.spacing(1),
-      backgroundColor: theme.palette.secondary.main,
+      backgroundColor: '#2f385e',
+      
     },
     form: {
       width: '100%', // Fix IE 11 issue.

@@ -84,8 +84,11 @@ function Login() {
         <Grid item xs={10} sm={7} md={6} lg={5} xl={4}>
           <h1 className="titulo">Revolução Saúde</h1>
           <p className="descricao">
-            A Revolução Saúde é uma rede social com a finalidade de possibilitar
-            que as pessoas troquem experiências/informações entre si.
+            A Revolução Saúde é uma rede social com a <br /> 
+            finalidade de possibilitar 
+            que as pessoas troquem  <br /> 
+            experiências 
+            e informações entre si.
           </p>
         </Grid>
         <Grid
